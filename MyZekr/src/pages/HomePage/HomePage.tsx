@@ -17,7 +17,7 @@ export const HomePage: FC = () => {
 					در اینجا سعی می کنیم که مرجعی برای دعاها، اذکار و اعمال عبادی رو جمع کنیم. به امید داشتن یک منبع برای همه چی.
 					<br />
 					این سایت و اطلاعات آن کد منبع آزاد بوده و رایگان است و از{' '}
-					<a href="https://github.com/" target="_blank" rel="noopener noreferrer nofollow">
+					<a href="https://github.com/salarcode/myzekr" target="_blank" rel="noopener noreferrer nofollow">
 						<img src="https://github.githubassets.com/pinned-octocat.svg" alt="" className="icon-13 m-1" />
 						اینجا &nbsp;
 					</a>
