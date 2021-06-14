@@ -10,13 +10,18 @@ import { configureStore } from './store/store';
 import { Provider } from 'react-redux';
 import { ZekrCounter } from './pages/ZekrCounter/ZekrCounter';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
+import { redirectToMyZekrCom } from './common/myZekrDomainRedirect';
 
 function App() {
 	const store = configureStore();
 
 	useEffect(() => {
-		// here we are checking if we are serving from myzerk.com or github?
-		console.log('App.useEffect');
+		//const history = createBrowserHistory();
+		// // Initialize google analytics page view tracking
+		// history.listen(location => {
+		// ReactGA.set({ page: location.pathname }); // Update the user's current page
+		// ReactGA.pageview(location.pathname); // Record a pageview for the given page
+		// });
 	}, []);
 
 	return (
@@ -39,3 +44,6 @@ function App() {
 }
 
 export default App;
+function createBrowserHistory() {
+	throw new Error('Function not implemented.');
+}

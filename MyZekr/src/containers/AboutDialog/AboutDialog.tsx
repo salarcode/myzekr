@@ -28,7 +28,11 @@ export const AboutDialog: FC<Props> = ({}) => {
 							<br />
 							این سایت و اطلاعات آن کد منبع آزاد بوده و رایگان است و از{' '}
 							<a href="https://github.com/salarcode/myzekr" target="_blank" rel="noopener noreferrer nofollow">
-								<img src="https://github.githubassets.com/pinned-octocat.svg" alt="" className="icon-13 m-1" />
+								<img
+									src="https://github.githubassets.com/pinned-octocat.svg"
+									alt="github"
+									className="icon-13 m-1"
+								/>
 								اینجا &nbsp;
 							</a>
 							قابل دریافت است.

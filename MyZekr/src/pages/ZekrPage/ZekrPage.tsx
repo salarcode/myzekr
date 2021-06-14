@@ -162,7 +162,7 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 								))}
 							</span>
 						</div>
-						<div className="inline-title">{zekr.fullName}</div>
+						<h1 className="inline-title">{zekr.fullName}</h1>
 						<div className="inline-actions">
 							{zekr.benefits && zekr.benefits?.length > 0 && (
 								<button

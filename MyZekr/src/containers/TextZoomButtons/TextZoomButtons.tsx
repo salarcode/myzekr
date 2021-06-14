@@ -61,11 +61,11 @@ const TextZoomButtons: FC<Props> = ({ settingsLoading, settings, saveSettings })
 	return (
 		<Fragment>
 			<a href="#" onClick={onAddClick}>
-				<img src="/assets/icons/add.svg" className="icon-24  link-image" />
+				<img src="/assets/icons/add.svg" alt="+" className="icon-24  link-image" />
 				{/* <i className="fas fa-minus-circle fa-lg"></i> */}
 			</a>
 			<a href="#" onClick={onRemoveClick}>
-				<img src="/assets/icons/remove.svg" className="icon-24 link-image" />
+				<img src="/assets/icons/remove.svg" alt="-" className="icon-24 link-image" />
 				{/* <i className="fas fa-plus-circle fa-lg"></i> */}
 			</a>
 		</Fragment>

@@ -11,7 +11,7 @@ interface Props {
 export const PageMeta: FC<Props> = ({ title, description }) => {
 	return (
 		<Helmet>
-			<title>مرجع دعاها و اذکار {title && ' - ' + title}</title>
+			<title>{title && title + ' - '} مرجع دعاها و اذکار</title>
 			<meta name="description" content={description ? description : title} />
 		</Helmet>
 	);

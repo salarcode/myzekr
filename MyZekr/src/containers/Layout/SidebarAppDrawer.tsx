@@ -79,7 +79,7 @@ const SidebarAppDrawer: FC<Props> = ({ settingsLoading, settings, saveSettings }
 			<div className="offcanvas-body">
 				<div className="drawer-logo" data-bs-toggle="offcanvas" data-bs-target="#sidebar-app-drawer">
 					<Link to="/">
-						<img className="logo" src="/android-chrome-512x512.png" alt="" />
+						<img className="logo" src="/android-chrome-512x512.png" alt="MyZekr" />
 					</Link>
 				</div>
 				<div className="form-check form-switch">
