@@ -32,7 +32,6 @@ const BookmarkZekrButton: FC<Props> = ({ zekr, settingsLoading, settings, saveSe
 	function displayToast(message: string) {
 		var bodyElm = document.querySelector<HTMLElement>('#bookmark-zekr-button-toast .toast-body');
 		if (bodyElm) {
-			console.log(bodyElm);
 			bodyElm.innerText = message;
 		}
 

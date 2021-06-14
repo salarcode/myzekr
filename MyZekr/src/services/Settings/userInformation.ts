@@ -19,6 +19,5 @@ export async function readUserInformationFromServer(): Promise<UserInformation> 
 }
 
 export async function saveUserInformationInServer(userInfo: UserInformation) {
-	console.log('saveUserInformationInServer', userInfo);
 	await saveStorageItem(UserInformationStorageKey, userInfo);
 }

@@ -19,6 +19,5 @@ export async function readSettingsFromServer(): Promise<AppSettings> {
 }
 
 export async function saveSettingsInServer(settings: AppSettings) {
-	console.log('saveSettingsInServer', settings);
 	await saveStorageItem(AppSettingsStorageKey, settings);
 }

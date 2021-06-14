@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import './App.scss';
 import Layout from './containers/Layout/Layout';
@@ -13,6 +13,11 @@ import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
 
 function App() {
 	const store = configureStore();
+
+	useEffect(() => {
+		// here we are checking if we are serving from myzerk.com or github?
+		console.log('App.useEffect');
+	}, []);
 
 	return (
 		<Provider store={store}>
@@ -30,23 +35,6 @@ function App() {
 				</Layout>
 			</BrowserRouter>
 		</Provider>
-
-		// <div className="App">
-		//   <header className="App-header">
-		//     <img src={logo} className="App-logo" alt="logo" />
-		//     <p>
-		//       Edit <code>src/App.tsx</code> and save to reload.
-		//     </p>
-		//     <a
-		//       className="App-link"
-		//       href="https://reactjs.org"
-		//       target="_blank"
-		//       rel="noopener noreferrer"
-		//     >
-		//       Learn React
-		//     </a>
-		//   </header>
-		// </div>
 	);
 }
 

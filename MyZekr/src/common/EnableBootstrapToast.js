@@ -12,7 +12,7 @@ export function enableBootstrapToastAll() {
 
 	var toastElList = [].slice.call(document.querySelectorAll('.toast'))
 	var toastList = toastElList.map(function (toastEl) {
-		console.log('enabling Toast ...', bootstrap, toastEl);
+		// showing the toast
 		return new bootstrap.Toast(toastEl, {})
 	})
 	return toastList;

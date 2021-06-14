@@ -60,19 +60,16 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 
 			setLoading(false);
 		}
-		console.log('ZekrPage.useEffect, before load settings = ', settings);
 		if (settings === null) {
 			readSettings();
 		}
 		doGetZekr();
 
-		//console.log('ZekrPage.useEffect, after load settings, not null? = ' + (settings != null));
 		detectPositionSticky('.sticky-inline-header');
 		detectPositionSticky('.zekr-body-play-voice');
 	}, [zekrUid, settings, readSettings]);
 
 	function onReturnClick() {
-		console.log('return');
 		if (history.length > 2) {
 			history.goBack();
 		} else if (categories && categories.length > 0) {
@@ -128,8 +125,6 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 			</div>
 		</div>
 	);
-
-	console.log(`ZekrPage loading=${loading} || settingsLoading=${settingsLoading} || !zekr=${!zekr}`);
 
 	return loading || settingsLoading || !zekr ? (
 		loading || settingsLoading ? (

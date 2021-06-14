@@ -52,9 +52,7 @@ export function webJsonRequestXhr<TRQ, TRS>(config: HttpRequest<TRQ>): Promise<H
 			xhr.setRequestHeader('Cache-Control', 'no-cache');
 		}
 		if (config.timeout) {
-			console.log('webJsonRequestXhr.Timeout-Set: ' + config.timeout, 'before: ' + xhr.timeout);
 			xhr.timeout = config.timeout;
-			//console.log('webJsonRequestXhr.Timeout-Set: ' + xhr.timeout);
 		}
 
 		xhr.onload = (evt) => {
@@ -62,13 +60,12 @@ export function webJsonRequestXhr<TRQ, TRS>(config: HttpRequest<TRQ>): Promise<H
 		};
 
 		xhr.onerror = (evt) => {
-			console.log('webJsonRequestXhr.xhr.onerror', evt);
-			//debugger;
+			console.warn('webJsonRequest has failed for ' + config.url, evt);
 			reject(errorResponse(xhr, 'Failed to make request.'));
 		};
 
 		xhr.ontimeout = (evt) => {
-			console.log('webJsonRequestXhr.xhr.ontimeout', evt);
+			console.warn('webJsonRequest has timed out for ' + config.url, evt);
 			reject(errorResponse(xhr, 'Request took longer than expected.'));
 		};
 
