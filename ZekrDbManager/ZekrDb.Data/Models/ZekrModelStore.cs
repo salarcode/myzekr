@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -11,13 +12,19 @@ namespace ZekrDb.Data.Models
 {
 	public static class ZekrModelStore
 	{
-		public const string ZekrDbPath = @"F:\Programming\React\Zekr\zekr\public\zekr-db\";
-		public const string ZekrUidPath = ZekrDbPath + @"zekr\";
+		private static string _zekrDbPath;
+
+
+		public static string ZekrUidPath => ZekrDbPath + @"zekr\";
 		public const string JsonFileExtension = ".json";
 		public const string RemoveFileExtension = ".removed";
 		public const string ZekrCategories = "category-index" + JsonFileExtension;
 		public const string ZekrTags = "tag-index" + JsonFileExtension;
 		public const string ZekrIndex = "zekr-index" + JsonFileExtension;
+
+
+		public static string ZekrDbPath =>
+			_zekrDbPath ??= ConfigurationManager.AppSettings["ZekrDbPath"];
 
 		public static Zekr.Zekr LoadZekrByUid(string uid)
 		{
