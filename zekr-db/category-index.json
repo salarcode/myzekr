@@ -1,0 +1,56 @@
+[
+	{
+		"uid": "prayer",
+		"title": "نماز",
+		"imageUrl": "sujud.svg",
+		"children": ["prayer-taqibat"]
+	},
+	{
+		"uid": "prayer-taqibat",
+		"title": "تعقیبات نماز",
+		"imageUrl": "pray.svg",
+		"parent": ["prayer"]
+	},
+	{
+		"uid": "famous-dua",
+		"title": "ادعیه معروف",
+		"imageUrl": null,
+		"parent": []
+	},
+	{
+		"uid": "dua-for-difficulties",
+		"title": "ادعیه مشکل گشا",
+		"imageUrl": null,
+		"parent": []
+	},
+	{
+		"uid": "week-days-dua",
+		"title": "ادعیه ایام هفته",
+		"imageUrl": null,
+		"parent": []
+	},
+	{
+		"uid": "dua-ramadan",
+		"title": "ادعیه رمضان",
+		"imageUrl": null,
+		"parent": []
+	},
+	{
+		"uid": "dua-ramadan-days",
+		"title": "ادعیه روزهای رمضان",
+		"imageUrl": null,
+		"parent": []
+	},
+	{
+		"uid": "famous-hadith",
+		"title": "احادیث معروف",
+		"imageUrl": null,
+		"parent": []
+	},
+	{
+		"uid": "ziyarats",
+		"title": "زیارات معصومین(ع)",
+		"imageUrl": null,
+		"parent": []
+	}
+]
