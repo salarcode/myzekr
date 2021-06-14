@@ -71,7 +71,7 @@ export const ZekrListSearchable: FC<Props> = ({
 
 	return (
 		<section className="main-section">
-			<div className="main-section-title title-with-tools">
+			<h3 className="main-section-title title-with-tools">
 				<span className="no-wrap">{sectionTitle}</span>
 				{zekrList.length > displaySearchInputLimit && (
 					<TextField
@@ -93,7 +93,7 @@ export const ZekrListSearchable: FC<Props> = ({
 						}}
 					/>
 				)}
-			</div>
+			</h3>
 			<div className="">
 				{searchText && !zekrSearchResult?.length && (
 					<div className="">متاسفانه نتیجه ای یافت نشد. با کلمات کوتاه تر امتحان کنید.</div>

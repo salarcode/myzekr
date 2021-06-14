@@ -178,7 +178,7 @@ const SidebarAppDrawer: FC<Props> = ({ settingsLoading, settings, saveSettings }
 				<div className="link-item" data-bs-toggle="offcanvas" data-bs-target="#sidebar-app-drawer">
 					<Link to="/counter">
 						<span className="link-icon text-danger">
-							<img src="/assets/icons/tasbih.svg" className="icon-20" />
+							<img src="/assets/icons/tasbih.svg" alt="." className="icon-20" />
 						</span>
 						ذکر شمار
 					</Link>

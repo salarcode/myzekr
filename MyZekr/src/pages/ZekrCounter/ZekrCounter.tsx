@@ -86,7 +86,7 @@ export const ZekrCounter = () => {
 								</span>
 							</span>
 						</div>
-						<div className="inline-title">ذکر شمار</div>
+						<h1 className="inline-title">ذکر شمار</h1>
 						<div className="inline-actions">
 							<BackButton />
 						</div>

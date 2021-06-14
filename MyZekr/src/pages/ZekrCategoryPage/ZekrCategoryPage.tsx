@@ -101,7 +101,7 @@ export const ZekrCategoryPage: FC<RouteComponentProps<params>> = ({ match, histo
 								))}
 							</span>
 						</div>
-						<div className="inline-title">
+						<h1 className="inline-title">
 							{category && (
 								<div>
 									{/* {category.icon && <i className={'fa ' + category.icon}></i>} */}
@@ -110,7 +110,7 @@ export const ZekrCategoryPage: FC<RouteComponentProps<params>> = ({ match, histo
 									</Link>
 								</div>
 							)}
-						</div>
+						</h1>
 						<div className="inline-actions">
 							<BackButton />
 						</div>
@@ -146,10 +146,10 @@ export const ZekrCategoryPage: FC<RouteComponentProps<params>> = ({ match, histo
 			</div>
 			{childrenCategories && (
 				<section className="main-section">
-					<div className="main-section-title">
+					<h3 className="main-section-title">
 						<span>⭐</span>
 						زیر مجموعه ها
-					</div>
+					</h3>
 					<div className="">
 						<CategoryList data={childrenCategories} />
 					</div>

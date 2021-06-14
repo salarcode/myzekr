@@ -238,7 +238,7 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 				<BookmarkZekrButton zekr={zekr} />
 				{zekr.zekrCounter && zekr.zekrCounter.length > 0 && (
 					<a href="#" onClick={onShowZekrCounter} title="ذکر شمار">
-						<img src="/assets/icons/tasbih.svg" className="icon-24 link-image" />
+						<img src="/assets/icons/tasbih.svg" alt="." className="icon-24 link-image" />
 					</a>
 				)}
 			</div>

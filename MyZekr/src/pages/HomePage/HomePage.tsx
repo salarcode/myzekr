@@ -46,10 +46,10 @@ export const HomePage: FC = () => {
 				/>
 			</section>
 			<section className="main-section">
-				<div className="main-section-title">
+				<h3 className="main-section-title">
 					<span>⭐</span>
 					انتخاب دسته بندی دعا ها
-				</div>
+				</h3>
 				<div className="">
 					<CategoryContainer />
 				</div>
