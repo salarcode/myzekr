@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="ZekrDbClient.UI.ZekrIndexControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ZekrDbClient.UI"
+             xmlns:models="clr-namespace:ZekrDb.Data.Models;assembly=ZekrDb.Data"
+             mc:Ignorable="d" 
+			 Padding="5"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}"
+             FlowDirection="RightToLeft"
+             d:DesignHeight="300" d:DesignWidth="800">
+	<Border BorderThickness="1,0,0,1" BorderBrush="Gray"  Name="BorderMain" CornerRadius="5,5,5,5">
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition/>
+				<RowDefinition Height="392*"/>
+			</Grid.RowDefinitions>
+			<Button Content="افزودن ذکر" Click="NewZekrClick" Width="90" Margin="5" Style="{StaticResource AccentButtonStyle}" />
+			<Button Content="🔃" Click="RefreshListClick" Width="Auto" Margin="5" Style="{StaticResource AccentButtonStyle}" HorizontalAlignment="Right" />
+			<DataGrid x:Name="grdZekrIndex" Grid.Row="2" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"
+			          AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True"
+			          ItemsSource="{Binding ZekrIndexList}">
+				<DataGrid.Columns>
+					<DataGridTextColumn Header = "UID" Binding = "{Binding uid}" />
+					<DataGridTextColumn Header = "عنوان کوتاه" Binding = "{Binding shortName}" />
+					<DataGridTextColumn Header = "عنوان بلند کامل" Binding = "{Binding fullName}" />
+					<DataGridTextColumn Header = "دسته" Binding = "{Binding category}" />
+					<DataGridTextColumn Header = "Image Url" Binding = "{Binding imageUrl}" />
+					<DataGridTextColumn Header = "Image Css" Binding = "{Binding imageClass}" />
+					<DataGridTemplateColumn Header="کپی" >
+						<DataGridTemplateColumn.CellTemplate>
+							<DataTemplate>
+								<Button Click="ZekrDuplicateClick" Margin="5" Style="{StaticResource AccentButtonStyle}">کپی جدید</Button>
+							</DataTemplate>
+						</DataGridTemplateColumn.CellTemplate>
+					</DataGridTemplateColumn>
+					<DataGridTemplateColumn Header="ویرایش" >
+						<DataGridTemplateColumn.CellTemplate>
+							<DataTemplate>
+								<Button Click="ZekrEditClick" Margin="5" Style="{StaticResource AccentButtonStyle}">ویرایش</Button>
+							</DataTemplate>
+						</DataGridTemplateColumn.CellTemplate>
+					</DataGridTemplateColumn>
+					<DataGridTemplateColumn Header="حذف" >
+						<DataGridTemplateColumn.CellTemplate>
+							<DataTemplate>
+								<Button Click="ZekrRemoveClick" Margin="5" Style="{StaticResource AccentButtonStyle}">حذف</Button>
+							</DataTemplate>
+						</DataGridTemplateColumn.CellTemplate>
+					</DataGridTemplateColumn>
+				</DataGrid.Columns>
+			</DataGrid>
+
+
+		</Grid>
+	</Border>
+</UserControl>

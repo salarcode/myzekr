@@ -1,0 +1,26 @@
+.zekr-counter-inline {
+	border-radius: 5px;
+	background: #e0ecde;
+	background: radial-gradient(#f4f1e9, #d4e7d1);
+	border: solid 1px silver;
+	box-shadow: -1px -1px 10px silver;
+	padding: 0 10px;
+
+	margin-top: 10px;
+	margin: 10px -10px 0 -10px;
+	position: sticky;
+	bottom: 2px;
+
+	max-height: 300px;
+	overflow-y: auto;
+	scrollbar-width: thin;
+	scrollbar-color: #a8d4c7 #d8f2d3;
+
+	.btn-close {
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 10px;
+		margin: 5px;
+	}
+}

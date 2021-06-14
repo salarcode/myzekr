@@ -1,0 +1,21 @@
+﻿<Application x:Class="ZekrDbClient.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ZekrDbClient"
+             StartupUri="MainWindow.xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:ui="http://schemas.modernwpf.com/2019">
+	<Application.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ui:ThemeResources />
+				<ui:XamlControlsResources />
+				<!-- Other merged dictionaries here -->
+				<!--<ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/SkinDefault.xaml"/>
+				<ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/Theme.xaml"/>-->
+			</ResourceDictionary.MergedDictionaries>
+			<!-- Other app resources here -->
+		</ResourceDictionary>
+
+	</Application.Resources>
+</Application>

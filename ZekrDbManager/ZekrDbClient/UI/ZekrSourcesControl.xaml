@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="ZekrDbClient.UI.ZekrSourcesControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ZekrDbClient.UI"
+             xmlns:models="clr-namespace:ZekrDb.Data.Models;assembly=ZekrDb.Data"
+             mc:Ignorable="d" 
+             Padding="5"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}"
+             FlowDirection="RightToLeft"
+             d:DesignHeight="300" d:DesignWidth="800">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="1*"/>
+		</Grid.RowDefinitions>
+		<Button Content="افزودن منبع" Click="NewSourceClicked" Width="90" Margin="5" Style="{StaticResource AccentButtonStyle}" />
+		<DataGrid x:Name="grdSources" Grid.Row="1" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" 
+			AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="False" CanUserAddRows="True"
+			ItemsSource="{Binding ZekrSourceModel, Mode=TwoWay}" Margin="5" GridLinesVisibility="All">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header = "عنوان منبع" Binding = "{Binding title}" Width="200" />
+				<DataGridTextColumn Header = "لینک منبع" Binding = "{Binding url}" Width="500"  >
+					<DataGridTextColumn.EditingElementStyle>
+						<Style/>
+					</DataGridTextColumn.EditingElementStyle>
+				</DataGridTextColumn>
+				<DataGridTemplateColumn Width="100">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Button Content="حذف"
+							        Command="Delete"/>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+			</DataGrid.Columns>
+			<DataGrid.RowValidationRules>
+				<DataErrorValidationRule/>
+				<NotifyDataErrorValidationRule/>
+			</DataGrid.RowValidationRules>
+
+		</DataGrid>
+	</Grid>
+</UserControl>

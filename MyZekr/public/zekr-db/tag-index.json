@@ -1,0 +1,42 @@
+[
+	{
+		"uid": "prayer",
+		"title": "نماز"
+	},
+	{
+		"uid": "prayer-taqibat",
+		"title": "تعقیبات نماز"
+	},
+	{
+		"uid": "fajr",
+		"title": "صبح"
+	},
+	{
+		"uid": "dhur",
+		"title": "ظهر"
+	},
+	{
+		"uid": "asr",
+		"title": "عصر"
+	},
+	{
+		"uid": "maghrib",
+		"title": "مغرب"
+	},
+	{
+		"uid": "isha",
+		"title": "عشا"
+	},
+	{
+		"uid": "for-imamm-mahdi",
+		"title": "مخصوص امام زمان (عج)"
+	},
+	{
+		"uid": "mafatih-al-janan",
+		"title": "مفاتیح الجنان"
+	},
+	{
+		"uid": "ziyarats",
+		"title": "زیارت معصومین"
+	}
+]

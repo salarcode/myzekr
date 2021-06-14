@@ -1,0 +1,65 @@
+.diacritics-text {
+	color: inherit;
+	font-size: 1em;
+	letter-spacing: inherit;
+	position: relative;
+	width: 100%;
+
+	font-size: 1.4em;
+	line-height: 2;
+	font-weight: normal;
+	font-family: 'Neirizi';
+	font-family: 'Estedad';
+	font-family: 'Nabi';
+	font-family: 'QuranTaha';
+	font-family: 'SamimV1';
+	font-family: 'Samim';
+
+	font-family: 'NotoNaskhArabic';
+	font-family: 'AlQalamQuran';
+
+	font-family: 'Parastoo';
+	font-family: 'AlfaSlabOne';
+	font-family: 'AmaticSC';
+	font-family: 'Montez';
+
+	// font-family: 'IsepMisbah';
+	// font-family: 'ScheherazadeRegOT';
+	// font-family: 'Nazanin';
+	// font-family: 'DroidSansArabic';
+
+	font-family: 'QuranTaha';
+	font-family: 'Parastoo';
+
+	.diacritics-org {
+		color: darkred;
+		color: brown;
+		margin: 0 !important;
+		padding: 0 !important;
+		border: 0 !important;
+		box-sizing: border-box !important;
+		font: inherit !important;
+		width: 100%;
+	}
+	.diacritics-plain {
+		position: absolute;
+		color: inherit !important;
+		font: inherit !important;
+		top: 0 !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		border: 0 !important;
+		box-sizing: border-box !important;
+		width: 100%;
+	}
+	.diacritics-simple {
+		color: inherit !important;
+		font: inherit !important;
+		top: 0 !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		border: 0 !important;
+		box-sizing: border-box !important;
+		width: 100%;
+	}
+}

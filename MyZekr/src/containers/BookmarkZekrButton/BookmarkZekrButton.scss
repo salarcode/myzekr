@@ -1,0 +1,33 @@
+#bookmark-zekr-button-toast {
+	bottom: 20% !important;
+}
+
+.animate-bookmark-button {
+	animation-name: bookmarkAnimation;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-duration: 0.45s;
+}
+
+@keyframes bookmarkAnimation {
+	0% {
+		transform: translate(0, -50px) scale(10);
+		transform: translate(0, -7vh) scale(10);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	@keyframes bookmarkAnimation {
+		0% {
+			transform: translate(50px, -100px) scale(20);
+			transform: translate(20vw, -15vh) scale(20);
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+}
