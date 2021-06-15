@@ -2,6 +2,7 @@
 	"name": "zekr",
 	"version": "0.1.0",
 	"private": true,
+	"homepage": "https://myzekr.com/",
 	"dependencies": {
 		"@material-ui/core": "^4.11.4",
 		"@material-ui/icons": "^4.11.2",
@@ -20,8 +21,7 @@
 		"react-router-dom": "^5.2.0",
 		"react-scripts": "3.4.3",
 		"redux-thunk": "^2.3.0",
-		"typescript": "^3.7.5",
-		"homepage": "https://myzekr.com"
+		"typescript": "^3.7.5"
 	},
 	"scripts": {
 		"start": "react-scripts start",

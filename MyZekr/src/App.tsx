@@ -26,7 +26,7 @@ function App() {
 
 	return (
 		<Provider store={store}>
-			<BrowserRouter>
+			<BrowserRouter basename={process.env.PUBLIC_URL}>
 				<Layout>
 					<Switch>
 						<Redirect path="/home" to="/" />
