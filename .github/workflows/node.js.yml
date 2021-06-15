@@ -29,8 +29,12 @@ jobs:
       working-directory: ./MyZekr
     - run: npm run build --if-present
       working-directory: ./MyZekr
+      env:
+        CI: false 
     - run: npm test
       working-directory: ./MyZekr
+      env:
+        CI: false 
 
     - name: Upload production-ready build files
       uses: actions/upload-artifact@v2
