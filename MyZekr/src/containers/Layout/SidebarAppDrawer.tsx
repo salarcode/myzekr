@@ -34,28 +34,30 @@ const SidebarAppDrawer: FC<Props> = ({ settingsLoading, settings, saveSettings }
 	function saveChanges() {
 		if (settings) saveSettings(settings);
 	}
-	const [colouredDiacritics, setColouredDiacritics] = useState(settings?.colouredDiacritics);
-	const [enableTranslations, setEnableTranslations] = useState(settings?.enableTranslations);
-	const [displayFavorites, setDisplayFavorites] = useState(settings?.homePage.displayFavorites);
-	const [displayTodayPlan, setDisplayTodayPlan] = useState(settings?.homePage.displayTodayPlan);
-	const [displayTodaySuggestions, setDisplayTodaySuggestions] = useState(settings?.homePage.displayTodaySuggestions);
+	const [colouredDiacritics, setColouredDiacritics] = useState<boolean>(settings?.colouredDiacritics || true);
+	const [enableTranslations, setEnableTranslations] = useState<boolean>(settings?.enableTranslations || true);
+	const [displayFavorites, setDisplayFavorites] = useState<boolean>(settings?.homePage.displayFavorites || true);
+	const [displayTodayPlan, setDisplayTodayPlan] = useState<boolean>(settings?.homePage.displayTodayPlan || true);
+	const [displayTodaySuggestions, setDisplayTodaySuggestions] = useState<boolean>(
+		settings?.homePage.displayTodaySuggestions || true,
+	);
 
 	if (!settingsLoading && settings) {
 		// update in each render
-		if (colouredDiacritics != settings?.colouredDiacritics) {
-			setColouredDiacritics(settings?.colouredDiacritics);
+		if (colouredDiacritics != settings.colouredDiacritics) {
+			setColouredDiacritics(settings.colouredDiacritics);
 		}
-		if (enableTranslations != settings?.enableTranslations) {
-			setEnableTranslations(settings?.enableTranslations);
+		if (enableTranslations != settings.enableTranslations) {
+			setEnableTranslations(settings.enableTranslations);
 		}
-		if (displayFavorites != settings?.homePage.displayFavorites) {
-			setDisplayFavorites(settings?.homePage.displayFavorites);
+		if (displayFavorites != settings.homePage.displayFavorites) {
+			setDisplayFavorites(settings.homePage.displayFavorites);
 		}
-		if (displayTodayPlan != settings?.homePage.displayTodayPlan) {
-			setDisplayTodayPlan(settings?.homePage.displayTodayPlan);
+		if (displayTodayPlan != settings.homePage.displayTodayPlan) {
+			setDisplayTodayPlan(settings.homePage.displayTodayPlan);
 		}
-		if (displayTodaySuggestions != settings?.homePage.displayTodaySuggestions) {
-			setDisplayTodaySuggestions(settings?.homePage.displayTodaySuggestions);
+		if (displayTodaySuggestions != settings.homePage.displayTodaySuggestions) {
+			setDisplayTodaySuggestions(settings.homePage.displayTodaySuggestions);
 		}
 	}
 
@@ -143,7 +145,7 @@ const SidebarAppDrawer: FC<Props> = ({ settingsLoading, settings, saveSettings }
 						className="form-check-input"
 						type="checkbox"
 						id="chkDisplayTodayPlan"
-						checked={settings?.homePage.displayTodayPlan}
+						checked={displayTodayPlan}
 						onChange={(e) => {
 							if (settings) {
 								settings.homePage.displayTodayPlan = e.currentTarget.checked;
@@ -161,7 +163,7 @@ const SidebarAppDrawer: FC<Props> = ({ settingsLoading, settings, saveSettings }
 						className="form-check-input"
 						type="checkbox"
 						id="chkDisplayTodaySuggestions"
-						checked={settings?.homePage.displayTodaySuggestions}
+						checked={displayTodaySuggestions}
 						onChange={(e) => {
 							if (settings) {
 								settings.homePage.displayTodaySuggestions = e.currentTarget.checked;

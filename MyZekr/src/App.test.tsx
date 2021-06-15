@@ -3,7 +3,9 @@ import { render } from '@testing-library/react';
 import App from './App';
 
 test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+	const { getAllByText } = render(<App />);
+	const linkElements = getAllByText(/مرجع دعاها و اذکار/i);
+	for (const link of linkElements) {
+		expect(link).toBeInTheDocument();
+	}
 });

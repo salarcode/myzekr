@@ -25,7 +25,7 @@ const Layout: FC<Props> = ({ children, settings, readSettings, settingsLoading =
 	}, [readSettings]);
 
 	return (
-		<div className="layout block-container">
+		<div className="layout block-container myzekr-layout">
 			<div className="site-header-row">
 				<Header />
 			</div>
