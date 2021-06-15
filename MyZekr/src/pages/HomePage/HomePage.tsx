@@ -10,9 +10,9 @@ export const HomePage: FC = () => {
 		<div>
 			<PageMeta title="خوش آمدید" description="سایت مرجع دعاها و اذکار" />
 			<main className="text-center">
-				<p>
+				<h1 className="fs-6">
 					<strong>به سایت مرجع دعاها و اذکار خوش آمدید</strong>
-				</p>
+				</h1>
 				<p>
 					در اینجا سعی می کنیم که مرجعی برای دعاها، اذکار و اعمال عبادی رو جمع کنیم. به امید داشتن یک منبع برای همه چی.
 					<br />
