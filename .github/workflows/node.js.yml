@@ -43,7 +43,7 @@ jobs:
         path: ./MyZekr/build
   
   deploy:
-    name: Deploy
+    name: Deploy to MyZekr.com
     needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
