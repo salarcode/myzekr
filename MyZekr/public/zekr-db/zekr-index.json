@@ -51,7 +51,14 @@
     "uid": "night-prayer",
     "shortName": "نماز شب",
     "fullName": "نماز شب",
-    "category": "prayer"
+    "category": "prayer",
+    "tags": [
+      "prayer"
+    ],
+    "zekrTimes": [
+      "AfterMidnight",
+      "NightPrayer"
+    ]
   },
   {
     "uid": "sunday-prayer-dhu-l-qadah",
