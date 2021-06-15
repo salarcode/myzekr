@@ -3,12 +3,18 @@
 		"uid": "prayer",
 		"title": "نماز",
 		"imageUrl": "sujud.svg",
-		"children": ["prayer-taqibat"]
+		"children": ["prayer-taqibat", "prayer-mustahabb"]
 	},
 	{
 		"uid": "prayer-taqibat",
 		"title": "تعقیبات نماز",
 		"imageUrl": "pray.svg",
+		"parent": ["prayer"]
+	},
+	{
+		"uid": "prayer-mustahabb",
+		"title": "نماز های مستحبی",
+		"imageUrl": null,
 		"parent": ["prayer"]
 	},
 	{

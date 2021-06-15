@@ -1,13 +1,16 @@
 [
   {
     "uid": "prayer-fajr",
-    "shortName": "نماز دو رکعنی (دو رکعتی)",
+    "shortName": "نماز دو رکعتی (دو رکعتی)",
     "fullName": "نماز صبح (دو رکعتی)",
     "imageUrl": "prayer.svg",
     "category": "prayer",
     "tags": [
       "prayer",
       "fajr"
+    ],
+    "zekrTimes": [
+      "MorningPrayer"
     ]
   },
   {
@@ -49,5 +52,17 @@
     "shortName": "نماز شب",
     "fullName": "نماز شب",
     "category": "prayer"
+  },
+  {
+    "uid": "sunday-prayer-dhu-l-qadah",
+    "shortName": "نماز یکشنبه ماه ذی‌القعده",
+    "fullName": "نماز یکشنبه ماه ذی‌القعده",
+    "category": "prayer-mustahabb"
+  },
+  {
+    "uid": "al-kursi-verse",
+    "shortName": "آیة الکرسی",
+    "fullName": "آیة الکرسی",
+    "category": "famous-hadith"
   }
 ]
