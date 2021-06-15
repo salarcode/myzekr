@@ -4,6 +4,9 @@ import { Uid } from './models/Uid';
 import { Zekr, ZekrIndex } from './models/Zekr';
 import { ZekrCategory } from './models/ZekrCategory';
 
+/** The base url for Json data could be any CDN */
+const siteBaseUrl = '';
+
 /**
  * Get Zekr data by its UID. [Not cached]
  * @param uid Zekr UID
@@ -12,7 +15,7 @@ export function getWebZekrByUid(uid: string): Promise<Zekr | undefined> {
 	if (!uid) return Promise.resolve(undefined);
 	uid = uid.toLowerCase();
 
-	let url = `/zekr-db/zekr/${uid}.json`;
+	let url = `${siteBaseUrl}/zekr-db/zekr/${uid}.json`;
 	return new Promise((resolve, reject) => {
 		webJsonRequestXhr<undefined, Zekr>({
 			url: url,
@@ -122,7 +125,7 @@ export function getWebZekrCategoryChainToTopByUid(uid: Uid): Promise<ZekrCategor
 					}
 				}
 
-				resolve(result);
+				resolve(result.reverse());
 			})
 			.catch((err) => {
 				reject(err);
@@ -164,7 +167,7 @@ function _getCategoryIndexList(): Promise<ZekrCategory[] | undefined> {
 		return Promise.resolve(cachedItem);
 	}
 
-	let url = `/zekr-db/${keyName}.json`;
+	let url = `${siteBaseUrl}/zekr-db/${keyName}.json`;
 	return new Promise((resolve, reject) => {
 		webJsonRequestXhr<undefined, ZekrCategory[]>({
 			url: url,
@@ -191,7 +194,7 @@ export function getZekrIndexList(): Promise<ZekrIndex[] | undefined> {
 		return Promise.resolve(cachedItem);
 	}
 
-	let url = `/zekr-db/${keyName}.json`;
+	let url = `${siteBaseUrl}/zekr-db/${keyName}.json`;
 	return new Promise((resolve, reject) => {
 		webJsonRequestXhr<undefined, ZekrIndex[]>({
 			url: url,
