@@ -10,6 +10,10 @@ on:
     branches: [ main ]
 
 jobs:
+  defaults:
+    run:
+      working-directory: ./app
+      
   build:
 
     runs-on: ubuntu-latest
@@ -26,14 +30,17 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
+      working-directory: ./MyZekr
     - run: npm run build --if-present
+      working-directory: ./MyZekr
     - run: npm test
+      working-directory: ./MyZekr
 
     - name: Upload production-ready build files
       uses: actions/upload-artifact@v2
       with:
         name: production-files
-        path: ./build
+        path: ./MyZekr/build
   
   deploy:
     name: Deploy
@@ -46,10 +53,10 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: production-files
-        path: ./build
+        path: ./MyZekr/build
 
     - name: Deploy to gh-pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build        
+        publish_dir: ./MyZekr/build        
