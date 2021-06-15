@@ -27,6 +27,12 @@ namespace ZekrDb.Data.Models
 
 				zekrIndexes.Add(zekrIndex);
 			}
+			else
+			{
+				// update the index
+				TinyMapper.Map(zekr, zekrIndex);
+
+			}
 
 			ZekrModelStore.SaveZekrIndex(zekrIndexes);
 		}

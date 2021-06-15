@@ -19,7 +19,7 @@ export const Footer: FC = () => {
 			<Link to="/">گزارش خطا</Link>
 			<div>
 				<span className="text-bold">©</span>
-				1399 تمامی حقوقی مادی و معنوی
+				1400 تمامی حقوقی مادی و معنوی
 				<a href="//myzekr.com/"> MyZekr </a> محفوظ است
 			</div>
 		</footer>

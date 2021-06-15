@@ -265,5 +265,12 @@ namespace ZekrDbClient.UI
 		{
 			UpdateZekrTimes();
 		}
+ 
+		private void txtUid_LostFocus(object sender, RoutedEventArgs e)
+		{
+			var text = txtUid.Text.Trim().Replace(' ', '-').ToLower();
+			txtUid.Text = text;
+
+		}
 	}
 }
