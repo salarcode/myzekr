@@ -55,8 +55,13 @@ export const ZekrCategoryPage: FC<RouteComponentProps<params>> = ({ match, histo
 			}
 
 			if (loadedZekrList) setZekrList(loadedZekrList);
+			else setZekrList(undefined);
+
 			if (categories) setChildrenCategories(categories);
+			else setChildrenCategories(undefined);
+
 			if (category) setCategory(category);
+			else setCategory(undefined);
 
 			setLoading(false);
 		}
