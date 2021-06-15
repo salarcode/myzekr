@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x]
+        node-version: [15.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -55,8 +55,9 @@ jobs:
         name: production-files
         path: ./MyZekr/build
 
-    - name: Deploy to gh-pages
+    - name: Deploy to `MyZekr.com` branch
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./MyZekr/build        
+        publish_branch: MyZekr.com 
+        publish_dir: ./
