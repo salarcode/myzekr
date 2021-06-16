@@ -71,5 +71,39 @@
     "shortName": "آیة الکرسی",
     "fullName": "آیة الکرسی",
     "category": "famous-hadith"
+  },
+  {
+    "uid": "prayer-fajr-taqibat",
+    "shortName": "تعقیبات نماز صبح",
+    "fullName": "تعقیبات نماز صبح",
+    "category": "prayer-taqibat",
+    "tags": [
+      "prayer-taqibat"
+    ],
+    "zekrTimes": [
+      "AfterMorningPrayer"
+    ]
+  },
+  {
+    "uid": "dhuhr-prayer-taqibat",
+    "shortName": "تعقیبات نماز ظهر",
+    "fullName": "تعقیبات نماز ظهر",
+    "category": "prayer-taqibat",
+    "tags": [
+      "prayer-taqibat",
+      "dhur"
+    ],
+    "zekrTimes": [
+      "AfterNoonPrayer"
+    ]
+  },
+  {
+    "uid": "prayer-tagibat-for-memory",
+    "shortName": "دعایی برای تقویت حافظه",
+    "fullName": "دعای حافظه بعد از هر نماز (مفاتیح الجنان)",
+    "category": "prayer-taqibat",
+    "tags": [
+      "prayer-taqibat"
+    ]
   }
 ]
