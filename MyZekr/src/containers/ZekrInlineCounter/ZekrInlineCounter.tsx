@@ -6,7 +6,7 @@ import { Zekr } from '../../services/Zekr/models/Zekr';
 import { ZekrCounter } from '../../services/Zekr/models/ZekrCounter';
 
 interface Props {
-	zekrCounts: ZekrCounter[];
+	zekrCounts?: ZekrCounter[];
 	onCloseRequested?: () => void;
 }
 var zekrClickStatus = false;

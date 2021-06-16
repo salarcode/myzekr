@@ -15,6 +15,7 @@ interface ZekrBase {
 	tags?: Uid[];
 	zekrTimes?: ZekrTime[];
 	zekrCounter?: ZekrCounter[];
+	showZekrCounter?: boolean;
 }
 
 export interface ZekrIndex extends ZekrBase {}

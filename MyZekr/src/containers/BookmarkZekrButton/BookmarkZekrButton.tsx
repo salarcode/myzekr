@@ -85,7 +85,7 @@ const BookmarkZekrButton: FC<Props> = ({ zekr, settingsLoading, settings, saveSe
 				</div>
 			</div>
 			{settings && (
-				<a href="#bookmark" onClick={onBookmarkClick} area-label="❤">
+				<a href="#bookmark" onClick={onBookmarkClick}>
 					<img
 						src="/assets/icons/add-favourite.svg"
 						alt="❤"

@@ -97,6 +97,7 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 			fontSize: settings.textSettings.benefitsFontSize,
 		};
 	}
+	var showZekrCounter = zekr?.showZekrCounter || false;
 
 	const zekrBenefitsDialog = () => (
 		<div
@@ -236,14 +237,14 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 				</a> */}
 				<TextZoomButtons />
 				<BookmarkZekrButton zekr={zekr} />
-				{zekr.zekrCounter && zekr.zekrCounter.length > 0 && (
+				{showZekrCounter && (
 					<a href="#zekr-counter" onClick={onShowZekrCounter} title="ذکر شمار">
 						<img src="/assets/icons/tasbih.svg" alt="." className="icon-24 link-image" />
 					</a>
 				)}
 			</div>
 			{zekr.benefits && zekr.benefits.length > 0 && zekrBenefitsDialog()}
-			{zekrCounterVisible && zekr.zekrCounter && zekr.zekrCounter.length > 0 && (
+			{zekrCounterVisible && showZekrCounter && (
 				<ZekrInlineCounter zekrCounts={zekr.zekrCounter} onCloseRequested={onCloseZekrCounter} />
 			)}
 		</div>
