@@ -144,8 +144,8 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 						<div className="inline-breadcrumbs hidden-xs">
 							<span className="breadcrumbs-list">
 								<span className="breadcrumb-item">
-									<Link to="/">
-										<img src="/assets/icons/home.svg" className="icon-20" />
+									<Link to="/" aria-label="صفحه اصلی">
+										<img src="/assets/icons/home.svg" className="icon-20" alt="خانه" />
 									</Link>
 								</span>
 								{categories?.map((parent) => (
@@ -173,7 +173,7 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 									data-bs-toggle="modal"
 									data-bs-target="#zekr-benefits-dialog"
 								>
-									<img src="/assets/icons/islam-star.svg" className="icon-20" />
+									<img src="/assets/icons/islam-star.svg" className="icon-20" alt="" />
 									<span className="hidden-xs-inline">&nbsp; فضیلت</span>
 								</button>
 							)}
@@ -187,8 +187,8 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 					<div className="out-breadcrumbs visible-xs">
 						<span className="breadcrumbs-list">
 							<span className="breadcrumb-item">
-								<Link to="/">
-									<img src="/assets/icons/home.svg" className="icon-20" />
+								<Link to="/" aria-label="صفحه اصلی">
+									<img src="/assets/icons/home.svg" className="icon-20" alt="خانه" />
 								</Link>
 							</span>
 							{categories?.map((parent) => (
@@ -237,7 +237,7 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 				<TextZoomButtons />
 				<BookmarkZekrButton zekr={zekr} />
 				{zekr.zekrCounter && zekr.zekrCounter.length > 0 && (
-					<a href="#" onClick={onShowZekrCounter} title="ذکر شمار">
+					<a href="#zekr-counter" onClick={onShowZekrCounter} title="ذکر شمار">
 						<img src="/assets/icons/tasbih.svg" alt="." className="icon-24 link-image" />
 					</a>
 				)}

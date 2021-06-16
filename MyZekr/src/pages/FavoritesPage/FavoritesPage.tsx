@@ -112,8 +112,8 @@ const FavoritesPage: FC<Props> = ({ settings, settingsLoading, readSettings, sav
 							{/* ---------- */}
 							<span className="breadcrumbs-list">
 								<span className="breadcrumb-item">
-									<Link to="/">
-										<img src="/assets/icons/home.svg" className="icon-20" />
+									<Link to="/" aria-label="صفحه اصلی">
+										<img src="/assets/icons/home.svg" className="icon-20" alt="خانه" />
 									</Link>
 								</span>
 							</span>
@@ -132,8 +132,8 @@ const FavoritesPage: FC<Props> = ({ settings, settingsLoading, readSettings, sav
 					<div className="out-breadcrumbs visible-xs">
 						<span className="breadcrumbs-list">
 							<span className="breadcrumb-item">
-								<Link to="/">
-									<img src="/assets/icons/home.svg" className="icon-20" />
+								<Link to="/" aria-label="صفحه اصلی">
+									<img src="/assets/icons/home.svg" className="icon-20" alt="خانه" />
 								</Link>
 							</span>
 						</span>

@@ -88,8 +88,8 @@ export const ZekrCategoryPage: FC<RouteComponentProps<params>> = ({ match, histo
 							{/* ---------- */}
 							<span className="breadcrumbs-list">
 								<span className="breadcrumb-item">
-									<Link to="/">
-										<img src="/assets/icons/home.svg" className="icon-20" />
+									<Link to="/" aria-label="صفحه اصلی">
+										<img src="/assets/icons/home.svg" className="icon-20" alt="خانه" />
 									</Link>
 								</span>
 								{catParents?.map((parent) => (
@@ -128,8 +128,8 @@ export const ZekrCategoryPage: FC<RouteComponentProps<params>> = ({ match, histo
 						{/* ---------- */}
 						<span className="breadcrumbs-list">
 							<span className="breadcrumb-item">
-								<Link to="/">
-									<img src="/assets/icons/home.svg" className="icon-20" />
+								<Link to="/" aria-label="صفحه اصلی">
+									<img src="/assets/icons/home.svg" className="icon-20" alt="خانه" />
 								</Link>
 							</span>
 							{catParents?.map((parent) => (

@@ -7,7 +7,7 @@ export const MainMenuList: FC = () => {
 	return (
 		<menu className="mainmenu-list">
 			<div>
-				<Link to="/">
+				<Link to="/" aria-label="صفحه اصلی">
 					<img src={homeIcon} alt="صفحه اصلی" />
 				</Link>
 			</div>
