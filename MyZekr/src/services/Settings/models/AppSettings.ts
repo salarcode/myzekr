@@ -18,7 +18,7 @@ export function getAppSettingsInitial(): AppSettings {
 		},
 		textSettings: {
 			alternateBodyFont: 'Vazir',
-			alternateBodyFontSize: '.8rem',
+			alternateBodyFontSize: '0.85rem',
 			bodyFont: 'Parastoo',
 			bodyFontSize: '1.2rem',
 			benefitsFontSize: '1rem',

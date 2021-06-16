@@ -12,7 +12,7 @@ interface Props {}
 
 export const ShareItDialog: FC<Props> = ({}) => {
 	var pageTitle = (document.querySelector('head title') as any)?.innerText;
-	var url = document.location;
+	var url = escape(document.location.toString());
 
 	return (
 		<div className="modal fade" id="shareit-modal" tabIndex={-1} aria-labelledby="shareit-modal-label" aria-hidden="true">
