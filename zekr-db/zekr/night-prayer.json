@@ -143,5 +143,6 @@
   "zekrTimes": [
     "AfterMidnight",
     "NightPrayer"
-  ]
+  ],
+  "showZekrCounter": true
 }
