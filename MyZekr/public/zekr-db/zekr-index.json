@@ -107,5 +107,18 @@
     "tags": [
       "prayer-taqibat"
     ]
+  },
+  {
+    "uid": "dua-simat",
+    "shortName": "دعای سِمات",
+    "fullName": "دعای سِمات",
+    "category": "famous-dua",
+    "tags": [
+      "mafatih-al-janan"
+    ],
+    "zekrTimes": [
+      "Friday",
+      "FridayEndOfDaylight"
+    ]
   }
 ]
