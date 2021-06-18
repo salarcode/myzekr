@@ -1,7 +1,7 @@
 [
   {
     "uid": "prayer-fajr",
-    "shortName": "نماز دو رکعتی (دو رکعتی)",
+    "metaTitle": "نماز دو رکعتی (دو رکعتی)",
     "fullName": "نماز صبح (دو رکعتی)",
     "imageUrl": "prayer.svg",
     "category": "prayer",
@@ -15,32 +15,37 @@
   },
   {
     "uid": "Ziyarat-Ashura-short",
-    "shortName": "زیارت عاشورای غیر معروفه",
+    "metaTitle": "زیارت عاشورای غیر معروفه",
     "fullName": "زیارت عاشورای غیرمعروفه کوتاه",
     "category": "dua-ramadan"
   },
   {
     "uid": "ahd-imamm-mahdi",
-    "shortName": "دعای عهد",
+    "metaTitle": "دعای عهد",
     "fullName": "دعای عهد امام زمان (عج)",
     "category": "famous-dua",
     "tags": [
-      "for-imamm-mahdi"
+      "for-imamm-mahdi",
+      "mafatih-al-janan"
     ]
   },
   {
     "uid": "zeyarat-imamm-mahdi",
-    "shortName": "زیارت امام زمان (عج) بعد از نماز صبح",
+    "metaTitle": "زیارت امام زمان (عج) بعد از نماز صبح",
     "fullName": "زیارت امام زمان، حضرت مهدی (عج) بعد از نماز صبح",
     "category": "ziyarats",
     "tags": [
-      "ziyarats",
-      "for-imamm-mahdi"
+      "for-imamm-mahdi",
+      "ziyarats"
+    ],
+    "zekrTimes": [
+      "BetweenDawn",
+      "AfterMorningPrayer"
     ]
   },
   {
     "uid": "faraj-imamm-mahdi",
-    "shortName": "دعای فرج",
+    "metaTitle": "دعای فرج",
     "fullName": "دعای فرج امام زمان (ع)",
     "category": "famous-dua",
     "tags": [
@@ -49,7 +54,7 @@
   },
   {
     "uid": "night-prayer",
-    "shortName": "نماز شب",
+    "metaTitle": "نماز شب",
     "fullName": "نماز شب",
     "category": "prayer",
     "tags": [
@@ -63,19 +68,19 @@
   },
   {
     "uid": "sunday-prayer-dhu-l-qadah",
-    "shortName": "نماز یکشنبه ماه ذی‌القعده",
+    "metaTitle": "نماز یکشنبه ماه ذی‌القعده",
     "fullName": "نماز یکشنبه ماه ذی‌القعده",
     "category": "prayer-mustahabb"
   },
   {
     "uid": "al-kursi-verse",
-    "shortName": "آیة الکرسی",
+    "metaTitle": "آیة الکرسی",
     "fullName": "آیة الکرسی",
     "category": "famous-hadith"
   },
   {
     "uid": "prayer-fajr-taqibat",
-    "shortName": "تعقیبات نماز صبح",
+    "metaTitle": "تعقیبات نماز صبح",
     "fullName": "تعقیبات نماز صبح",
     "category": "prayer-taqibat",
     "tags": [
@@ -88,7 +93,7 @@
   },
   {
     "uid": "dhuhr-prayer-taqibat",
-    "shortName": "تعقیبات نماز ظهر",
+    "metaTitle": "تعقیبات نماز ظهر",
     "fullName": "تعقیبات نماز ظهر",
     "category": "prayer-taqibat",
     "tags": [
@@ -101,7 +106,7 @@
   },
   {
     "uid": "prayer-tagibat-for-memory",
-    "shortName": "دعایی برای تقویت حافظه",
+    "metaTitle": "دعایی برای تقویت حافظه",
     "fullName": "دعای حافظه بعد از هر نماز (مفاتیح الجنان)",
     "category": "prayer-taqibat",
     "tags": [
@@ -110,7 +115,7 @@
   },
   {
     "uid": "dua-simat",
-    "shortName": "دعای سِمات",
+    "metaTitle": "دعای سِمات",
     "fullName": "دعای سِمات",
     "category": "famous-dua",
     "tags": [

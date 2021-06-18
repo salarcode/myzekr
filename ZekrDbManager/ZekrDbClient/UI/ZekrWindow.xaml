@@ -37,7 +37,7 @@
 		<Label Content="UID" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
 		<TextBox x:Name="txtUid" HorizontalAlignment="Left" Margin="5" Text="{Binding ZekrModel.uid, Mode=TwoWay}" VerticalAlignment="Center" Width="200" Grid.Column="1" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" FlowDirection="LeftToRight" LostFocus="txtUid_LostFocus" />
 		<Label Content="عنوان کوتاه" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Center" Grid.Row="1"/>
-		<TextBox HorizontalAlignment="Left" Margin="5"  Text="{Binding ZekrModel.shortName, Mode=TwoWay}" VerticalAlignment="Center" Width="200" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+		<TextBox HorizontalAlignment="Left" Margin="5"  Text="{Binding ZekrModel.metaTitle, Mode=TwoWay}" VerticalAlignment="Center" Width="200" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
 		<Label Content="عنوان بلند کامل" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Center" Grid.Row="2"/>
 		<TextBox HorizontalAlignment="Left" Margin="5" Text="{Binding ZekrModel.fullName, Mode=TwoWay}" VerticalAlignment="Center" Width="200" Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
 		<Label Content="Image Url" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Center" Grid.Column="3"/>

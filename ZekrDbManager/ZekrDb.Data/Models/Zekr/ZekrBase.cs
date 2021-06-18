@@ -10,8 +10,9 @@ namespace ZekrDb.Data.Models.Zekr
 	public abstract class ZekrBase : BaseModel
 	{
 		private string _uid;
-		private string _shortName;
 		private string _fullName;
+		private string _metaTitle;
+		private string _metaDescription;
 		private string _imageUrl;
 		private string _imageClass;
 		private string _category;
@@ -28,19 +29,28 @@ namespace ZekrDb.Data.Models.Zekr
 			set { _uid = value; OnPropertyChanged(); }
 		}
 
-		[Display(Name = "عنوان کوتاه")]
-		[DisplayName("عنوان کوتاه")]
-		public string shortName
-		{
-			get => _shortName;
-			set { _shortName = value; OnPropertyChanged(); }
-		}
 
 		[Display(Name = "عنوان بلند کامل")]
 		public string fullName
 		{
 			get => _fullName;
 			set { _fullName = value; OnPropertyChanged(); }
+		}
+
+		[Display(Name = "عنوان ویژه")]
+		[DisplayName("عنوان ویژه")]
+		public string metaTitle
+		{
+			get => _metaTitle;
+			set { _metaTitle = value; OnPropertyChanged(); }
+		}
+
+		[Display(Name = "شرح ویژه")]
+		[DisplayName("شرح ویژه")]
+		public string metaDescription
+		{
+			get => _metaDescription;
+			set { _metaDescription = value; OnPropertyChanged(); }
 		}
 
 		/// <summary>
@@ -123,7 +133,7 @@ namespace ZekrDb.Data.Models.Zekr
 			if (string.IsNullOrWhiteSpace(uid))
 				validationResult.AddError("UID اجباری است");
 
-			if (string.IsNullOrWhiteSpace(shortName))
+			if (string.IsNullOrWhiteSpace(metaTitle))
 				validationResult.AddError("نام کوتاه اجباری است");
 
 			if (string.IsNullOrWhiteSpace(fullName))

@@ -6,8 +6,9 @@ import { ZekrTime } from './ZekrTime';
 
 interface ZekrBase {
 	uid: string;
-	shortName: string;
 	fullName: string;
+	metaTitle: string;
+	metaDescription: string;
 	imageUrl?: string;
 	imageClass?: string;
 	category: Uid;

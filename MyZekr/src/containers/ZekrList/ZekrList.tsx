@@ -24,7 +24,7 @@ export const ZekrList: FC<Props> = ({ data, onItemClick, displayRemoveButton, on
 						to={'/zekr/' + zekr.uid}
 						key={zekr.uid}
 						className="item-button"
-						title={zekr.shortName}
+						title={zekr.metaTitle}
 						onClick={onItemClick}
 					>
 						{zekr.imageClass ? (
@@ -33,10 +33,10 @@ export const ZekrList: FC<Props> = ({ data, onItemClick, displayRemoveButton, on
 							<img
 								className="icon-16 mx-1 button-icon"
 								src={'/assets/icons/' + zekr.imageUrl}
-								alt={zekr.shortName}
+								alt={zekr.metaTitle}
 							/>
 						) : (
-							<img className="icon-16 mx-1 button-icon" src="/assets/icons/star.svg" alt={zekr.shortName} />
+							<img className="icon-16 mx-1 button-icon" src="/assets/icons/star.svg" alt={zekr.metaTitle} />
 						)}
 						{zekr.fullName}
 						{displayRemoveButton && (

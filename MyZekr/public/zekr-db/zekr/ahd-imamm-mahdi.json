@@ -1,6 +1,6 @@
 {
   "uid": "ahd-imamm-mahdi",
-  "shortName": "دعای عهد",
+  "metaTitle": "دعای عهد",
   "fullName": "دعای عهد امام زمان (عج)",
   "category": "famous-dua",
   "zekrBody": [
@@ -90,15 +90,15 @@
     },
     {
       "body": "آنگاه «سه بار» بر ران خود دست می‌زنی و در هر مرتبه می‌گویی:",
-      "alternateBody": {
-        "body": "الْعَجَلَ الْعَجَلَ يَا مَوْلايَ يَا صاحِبَ الزَّمانِ. ",
-        "alternateBody": {
-          "body": "شتاب کن، شتاب کن،‌ ای مولای من‌! ای صاحب الزمان",
-          "languageKey": "fa"
-        },
-        "languageKey": "ar"
-      },
       "languageKey": "fa"
+    },
+    {
+      "body": "الْعَجَلَ الْعَجَلَ يَا مَوْلايَ يَا صاحِبَ الزَّمانِ.",
+      "translationBody": {
+        "body": "شتاب کن، شتاب کن،‌ ای مولای من‌! ای صاحب الزمان",
+        "languageKey": "fa"
+      },
+      "languageKey": "ar"
     }
   ],
   "benefits": [

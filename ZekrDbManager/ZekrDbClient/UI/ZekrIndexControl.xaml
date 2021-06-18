@@ -24,7 +24,7 @@
 			          ItemsSource="{Binding ZekrIndexList}">
 				<DataGrid.Columns>
 					<DataGridTextColumn Header = "UID" Binding = "{Binding uid}" />
-					<DataGridTextColumn Header = "عنوان کوتاه" Binding = "{Binding shortName}" />
+					<DataGridTextColumn Header = "عنوان کوتاه" Binding = "{Binding metaTitle}" />
 					<DataGridTextColumn Header = "عنوان بلند کامل" Binding = "{Binding fullName}" />
 					<DataGridTextColumn Header = "دسته" Binding = "{Binding category}" />
 					<DataGridTextColumn Header = "Image Url" Binding = "{Binding imageUrl}" />
