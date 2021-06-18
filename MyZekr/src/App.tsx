@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import './App.scss';
+import ReactGA from 'react-ga';
 import Layout from './containers/Layout/Layout';
 import { HomePage } from './pages/HomePage/HomePage';
 import ZekrPage from './pages/ZekrPage/ZekrPage';
@@ -11,17 +12,19 @@ import { Provider } from 'react-redux';
 import { ZekrCounter } from './pages/ZekrCounter/ZekrCounter';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
 import { redirectToMyZekrCom } from './common/myZekrDomainRedirect';
+import { createBrowserHistory } from 'history';
 
 function App() {
 	const store = configureStore();
 
 	useEffect(() => {
-		//const history = createBrowserHistory();
-		// // Initialize google analytics page view tracking
-		// history.listen(location => {
-		// ReactGA.set({ page: location.pathname }); // Update the user's current page
-		// ReactGA.pageview(location.pathname); // Record a pageview for the given page
-		// });
+		const history = createBrowserHistory();
+		// Initialize google analytics page view tracking
+		ReactGA.initialize('G-9BKCVXCGTY');
+		history.listen((location) => {
+			ReactGA.set({ page: location.pathname }); // Update the user's current page
+			ReactGA.pageview(location.pathname); // Record a pageview for the given page
+		});
 	}, []);
 
 	return (
@@ -44,6 +47,3 @@ function App() {
 }
 
 export default App;
-function createBrowserHistory() {
-	throw new Error('Function not implemented.');
-}
