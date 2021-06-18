@@ -20,7 +20,7 @@ function App() {
 	useEffect(() => {
 		const history = createBrowserHistory();
 		// Initialize google analytics page view tracking
-		ReactGA.initialize('G-9BKCVXCGTY');
+		ReactGA.initialize('G-9BKCVXCGTY', { testMode: process.env.NODE_ENV === 'test' });
 		history.listen((location) => {
 			ReactGA.set({ page: location.pathname }); // Update the user's current page
 			ReactGA.pageview(location.pathname); // Record a pageview for the given page
