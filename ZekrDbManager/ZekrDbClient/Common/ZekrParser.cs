@@ -9,6 +9,11 @@ namespace ZekrDbClient.Common
 {
 	public class ZekrParser
 	{
+		/// <summary>
+		/// ادغام اذکار به هم به صورت متن/ترجمه
+		/// </summary>
+		/// <param name="zekrBodies"></param>
+		/// <returns></returns>
 		public static List<ZekrBody> MergeRelatedTranslations(List<ZekrBody> zekrBodies)
 		{
 			var result = new List<ZekrBody>();
@@ -39,9 +44,20 @@ namespace ZekrDbClient.Common
 
 				if (body.languageKey == LanguageList.LanguageFarsi)
 				{
-					if (lastBody.alternateBodyList == null)
-						lastBody.alternateBodyList = new ObservableCollection<ZekrBody>();
-					lastBody.alternateBodyList.Add(body);
+					//if (lastBody.alternateBodyList == null)
+					//	lastBody.alternateBodyList = new ObservableCollection<ZekrBody>();
+					//lastBody.alternateBodyList.Add(body);
+
+					if (lastBody.translationBody == null)
+					{
+						lastBody.translationBody = body;
+					}
+					else
+					{
+						if (lastBody.alternateBodyList == null)
+							lastBody.alternateBodyList = new ObservableCollection<ZekrBody>();
+						lastBody.alternateBodyList.Add(body);
+					}
 					lastBody = body;
 				}
 				else
@@ -72,6 +88,12 @@ namespace ZekrDbClient.Common
 					body = line,
 				};
 
+				if (line.Contains("شأن"))
+				{
+					// TODO :REMOVE
+					body.languageKey = LanguageList.LanguageArabic;
+				}
+
 				if (quran)
 					body.languageKey = LanguageList.LanguageArabic;
 				else if (arabicOrPersian)
@@ -98,7 +120,7 @@ namespace ZekrDbClient.Common
 				if (c == 'پ' || c == 'چ' || c == 'ژ' || c == 'گ')
 					return false;
 
-				if (c == 'ة' || c == 'أ' || c == 'ؤ')
+				if (c == 'ة' /*|| c == 'أ'*/ || c == 'ؤ')
 					return true;
 
 				if (c == 'ٍ' || c == 'ٌ' || c == 'ً' || c == 'ۀ' || c == 'ّ' || c == 'ِ' || c == 'ُ' || c == 'َ' || c == 'ْ' || c == 'إ')

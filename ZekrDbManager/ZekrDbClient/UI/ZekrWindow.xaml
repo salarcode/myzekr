@@ -12,7 +12,7 @@
         ui:WindowHelper.UseModernWindowStyle="True"
         DataContext="{Binding RelativeSource={RelativeSource Self}}"
         mc:Ignorable="d"
-        Title="مشاهده ذکر" Height="800" Width="1200" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft">
+        Title="مشاهده ذکر" Height="800" Width="1500" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft">
 	<Grid>
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="Auto"/>

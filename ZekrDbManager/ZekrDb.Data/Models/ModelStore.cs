@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using ZekrDb.Data.Infrastructure;
 
 namespace ZekrDb.Data.Models
 {
@@ -35,7 +36,8 @@ namespace ZekrDb.Data.Models
 		{
 			return JsonConvert.SerializeObject(model, JsonFormatting, new JsonSerializerSettings()
 			{
-				NullValueHandling = NullValueHandling.Ignore
+				NullValueHandling = NullValueHandling.Ignore,
+				ContractResolver = new JsonPropertiesResolver()
 			});
 		}
 	}

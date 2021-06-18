@@ -9,7 +9,7 @@
         xmlns:UI="clr-namespace:ZekrDbClient.UI" x:Class="ZekrDbClient.MainWindow"
         mc:Ignorable="d"
         ui:WindowHelper.UseModernWindowStyle="True"
-        Title="MainWindow" Height="800" Width="1000" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft" Loaded="Window_Loaded">
+        Title="مدیریت دیتا ذکر ها" Height="800" Width="1550" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft" Loaded="Window_Loaded">
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>

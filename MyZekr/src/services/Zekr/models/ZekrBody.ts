@@ -1,6 +1,6 @@
 export interface ZekrBody {
 	body: string;
-	alternateBody?: ZekrBody;
+	translationBody?: ZekrBody;
 	alternateBodyList?: ZekrBody[];
 	languageKey?: string;
 	optional?: boolean;

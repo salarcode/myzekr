@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using Newtonsoft.Json;
+using ZekrDb.Data.Infrastructure;
 
 namespace ZekrDb.Data.Models.Zekr
 {
 	public class ZekrBody : BaseModel
 	{
 		private string _body;
-		private ZekrBody _alternateBody;
+		private ZekrBody _translationBody;
 		private ObservableCollection<ZekrBody> _alternateBodyList;
 		private string _languageKey;
 		private bool? _optional;
@@ -25,12 +26,12 @@ namespace ZekrDb.Data.Models.Zekr
 		/// <summary>
 		/// nullable
 		/// </summary>
-		public ZekrBody alternateBody
+		public ZekrBody translationBody
 		{
-			get => _alternateBody;
+			get => _translationBody;
 			set
 			{
-				_alternateBody = value; OnPropertyChanged();
+				_translationBody = value; OnPropertyChanged();
 			}
 		}
 
@@ -69,7 +70,7 @@ namespace ZekrDb.Data.Models.Zekr
 			if (!validationResult.IsValid)
 				return validationResult;
 
-			if ((_alternateBodyList == null || _alternateBodyList.Count == 0) && (_alternateBody == null))
+			if ((_alternateBodyList == null || _alternateBodyList.Count == 0) && (_translationBody == null))
 			{
 				if (string.IsNullOrWhiteSpace(body))
 				{
@@ -77,9 +78,9 @@ namespace ZekrDb.Data.Models.Zekr
 				}
 			}
 
-			if (_alternateBody != null)
+			if (_translationBody != null)
 			{
-				var altResult = _alternateBody.Validate();
+				var altResult = _translationBody.Validate();
 				if (!altResult.IsValid)
 				{
 					validationResult.AddError("خطا در متن دوم: ");

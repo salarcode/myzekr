@@ -43,6 +43,18 @@ namespace ZekrDbClient.UI
 			set => MoveDownButton.Visibility = value;
 		}
 
+		public Visibility TranslationBodyVisibility
+		{
+			get => AlternateBodyCheck.Visibility;
+			set => AlternateBodyCheck.Visibility = value;
+		}
+
+		public Visibility AlternateBodyListCheckVisibility
+		{
+			get => AlternateBodyListCheck.Visibility;
+			set => AlternateBodyListCheck.Visibility = value;
+		}
+
 		private void TheControl_Loaded(object sender, RoutedEventArgs e)
 		{
 			DataObject.AddPastingHandler(txtBody, OnBodyPaste);
@@ -99,7 +111,7 @@ namespace ZekrDbClient.UI
 				AlternateBodyListCheck.IsChecked = true;
 			}
 
-			if (ZekrBodyModel.alternateBody != null)
+			if (ZekrBodyModel.translationBody != null)
 			{
 				AlternateBodyCheck.IsChecked = true;
 			}
@@ -152,16 +164,16 @@ namespace ZekrDbClient.UI
 
 			if (AlternateBodyCheck.IsChecked == true)
 			{
-				if (ZekrBodyModel.alternateBody == null)
+				if (ZekrBodyModel.translationBody == null)
 				{
-					ZekrBodyModel.alternateBody = new ZekrBody();
+					ZekrBodyModel.translationBody = new ZekrBody();
 				}
 				AlternateBodyHost.ItemsSource = null;
-				AlternateBodyHost.ItemsSource = new List<ZekrBody> { ZekrBodyModel.alternateBody };
+				AlternateBodyHost.ItemsSource = new List<ZekrBody> { ZekrBodyModel.translationBody };
 			}
 			else
 			{
-				ZekrBodyModel.alternateBody = null;
+				ZekrBodyModel.translationBody = null;
 				AlternateBodyHost.ItemsSource = null;
 			}
 		}

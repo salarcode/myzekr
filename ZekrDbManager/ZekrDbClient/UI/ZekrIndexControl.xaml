@@ -32,7 +32,7 @@
 					<DataGridTemplateColumn Header="کپی" >
 						<DataGridTemplateColumn.CellTemplate>
 							<DataTemplate>
-								<Button Click="ZekrDuplicateClick" Margin="5" Style="{StaticResource AccentButtonStyle}">کپی جدید</Button>
+								<Button Padding="10,5" Click="ZekrDuplicateClick" Margin="5" Style="{StaticResource AccentButtonStyle}">کپی جدید</Button>
 							</DataTemplate>
 						</DataGridTemplateColumn.CellTemplate>
 					</DataGridTemplateColumn>

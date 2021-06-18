@@ -66,14 +66,14 @@
 				<TextBox Text="{Binding optionalText}" IsEnabled="{Binding ElementName=CheckOptional, Path=IsChecked}" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150" Margin="5,5,5,5" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
 			</Grid>
 
-			<CheckBox x:Name="AlternateBodyCheck" Content="متن دوم" Grid.Row="2" HorizontalAlignment="Right" Margin="5,5,5,5" VerticalAlignment="Top" Height="32" Width="120" 
+			<CheckBox x:Name="AlternateBodyCheck" Content="متن ترجمه" Grid.Row="2" HorizontalAlignment="Right" Margin="5,5,5,5" VerticalAlignment="Top" Height="32" Width="120" 
 			          Checked="AlternateBodyCheck_Checked" Unchecked="AlternateBodyCheck_Unchecked" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
 			<StackPanel Grid.Column="1" Grid.Row="2" Margin="0">
 				<ItemsControl x:Name="AlternateBodyHost" MinHeight="10" >
 					<ItemsControl.ItemTemplate>
 						<DataTemplate>
 							<StackPanel>
-								<local:ZekrBodyControl RemoveButtonVisibility="Collapsed"/>
+								<local:ZekrBodyControl RemoveButtonVisibility="Collapsed" TranslationBodyVisibility="Collapsed" AlternateBodyListCheckVisibility="Collapsed"/>
 							</StackPanel>
 						</DataTemplate>
 					</ItemsControl.ItemTemplate>

@@ -29,8 +29,7 @@
 				<DataGridTemplateColumn Width="100">
 					<DataGridTemplateColumn.CellTemplate>
 						<DataTemplate>
-							<Button Content="حذف"
-							        Command="Delete"/>
+							<Button Command="Delete" Padding="10,5" Margin="5" Style="{StaticResource AccentButtonStyle}">حذف</Button>
 						</DataTemplate>
 					</DataGridTemplateColumn.CellTemplate>
 				</DataGridTemplateColumn>

@@ -58,9 +58,9 @@ export const ZekrBodyText: FC<Props> = ({ body, lineSeparator = true, settings }
 					/>
 				)}
 
-				<Conditional condition={body.alternateBody != null}>
+				<Conditional condition={body.translationBody != null}>
 					<div className="zekr-body-alternative">
-						<ZekrBodyText body={body.alternateBody} lineSeparator={false} settings={settings} />
+						<ZekrBodyText body={body.translationBody} lineSeparator={false} settings={settings} />
 					</div>
 				</Conditional>
 				<Conditional condition={body.alternateBodyList != null && body.alternateBodyList.length > 0}>
