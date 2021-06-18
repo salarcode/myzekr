@@ -6,8 +6,12 @@ name: Node.js CI
 on:
   push:
     branches: [ main ]
+    paths:
+      - MyZekr/**
   pull_request:
     branches: [ main ]
+    paths:
+      - MyZekr/**
 
 jobs:
   build:
