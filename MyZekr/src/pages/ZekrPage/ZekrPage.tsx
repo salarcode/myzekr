@@ -20,6 +20,7 @@ import BookmarkZekrButton from '../../containers/BookmarkZekrButton/BookmarkZekr
 import { PageMeta } from '../../containers/PageMeta/PageMeta';
 import { ZekrInlineCounter } from '../../containers/ZekrInlineCounter/ZekrInlineCounter';
 import TextZoomButtons from '../../containers/TextZoomButtons/TextZoomButtons';
+import { ScrollTop } from '../../components/ScrollTop/ScrollTop';
 
 interface params {
 	zekrUid: string;
@@ -235,6 +236,7 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 				<a href="#">
 					<img src="/assets/icons/microphone.svg" className="icon-20 link-image" />
 				</a> */}
+				<ScrollTop />
 				<TextZoomButtons />
 				<BookmarkZekrButton zekr={zekr} />
 				{showZekrCounter && (
