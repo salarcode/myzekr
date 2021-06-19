@@ -10,6 +10,7 @@ namespace ZekrDb.Data.Models.Zekr
 	{
 		private string _uid;
 		private string _title;
+		private string _description;
 		private string _iconClass;
 		private string _imageUrl;
 		private string[] _children;
@@ -27,6 +28,12 @@ namespace ZekrDb.Data.Models.Zekr
 		{
 			get => _title;
 			set { _title = value; OnPropertyChanged(); }
+		}
+
+		public string description
+		{
+			get => _description;
+			set { _description = value; OnPropertyChanged(); }
 		}
 
 		/// <summary>

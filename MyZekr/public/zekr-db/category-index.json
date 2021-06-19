@@ -13,7 +13,13 @@
 	},
 	{
 		"uid": "prayer-mustahabb",
-		"title": "نماز های مستحبی",
+		"title": "نمازهای مستحبی",
+		"imageUrl": null,
+		"parent": ["prayer"]
+	},
+	{
+		"uid": "prayer-daily-nawafil",
+		"title": "نمازهای نافله",
 		"imageUrl": null,
 		"parent": ["prayer"]
 	},

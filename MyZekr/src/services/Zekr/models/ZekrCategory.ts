@@ -5,6 +5,7 @@ export interface ZekrCategory {
 	title: string;
 	iconClass?: string;
 	imageUrl?: string;
+	description?: string;
 
 	/** Children category UID */
 	children?: Uid[];
