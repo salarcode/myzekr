@@ -41,7 +41,7 @@
           "body": "اَللّهُمَّ اِغْفِر لِلْمومِنينَ وَ اَلْمومِناتْ وَ اَلْمُسلِمينَ وَ اَلْمُسلِماتْ",
           "translationBody": {
             "body": "«خدايا ببخش جميع مؤمنين مرد و مؤمنين زن را»",
-            "languageKey": "ar"
+            "languageKey": "fa"
           },
           "languageKey": "ar"
         },
@@ -82,14 +82,16 @@
     },
     {
       "body": "بعد سيصد مرتبه بگوييد:",
-      "translationBody": {
-        "body": "اَلْعَفو",
-        "translationBody": {
-          "body": "«ببخش»",
-          "languageKey": "fa"
-        },
-        "languageKey": "ar"
-      },
+      "alternateBodyList": [
+        {
+          "body": "اَلْعَفو",
+          "translationBody": {
+            "body": "«ببخش»",
+            "languageKey": "fa"
+          },
+          "languageKey": "ar"
+        }
+      ],
       "languageKey": "fa"
     },
     {
