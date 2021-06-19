@@ -56,7 +56,7 @@
     "uid": "night-prayer",
     "fullName": "نماز شب",
     "metaTitle": "نماز شب",
-    "category": "prayer",
+    "category": "prayer-daily-nawafil",
     "tags": [
       "prayer"
     ],
@@ -70,7 +70,8 @@
     "uid": "sunday-prayer-dhu-l-qadah",
     "fullName": "نماز یکشنبه ماه ذی‌القعده",
     "metaTitle": "نماز یکشنبه ماه ذی‌القعده",
-    "category": "prayer-mustahabb"
+    "category": "prayer-mustahabb",
+    "showZekrCounter": true
   },
   {
     "uid": "al-kursi-verse",
