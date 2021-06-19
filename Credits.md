@@ -9,3 +9,5 @@
 	 - [Font-Awesome](https://fontawesome.com/)
 	 - [Flat Icons](https://www.flaticon.com/)
 	 - [SVG Compressor](https://vecta.io/nano)
+- Fonts:
+  - [Vazir](https://rastikerdar.github.io/vazir-font/)
