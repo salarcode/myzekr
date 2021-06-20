@@ -149,6 +149,13 @@ export const ZekrCategoryPage: FC<RouteComponentProps<params>> = ({ match, histo
 					<div className="mb-4"></div>
 				</div>
 			</div>
+			{category?.description && (
+				<div>
+					<main className="category-description">
+						<p>{category?.description}</p>
+					</main>
+				</div>
+			)}
 			{childrenCategories && (
 				<section className="main-section">
 					<h3 className="main-section-title">
