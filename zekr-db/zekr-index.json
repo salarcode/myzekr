@@ -77,7 +77,8 @@
     "uid": "al-kursi-verse",
     "fullName": "آیة الکرسی",
     "metaTitle": "آیة الکرسی",
-    "category": "famous-hadith"
+    "category": "famous-hadith",
+    "showZekrCounter": true
   },
   {
     "uid": "prayer-fajr-taqibat",
@@ -138,5 +139,11 @@
     "zekrTimes": [
       "Friday"
     ]
+  },
+  {
+    "uid": "al-tawassul-supplication",
+    "fullName": "دعای توسل",
+    "metaTitle": "دعای توسل",
+    "category": "famous-dua"
   }
 ]
