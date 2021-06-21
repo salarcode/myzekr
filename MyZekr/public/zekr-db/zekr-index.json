@@ -145,5 +145,15 @@
     "fullName": "دعای توسل",
     "metaTitle": "دعای توسل",
     "category": "famous-dua"
+  },
+  {
+    "uid": "supplication-of-kumayl",
+    "fullName": "دعای کمیل",
+    "metaTitle": "دعای کُمَیل",
+    "category": "famous-dua",
+    "zekrTimes": [
+      "NightOfFriday",
+      "HalfOfShabanDay"
+    ]
   }
 ]
