@@ -11,10 +11,16 @@
 			"src": "/android-chrome-512x512.png",
 			"sizes": "512x512",
 			"type": "image/png"
+		},
+		{
+			"src": "/favicon-maskable.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any maskable"
 		}
 	],
 	"start_url": ".",
-	"theme_color": "#ffffff",
+	"theme_color": "#dae6d8",
 	"background_color": "#ffffff",
 	"display": "standalone",
 	"shortcuts": []
