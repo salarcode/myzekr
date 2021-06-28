@@ -12,7 +12,7 @@ import { clientsClaim } from 'workbox-core';
 import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
-import { StaleWhileRevalidate } from 'workbox-strategies';
+import { CacheFirst, NetworkFirst, StaleWhileRevalidate } from 'workbox-strategies';
 
 declare const self: ServiceWorkerGlobalScope;
 
@@ -53,14 +53,29 @@ registerRoute(
 	createHandlerBoundToURL(process.env.PUBLIC_URL + '/index.html'),
 );
 
-// An example runtime caching route for requests that aren't handled by the
+// Cache the json files from our server
+registerRoute(({ url }) => url.pathname.endsWith('.json'), new NetworkFirst({ cacheName: 'myzekr-database' }));
+
+// Cache external styles
+registerRoute(({ url }) => {
+	console.log('registerRoute req', url.toString());
+	return url.pathname.endsWith('.min.css') || url.pathname.endsWith('.min.js');
+}, new CacheFirst({ cacheName: 'myzekr-cdn' }));
+
+// Cache the fonts files from client first
+registerRoute(
+	({ url }) => url.pathname.endsWith('.woff2') || url.pathname.endsWith('.woff') || url.pathname.endsWith('.ttf'),
+	new CacheFirst({ cacheName: 'myzekr-fonts' }),
+);
+
+// Runtime caching route for requests that aren't handled by the
 // precache, in this case same-origin .png requests like those from in public/
 registerRoute(
 	// Add in any other file extensions or routing criteria as needed.
-	({ url }) => url.origin === self.location.origin && url.pathname.endsWith('.png'),
+	({ url }) => url.origin === self.location.origin && url.pathname.endsWith('.svg'),
 	// Customize this strategy as needed, e.g., by changing to CacheFirst.
-	new StaleWhileRevalidate({
-		cacheName: 'images',
+	new CacheFirst({
+		cacheName: 'myzekr-svg-images',
 		plugins: [
 			// Ensure that once this runtime cache reaches a maximum size the
 			// least-recently used images are removed.

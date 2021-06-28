@@ -1,5 +1,34 @@
 /* STYLES THAT SHOULD NOT BE PROCESSED SHOULD COME HERE*/
+@font-face {
+	font-family: Vazir;
+	src: url('/assets/fonts/Vazir.eot');
+	src: url('/assets/fonts/Vazir.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/Vazir.woff2') format('woff2'), url('/assets/fonts/Vazir.woff') format('woff'),
+		url('/assets/fonts/Vazir.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: Vazir;
+	src: url('/assets/fonts/Vazir-Bold.eot');
+	src: url('/assets/fonts/Vazir-Bold.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/Vazir-Bold.woff2') format('woff2'), url('/assets/fonts/Vazir-Bold.woff') format('woff'),
+		url('/assets/fonts/Vazir-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
 
+@font-face {
+	font-family: Parastoo;
+	src: url('/assets/fonts/Parastoo.eot');
+	src: url('/assets/fonts/Parastoo.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/Parastoo.woff2') format('woff2'), url('/assets/fonts/Parastoo.woff') format('woff'),
+		url('/assets/fonts/Parastoo.ttf') format('truetype');
+	font-weight: normal;
+	font-display: swap;
+}
 @font-face {
 	font-family: Parastoo;
 	src: url('/assets/fonts/Parastoo-Bold.eot');
