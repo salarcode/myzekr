@@ -1,22 +1,32 @@
 {
   "files": {
-    "main.css": "/static/css/main.39e606fe.chunk.css",
-    "main.js": "/static/js/main.751c7bad.chunk.js",
-    "main.js.map": "/static/js/main.751c7bad.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.06d0863b.js",
-    "runtime-main.js.map": "/static/js/runtime-main.06d0863b.js.map",
-    "static/js/2.e292d2b9.chunk.js": "/static/js/2.e292d2b9.chunk.js",
-    "static/js/2.e292d2b9.chunk.js.map": "/static/js/2.e292d2b9.chunk.js.map",
+    "main.css": "/static/css/main.293e9406.chunk.css",
+    "main.js": "/static/js/main.f7b9aa6f.chunk.js",
+    "main.js.map": "/static/js/main.f7b9aa6f.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.56c48bfc.js",
+    "runtime-main.js.map": "/static/js/runtime-main.56c48bfc.js.map",
+    "static/js/2.c8229ae6.chunk.js": "/static/js/2.c8229ae6.chunk.js",
+    "static/js/2.c8229ae6.chunk.js.map": "/static/js/2.c8229ae6.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.dc8d7d7cbedfe403b0b5a7cea32b2cde.js": "/precache-manifest.dc8d7d7cbedfe403b0b5a7cea32b2cde.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.39e606fe.chunk.css.map": "/static/css/main.39e606fe.chunk.css.map",
-    "static/js/2.e292d2b9.chunk.js.LICENSE.txt": "/static/js/2.e292d2b9.chunk.js.LICENSE.txt"
+    "service-worker.js.map": "/service-worker.js.map",
+    "static/css/main.293e9406.chunk.css.map": "/static/css/main.293e9406.chunk.css.map",
+    "static/js/2.c8229ae6.chunk.js.LICENSE.txt": "/static/js/2.c8229ae6.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/static/media/line-seperator.b100db4d.svg",
+    "static/media/add-favourite.8efecb08.svg": "/static/media/add-favourite.8efecb08.svg",
+    "static/media/add.067491a9.svg": "/static/media/add.067491a9.svg",
+    "static/media/arrow-up.f2806314.svg": "/static/media/arrow-up.f2806314.svg",
+    "static/media/back.a611f23f.svg": "/static/media/back.a611f23f.svg",
+    "static/media/home.0657de42.svg": "/static/media/home.0657de42.svg",
+    "static/media/islam-star.5d59afeb.svg": "/static/media/islam-star.5d59afeb.svg",
+    "static/media/remove.46c536a6.svg": "/static/media/remove.46c536a6.svg",
+    "static/media/star.a2ed7ca2.svg": "/static/media/star.a2ed7ca2.svg",
+    "static/media/tasbih.39c2a00a.svg": "/static/media/tasbih.39c2a00a.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.06d0863b.js",
-    "static/js/2.e292d2b9.chunk.js",
-    "static/css/main.39e606fe.chunk.css",
-    "static/js/main.751c7bad.chunk.js"
+    "static/js/runtime-main.56c48bfc.js",
+    "static/js/2.c8229ae6.chunk.js",
+    "static/css/main.293e9406.chunk.css",
+    "static/js/main.f7b9aa6f.chunk.js"
   ]
 }
