@@ -1,182 +1,31 @@
 @font-face {
 	font-family: Vazir;
-	src: url('/assets/fonts/Vazir.eot');
-	src: url('/assets/fonts/Vazir.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/Vazir.woff2') format('woff2'),
-		url('/assets/fonts/Vazir.woff') format('woff'), url('/assets/fonts/Vazir.ttf') format('truetype');
+	src: url('/assets-offline/fonts/Vazir.eot');
+	src: url('/assets-offline/fonts/Vazir.eot?#iefix') format('embedded-opentype'),
+		url('/assets-offline/fonts/Vazir.woff2') format('woff2'), url('/assets-offline/fonts/Vazir.woff') format('woff'),
+		url('/assets-offline/fonts/Vazir.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: Vazir;
-	src: url('/assets/fonts/Vazir-Bold.eot');
-	src: url('/assets/fonts/Vazir-Bold.eot?#iefix') format('embedded-opentype'),
-		url('/assets/fonts/Vazir-Bold.woff2') format('woff2'), url('/assets/fonts/Vazir-Bold.woff') format('woff'),
-		url('/assets/fonts/Vazir-Bold.ttf') format('truetype');
+	src: url('/assets-offline/fonts/Vazir-Bold.eot');
+	src: url('/assets-offline/fonts/Vazir-Bold.eot?#iefix') format('embedded-opentype'),
+		url('/assets-offline/fonts/Vazir-Bold.woff2') format('woff2'), url('/assets-offline/fonts/Vazir-Bold.woff') format('woff'),
+		url('/assets-offline/fonts/Vazir-Bold.ttf') format('truetype');
 	font-weight: bold;
 	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: Vazir;
-	src: url('/assets/fonts/Vazir-Black.eot');
-	src: url('/assets/fonts/Vazir-Black.eot?#iefix') format('embedded-opentype'),
-		url('/assets/fonts/Vazir-Black.woff2') format('woff2'), url('/assets/fonts/Vazir-Black.woff') format('woff'),
-		url('/assets/fonts/Vazir-Black.ttf') format('truetype');
-	font-weight: 900;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: Vazir;
-	src: url('/assets/fonts/Vazir-Medium.eot');
-	src: url('/assets/fonts/Vazir-Medium.eot?#iefix') format('embedded-opentype'),
-		url('/assets/fonts/Vazir-Medium.woff2') format('woff2'), url('/assets/fonts/Vazir-Medium.woff') format('woff'),
-		url('/assets/fonts/Vazir-Medium.ttf') format('truetype');
-	font-weight: 500;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: Vazir;
-	src: url('/assets/fonts/Vazir-Light.eot');
-	src: url('/assets/fonts/Vazir-Light.eot?#iefix') format('embedded-opentype'),
-		url('/assets/fonts/Vazir-Light.woff2') format('woff2'), url('/assets/fonts/Vazir-Light.woff') format('woff'),
-		url('/assets/fonts/Vazir-Light.ttf') format('truetype');
-	font-weight: 300;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: Vazir;
-	src: url('/assets/fonts/Vazir-Thin.eot');
-	src: url('/assets/fonts/Vazir-Thin.eot?#iefix') format('embedded-opentype'),
-		url('/assets/fonts/Vazir-Thin.woff2') format('woff2'), url('/assets/fonts/Vazir-Thin.woff') format('woff'),
-		url('/assets/fonts/Vazir-Thin.ttf') format('truetype');
-	font-weight: 100;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: Parastoo;
-	src: url('/assets/fonts/Parastoo.eot');
-	src: url('/assets/fonts/Parastoo.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/Parastoo.woff2') format('woff2'),
-		url('/assets/fonts/Parastoo.woff') format('woff'), url('/assets/fonts/Parastoo.ttf') format('truetype');
-	font-weight: normal;
 	font-display: swap;
 }
 
 @font-face {
 	font-family: Parastoo;
-	src: url('/assets/fonts/Parastoo-Bold.eot');
-	src: url('/assets/fonts/Parastoo-Bold.eot?#iefix') format('embedded-opentype'),
-		url('/assets/fonts/Parastoo-Bold.woff2') format('woff2'), url('/assets/fonts/Parastoo-Bold.woff') format('woff'),
-		url('/assets/fonts/Parastoo-Bold.ttf') format('truetype');
-	font-weight: bold;
-	font-display: swap;
-}
-@font-face {
-	font-family: SamimV1;
-	src: url('/assets/fonts/Samim-v0.10.3.woff') format('woff'), url('/assets/fonts/Samim-v0.10.3.ttf') format('truetype');
+	src: url('/assets-offline/fonts/Parastoo.eot');
+	src: url('/assets-offline/fonts/Parastoo.eot?#iefix') format('embedded-opentype'),
+		url('/assets-offline/fonts/Parastoo.woff2') format('woff2'), url('/assets-offline/fonts/Parastoo.woff') format('woff'),
+		url('/assets-offline/fonts/Parastoo.ttf') format('truetype');
 	font-weight: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: SamimV1;
-	src: url('/assets/fonts/Samim-v0.10.3-Bold.woff') format('woff'),
-		url('/assets/fonts/Samim-v0.10.3-Bold.ttf') format('truetype');
-	font-weight: bold;
-	font-display: swap;
-}
-@font-face {
-	font-family: Samim;
-	src: url('/assets/fonts/Samim.woff') format('woff'), url('/assets/fonts/Samim.ttf') format('truetype');
-	font-weight: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: Samim;
-	src: url('/assets/fonts/Samim-Bold.woff') format('woff'), url('/assets/fonts/Samim-Bold.ttf') format('truetype');
-	font-weight: bold;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: Neirizi;
-	src: url('/assets/fonts/Neirizi.ttf');
-	font-display: swap;
-}
-@font-face {
-	font-family: TahaNaskh;
-	src: url('/assets/fonts/UthmanTahaNaskhRegular.ttf');
-	font-display: swap;
-}
-@font-face {
-	font-family: QuranTaha;
-	src: url('/assets/fonts/QuranTaha.ttf');
-	font-display: swap;
-}
-@font-face {
-	font-family: Estedad;
-	src: url('/assets/fonts/Estedad-Medium.woff2') format('woff2'), url('/assets/fonts/Estedad-Medium.woff') format('woff'),
-		url('/assets/fonts/Estedad-Medium.ttf') format('truetype');
-	font-display: swap;
-}
-@font-face {
-	font-family: Nabi;
-	src: url('/assets/fonts/Nabi.ttf');
-	font-display: swap;
-}
-@font-face {
-	font-family: Nazanin;
-	src: url('/assets/fonts/Nazanin.ttf');
-	font-display: swap;
-}
-
-@font-face {
-	font-family: AlfaSlabOne;
-	src: url('/assets/fonts/AlfaSlabOne-Regular.ttf');
-	font-display: swap;
-}
-@font-face {
-	font-family: DroidSansArabic;
-	src: url('/assets/fonts/DroidSansArabic.ttf');
-	font-display: swap;
-}
-
-@font-face {
-	font-family: AmaticSC;
-	src: url('/assets/fonts/AmaticSC-Regular.ttf');
-	font-display: swap;
-}
-@font-face {
-	font-family: IsepMisbah;
-	src: url('/assets/fonts/IsepMisbah.ttf');
-	font-display: swap;
-}
-
-@font-face {
-	font-family: Montez;
-	src: url('/assets/fonts/Montez-Regular.ttf');
-	font-display: swap;
-}
-
-@font-face {
-	font-family: NotoNaskhArabic;
-	src: url('/assets/fonts/NotoNaskhArabic-Regular.ttf');
-	font-display: swap;
-}
-@font-face {
-	font-family: AlQalamQuran;
-	src: url('/assets/fonts/AlQalamQuranMajeed2.ttf');
-	font-display: swap;
-}
-
-@font-face {
-	font-family: ScheherazadeRegOT;
-	src: url('/assets/fonts/ScheherazadeRegOT.ttf');
 	font-display: swap;
 }
 
@@ -249,7 +98,7 @@ html {
 	background-repeat: repeat-x;
 	background-color: #e1e8e0;
 
-	background-image: url('/assets/images/bg-green.png');
+	// // background-image: url('/assets/images/bg-green.png');
 	background-repeat: repeat;
 	scrollbar-width-disabled: thin;
 	scrollbar-color: #a8d4c7 #d8f2d3;
@@ -1132,7 +981,7 @@ BLOCK
 }
 .zekr-line {
 	border: 1px solid transparent;
-	border-image: url('/assets/images/line-seperator.svg') 34 40 /* slice */ /0px 40px 20px 40px /* width */ /0 0 10px 0
+	border-image: url('/assets-offline/images/line-seperator.svg') 34 40 /* slice */ /0px 40px 20px 40px /* width */ /0 0 10px 0
 		/* outset */ round;
 }
 .zekr-body-play-voice {

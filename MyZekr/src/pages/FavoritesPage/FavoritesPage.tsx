@@ -14,6 +14,7 @@ import { ErrorMessage, retryType } from '../../components/ErrorMessage/ErrorMess
 import { getZekrIndexList } from '../../services/Zekr/ZekrWebService';
 import { ZekrIndex } from '../../services/Zekr/models/Zekr';
 import { PageMeta } from '../../containers/PageMeta/PageMeta';
+import HomeImage from '../../assets-offline/icons/home.svg';
 
 interface Props extends RouteComponentProps {
 	settings: AppSettings | undefined;
@@ -113,7 +114,7 @@ const FavoritesPage: FC<Props> = ({ settings, settingsLoading, readSettings, sav
 							<span className="breadcrumbs-list">
 								<span className="breadcrumb-item">
 									<Link to="/" aria-label="صفحه اصلی">
-										<img src="/assets/icons/home.svg" className="icon-20" alt="خانه" />
+										<img src={HomeImage} className="icon-20" alt="خانه" />
 									</Link>
 								</span>
 							</span>
@@ -133,7 +134,7 @@ const FavoritesPage: FC<Props> = ({ settings, settingsLoading, readSettings, sav
 						<span className="breadcrumbs-list">
 							<span className="breadcrumb-item">
 								<Link to="/" aria-label="صفحه اصلی">
-									<img src="/assets/icons/home.svg" className="icon-20" alt="خانه" />
+									<img src={HomeImage} className="icon-20" alt="خانه" />
 								</Link>
 							</span>
 						</span>

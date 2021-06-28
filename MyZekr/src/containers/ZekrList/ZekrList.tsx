@@ -1,8 +1,9 @@
-import React, { FormEvent, MouseEventHandler } from 'react';
+import { MouseEventHandler } from 'react';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { ZekrIndex } from '../../services/Zekr/models/Zekr';
 import './ZekrList.scss';
+import StarImage from '../../assets-offline/icons/star.svg';
 
 interface Props {
 	data: ZekrIndex[];
@@ -36,7 +37,7 @@ export const ZekrList: FC<Props> = ({ data, onItemClick, displayRemoveButton, on
 								alt={zekr.metaTitle}
 							/>
 						) : (
-							<img className="icon-16 mx-1 button-icon" src="/assets/icons/star.svg" alt={zekr.metaTitle} />
+							<img className="icon-16 mx-1 button-icon" src={StarImage} alt={zekr.metaTitle} />
 						)}
 						{zekr.fullName}
 						{displayRemoveButton && (

@@ -1,17 +1,14 @@
 import './BookmarkZekrButton.scss';
-import React, { FC, Fragment, MouseEventHandler, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { FC, Fragment, useEffect } from 'react';
 import { Zekr } from '../../services/Zekr/models/Zekr';
-import { VersionNumber } from '../../components/VersionNumber';
-import { AboutDialog } from '../AboutDialog/AboutDialog';
 import { connect } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { AppState } from '../../store/store';
 import { AppSettings } from '../../services/Settings/models/AppSettings';
 import { readSettingsActionCreator, saveSettingsActionCreator } from '../../store/Actions/SettingsActions';
 import { AnyAction } from 'redux';
-import { getZekrUrl } from '../../services/UrlService';
 import { enableBootstrapToast } from '../../common/EnableBootstrapToast';
+import ArrowUpImage from '../../assets-offline/icons/add-favourite.svg';
 
 interface Props {
 	zekr: Zekr;
@@ -86,11 +83,7 @@ const BookmarkZekrButton: FC<Props> = ({ zekr, settingsLoading, settings, saveSe
 			</div>
 			{settings && (
 				<a href="#bookmark" onClick={onBookmarkClick}>
-					<img
-						src="/assets/icons/add-favourite.svg"
-						alt="❤"
-						className={'icon-28 ' + (bookmarked ? 'animate-bookmark-button' : '')}
-					/>
+					<img src={ArrowUpImage} alt="❤" className={'icon-28 ' + (bookmarked ? 'animate-bookmark-button' : '')} />
 				</a>
 			)}
 		</Fragment>

@@ -11,6 +11,7 @@ import { BackButton } from '../../components/BackButton/BackButton';
 import { CategoryListSmallIcon } from '../../containers/CategoryList/CategoryListSmallIcon';
 import { ZekrListSearchable } from '../../containers/ZekrListSearchable/ZekrListSearchable';
 import { PageMeta } from '../../containers/PageMeta/PageMeta';
+import HomeImage from '../../assets-offline/icons/home.svg';
 
 interface params {
 	categoryUid: string;
@@ -89,7 +90,7 @@ export const ZekrCategoryPage: FC<RouteComponentProps<params>> = ({ match, histo
 							<span className="breadcrumbs-list">
 								<span className="breadcrumb-item">
 									<Link to="/" aria-label="صفحه اصلی">
-										<img src="/assets/icons/home.svg" className="icon-20" alt="خانه" />
+										<img src={HomeImage} className="icon-20" alt="خانه" />
 									</Link>
 								</span>
 								{catParents?.map((parent) => (
@@ -129,7 +130,7 @@ export const ZekrCategoryPage: FC<RouteComponentProps<params>> = ({ match, histo
 						<span className="breadcrumbs-list">
 							<span className="breadcrumb-item">
 								<Link to="/" aria-label="صفحه اصلی">
-									<img src="/assets/icons/home.svg" className="icon-20" alt="خانه" />
+									<img src={HomeImage} className="icon-20" alt="خانه" />
 								</Link>
 							</span>
 							{catParents?.map((parent) => (

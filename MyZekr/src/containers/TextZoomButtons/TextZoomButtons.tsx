@@ -1,16 +1,12 @@
-import React, { FC, Fragment, MouseEventHandler, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Zekr } from '../../services/Zekr/models/Zekr';
-import { VersionNumber } from '../../components/VersionNumber';
-import { AboutDialog } from '../AboutDialog/AboutDialog';
+import { FC, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { AppState } from '../../store/store';
 import { AppSettings } from '../../services/Settings/models/AppSettings';
 import { readSettingsActionCreator, saveSettingsActionCreator } from '../../store/Actions/SettingsActions';
 import { AnyAction } from 'redux';
-import { getZekrUrl } from '../../services/UrlService';
-import { enableBootstrapToast } from '../../common/EnableBootstrapToast';
+import AddImage from '../../assets-offline/icons/add.svg';
+import RemoveImage from '../../assets-offline/icons/remove.svg';
 
 interface Props {
 	settings?: AppSettings;
@@ -60,12 +56,12 @@ const TextZoomButtons: FC<Props> = ({ settingsLoading, settings, saveSettings })
 	}
 	return (
 		<Fragment>
-			<a href="#" onClick={onAddClick}>
-				<img src="/assets/icons/add.svg" alt="+" className="icon-24  link-image" />
+			<a href="#add" onClick={onAddClick}>
+				<img src={AddImage} alt="+" className="icon-24 link-image" />
 				{/* <i className="fas fa-minus-circle fa-lg"></i> */}
 			</a>
-			<a href="#" onClick={onRemoveClick}>
-				<img src="/assets/icons/remove.svg" alt="-" className="icon-24 link-image" />
+			<a href="#remove" onClick={onRemoveClick}>
+				<img src={RemoveImage} alt="-" className="icon-24 link-image" />
 				{/* <i className="fas fa-plus-circle fa-lg"></i> */}
 			</a>
 		</Fragment>

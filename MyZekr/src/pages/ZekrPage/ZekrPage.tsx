@@ -21,6 +21,9 @@ import { PageMeta } from '../../containers/PageMeta/PageMeta';
 import { ZekrInlineCounter } from '../../containers/ZekrInlineCounter/ZekrInlineCounter';
 import TextZoomButtons from '../../containers/TextZoomButtons/TextZoomButtons';
 import { ScrollTop } from '../../components/ScrollTop/ScrollTop';
+import HomeImage from '../../assets-offline/icons/home.svg';
+import IslamStarImage from '../../assets-offline/icons/islam-star.svg';
+import TasbihImage from '../../assets-offline/icons/tasbih.svg';
 
 interface params {
 	zekrUid: string;
@@ -147,7 +150,7 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 							<span className="breadcrumbs-list">
 								<span className="breadcrumb-item">
 									<Link to="/" aria-label="صفحه اصلی">
-										<img src="/assets/icons/home.svg" className="icon-20" alt="خانه" />
+										<img src={HomeImage} className="icon-20" alt="خانه" />
 									</Link>
 								</span>
 								{categories?.map((parent) => (
@@ -175,7 +178,7 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 									data-bs-toggle="modal"
 									data-bs-target="#zekr-benefits-dialog"
 								>
-									<img src="/assets/icons/islam-star.svg" className="icon-20" alt="" />
+									<img src={IslamStarImage} className="icon-20" alt="" />
 									<span className="hidden-xs-inline">&nbsp; فضیلت</span>
 								</button>
 							)}
@@ -190,7 +193,7 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 						<span className="breadcrumbs-list">
 							<span className="breadcrumb-item">
 								<Link to="/" aria-label="صفحه اصلی">
-									<img src="/assets/icons/home.svg" className="icon-20" alt="خانه" />
+									<img src={HomeImage} className="icon-20" alt="خانه" />
 								</Link>
 							</span>
 							{categories?.map((parent) => (
@@ -241,7 +244,7 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 				<BookmarkZekrButton zekr={zekr} />
 				{showZekrCounter && (
 					<a href="#zekr-counter" onClick={onShowZekrCounter} title="ذکر شمار">
-						<img src="/assets/icons/tasbih.svg" alt="." className="icon-24 link-image" />
+						<img src={TasbihImage} alt="." className="icon-24 link-image" />
 					</a>
 				)}
 			</div>

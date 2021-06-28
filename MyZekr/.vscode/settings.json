@@ -1,14 +1,5 @@
 {
-	"cSpell.words": [
-		"Isha",
-		"Maghrib",
-		"Zekr",
-		"favourite",
-		"namaz",
-		"salah",
-		"scrollable",
-		"scrollbar"
-	],
+	"cSpell.words": ["Isha", "Maghrib", "Zekr", "favourite", "namaz", "salah", "scrollable", "scrollbar"],
 	"telemetry.enableTelemetry": false,
 	"code-runner.enableAppInsights": false,
 	"cSpell.language": "en,fa",

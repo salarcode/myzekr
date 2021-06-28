@@ -4,17 +4,12 @@ export function ObjectToQueryString(params: any): string {
 		return new URLSearchParams(params).toString();
 
 	if (typeof params != 'object') {
-		console.warn(
-			'Warning, ObjectToQueryString is called for a non-object ',
-			params,
-		);
+		console.warn('Warning, ObjectToQueryString is called for a non-object ', params);
 		return '';
 	}
 	return Object.keys(params)
 		.map((key) => {
-			return (
-				encodeURIComponent(key) + '=' + encodeURIComponent(params[key])
-			);
+			return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
 		})
 		.join('&');
 }

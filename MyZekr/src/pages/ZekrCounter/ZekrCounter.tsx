@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { BackButton } from '../../components/BackButton/BackButton';
 import { PageMeta } from '../../containers/PageMeta/PageMeta';
 import './ZekrCounter.scss';
+import HomeImage from '../../assets-offline/icons/home.svg';
+//import TheIndex from '../../assets-offline/category-index.json';
 
 var zekrClickStatus = false;
 var zekrVibrateWarmed = false;
@@ -71,6 +73,8 @@ export const ZekrCounter = () => {
 	}
 	vibrateWarmup();
 
+	//console.log('the json index', TheIndex);
+
 	return (
 		<div className="zekr-counter-box">
 			<PageMeta title="ذکر شمار" description="ذکر شمار" />
@@ -81,7 +85,7 @@ export const ZekrCounter = () => {
 							<span className="breadcrumbs-list">
 								<span className="breadcrumb-item">
 									<Link to="/" aria-label="صفحه اصلی">
-										<img src="/assets/icons/home.svg" className="icon-20" alt="خانه" />
+										<img src={HomeImage} className="icon-20" alt="خانه" />
 									</Link>
 								</span>
 							</span>

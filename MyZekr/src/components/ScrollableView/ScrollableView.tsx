@@ -31,11 +31,7 @@ export const ScrollableView: FC = ({ children }) => {
 			resizeScrollableView();
 		}, 100);
 	}
-	function resizeToContent(
-		selectorText: string,
-		bottomElementsSelector?: string,
-		clearanceHeight?: number,
-	) {
+	function resizeToContent(selectorText: string, bottomElementsSelector?: string, clearanceHeight?: number) {
 		let element = jQuery(selectorText);
 		element.css('height', 0);
 

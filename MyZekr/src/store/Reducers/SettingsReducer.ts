@@ -1,6 +1,4 @@
-import { Action, ActionCreator, Dispatch, Reducer } from 'redux';
-import { ThunkAction } from 'redux-thunk';
-import { getAppSettingsInitial } from '../../services/Settings/models/AppSettings';
+import { Reducer } from 'redux';
 import {
 	Action_ReadingSettings,
 	Action_ReadSettings,

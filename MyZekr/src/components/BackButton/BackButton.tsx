@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { retrieveStorageItem, saveStorageItem } from '../../services/Storage';
+import BackImage from '../../assets-offline/icons/back.svg';
 
 interface Props {
 	returnUrl?: string;
@@ -38,7 +39,7 @@ export const BackButton: FC<Props> = ({ returnUrl, doNotShowButton }) => {
 
 	return (
 		<Link title="بازگشت" to={url} key={url} className="px-1">
-			<img alt="بازگشت" src="/assets/icons/back.svg" className="icon-20 link-image" />
+			<img alt="بازگشت" src={BackImage} className="icon-20 link-image" />
 		</Link>
 	);
 };

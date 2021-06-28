@@ -1,15 +1,14 @@
 import './SidebarAppDrawer.scss';
-import React, { FC, Fragment, MouseEventHandler, useState } from 'react';
+import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Zekr } from '../../services/Zekr/models/Zekr';
 import { VersionNumber } from '../../components/VersionNumber';
-import { AboutDialog } from '../AboutDialog/AboutDialog';
 import { connect } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { AppState } from '../../store/store';
 import { AppSettings } from '../../services/Settings/models/AppSettings';
 import { readSettingsActionCreator, saveSettingsActionCreator } from '../../store/Actions/SettingsActions';
 import { AnyAction } from 'redux';
+import TasbihImage from '../../assets-offline/icons/tasbih.svg';
 
 interface Props {
 	settings?: AppSettings;
@@ -180,7 +179,7 @@ const SidebarAppDrawer: FC<Props> = ({ settingsLoading, settings, saveSettings }
 				<div className="link-item" data-bs-toggle="offcanvas" data-bs-target="#sidebar-app-drawer">
 					<Link to="/counter">
 						<span className="link-icon text-danger">
-							<img src="/assets/icons/tasbih.svg" alt="." className="icon-20" />
+							<img src={TasbihImage} alt="." className="icon-20" />
 						</span>
 						ذکر شمار
 					</Link>

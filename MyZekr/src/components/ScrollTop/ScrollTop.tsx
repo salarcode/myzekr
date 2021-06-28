@@ -1,10 +1,11 @@
-import React, { FC } from 'react';
-import { Link } from 'react-router-dom';
-import { Zekr } from '../../services/Zekr/models/Zekr';
+import { FC } from 'react';
 import './ScrollTop.scss';
+import ArrowUpImage from '../../assets-offline/icons/arrow-up.svg';
 
 export const ScrollTop: FC = () => {
-	function onScrollClick() {
+	function onScrollClick(e: any) {
+		if (e) e.preventDefault();
+
 		window.scrollTo({ top: 0, behavior: 'smooth' });
 	}
 	window.addEventListener('scroll', function (e) {
@@ -51,8 +52,8 @@ export const ScrollTop: FC = () => {
 	}
 
 	return (
-		<a href="#" onClick={onScrollClick} id="scroll-back-to-top" className="opacity-0">
-			<img src="/assets/icons/arrow-up.svg" alt="⬆" className="icon-28 link-image" />
+		<a href="#top" onClick={onScrollClick} id="scroll-back-to-top" className="opacity-0">
+			<img src={ArrowUpImage} alt="⬆" className="icon-28 link-image" />
 		</a>
 	);
 };
