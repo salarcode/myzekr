@@ -19,7 +19,6 @@ declare const self: ServiceWorkerGlobalScope;
 
 clientsClaim();
 
-//if (self.__WB_MANIFEST) {
 // caching the main fonts
 var precacheManifest: Array<PrecacheEntry | string> = [];
 precacheManifest = precacheManifest.concat(self.__WB_MANIFEST);
@@ -101,4 +100,7 @@ self.addEventListener('message', (event) => {
 	}
 });
 
+self.addEventListener('install', (event) => {
+	console.log('MyZekr service worker is installed!');
+});
 // Any other custom service worker logic can go here.
