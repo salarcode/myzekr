@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import './App.scss';
 import ReactGA from 'react-ga';
@@ -11,13 +11,14 @@ import { configureStore } from './store/store';
 import { Provider } from 'react-redux';
 import { ZekrCounter } from './pages/ZekrCounter/ZekrCounter';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
-import { redirectToMyZekrCom } from './common/myZekrDomainRedirect';
 import { createBrowserHistory } from 'history';
 
 function App() {
 	const store = configureStore();
 
 	useEffect(() => {
+		addFontStyleSheets();
+
 		const history = createBrowserHistory();
 		// Initialize google analytics page view tracking
 		ReactGA.initialize('G-9BKCVXCGTY', { testMode: process.env.NODE_ENV === 'test' });
@@ -26,6 +27,16 @@ function App() {
 			ReactGA.pageview(location.pathname); // Record a pageview for the given page
 		});
 	}, []);
+
+	/**
+	 * Add fonts css to the page dynamically
+	 */
+	function addFontStyleSheets() {
+		var cssFile = document.createElement('link');
+		cssFile.rel = 'stylesheet';
+		cssFile.href = '/assets/css/fonts.css';
+		document.head.appendChild(cssFile);
+	}
 
 	return (
 		<Provider store={store}>

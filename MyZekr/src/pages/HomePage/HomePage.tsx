@@ -10,18 +10,21 @@ export const HomePage: FC = () => {
 		<div>
 			<PageMeta title="خوش آمدید" description="سایت مرجع دعاها و اذکار" />
 			<main className="text-center">
+				<h2 className="fs-6">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</h2>
+				<br />
 				<h1 className="fs-6">
 					<strong>به سایت مرجع دعاها و اذکار خوش آمدید</strong>
 				</h1>
-				<p>
-					در اینجا سعی می کنیم که مرجعی برای دعاها، اذکار و اعمال عبادی رو جمع کنیم. به امید داشتن یک منبع برای همه چی.
-					<br />
+				<p className="text-start">
+					در اینجا سعی می کنیم که مرجعی برای دعاها، اذکار و اعمال عبادی رو جمع کنیم. به امید داشتن منبعی تقریبا کامل.
 					این سایت و اطلاعات آن کد منبع آزاد بوده و رایگان است و از{' '}
 					<a href="https://github.com/salarcode/myzekr" target="_blank" rel="noopener noreferrer nofollow">
 						<img src="https://github.githubassets.com/pinned-octocat.svg" alt="github" className="icon-13 m-1" />
 						اینجا &nbsp;
 					</a>
 					قابل دریافت است.
+					<br />
+					تقدیم به امیرالمؤمنین مولا امام علی علیه السلام.
 					<br />
 					محتاج دعای شما عزیزان.
 				</p>
