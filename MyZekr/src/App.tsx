@@ -35,8 +35,31 @@ function App() {
 		var cssFile = document.createElement('link');
 		cssFile.rel = 'stylesheet';
 		cssFile.href = '/assets/css/fonts.css';
+		cssFile.setAttribute('id', 'fonts-stylesheet');
 		document.head.appendChild(cssFile);
+
+		console.log('fonts-stylesheet added!');
 	}
+	function reAddFontStyleSheets() {
+		var fontsStylesheet = document.getElementById('fonts-stylesheet');
+		if (fontsStylesheet) {
+			fontsStylesheet.remove();
+			console.log('removed fonts-stylesheet');
+		} else {
+			console.log('fonts-stylesheet not found!');
+		}
+		addFontStyleSheets();
+	}
+	window.addEventListener('offline', () => {
+		// Update your UI to reflect that there's no connection.
+		console.log('Network is offline!');
+		reAddFontStyleSheets();
+	});
+
+	window.addEventListener('online', () => {
+		// Update your UI to reflect that the connection is back.
+		console.log('Network is online!');
+	});
 
 	return (
 		<Provider store={store}>
