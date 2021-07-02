@@ -20,7 +20,8 @@ namespace ZekrDb.Data.Models
 			var zekrIndexes = ZekrModelStore.ReadZekrIndex();
 
 			var uid = zekr.uid.ToLower();
-			var zekrIndex = zekrIndexes.FirstOrDefault(a => a.uid == uid);
+			var zekrIndex =
+				zekrIndexes.FirstOrDefault(a => a.uid.Equals(uid, StringComparison.InvariantCultureIgnoreCase));
 			if (zekrIndex == null)
 			{
 				zekrIndex = TinyMapper.Map<ZekrIndex>(zekr);

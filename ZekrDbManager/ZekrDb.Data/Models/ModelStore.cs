@@ -12,7 +12,7 @@ namespace ZekrDb.Data.Models
 	public static class ModelStore
 	{
 #if DEBUG
-		public static Formatting JsonFormatting = Formatting.Indented;
+		public static Formatting JsonFormatting = Formatting.None;
 #else
 		public static Formatting JsonFormatting = Formatting.None;
 #endif
