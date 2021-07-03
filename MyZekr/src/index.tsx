@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import './zekr-material-ui-override.scss';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 

@@ -13,7 +13,7 @@ import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { PrecacheEntry } from 'workbox-precaching/_types';
 import { registerRoute } from 'workbox-routing';
-import { CacheFirst, NetworkFirst } from 'workbox-strategies';
+import { CacheFirst, NetworkFirst, StaleWhileRevalidate } from 'workbox-strategies';
 
 declare const self: ServiceWorkerGlobalScope;
 
@@ -65,10 +65,10 @@ registerRoute(
 // Cache the json files from our server
 registerRoute(({ url }) => url.pathname.endsWith('.json'), new NetworkFirst({ cacheName: 'myzekr-database' }));
 
-// Cache external styles
+// Cache external styles and scripts
 registerRoute(
-	({ url }) => url.pathname.endsWith('.min.css') || url.pathname.endsWith('.min.js'),
-	new CacheFirst({ cacheName: 'myzekr-cdn' }),
+	({ request }) => request.destination === 'script' || request.destination === 'style',
+	new StaleWhileRevalidate({ cacheName: 'myzekr-cdn' }),
 );
 
 // Cache the fonts files from client first
@@ -80,15 +80,17 @@ registerRoute(
 // Runtime caching route for requests that aren't handled by the
 // precache, in this case same-origin .png requests like those from in public/
 registerRoute(
-	// Add in any other file extensions or routing criteria as needed.
-	({ url }) => url.origin === self.location.origin && (url.pathname.endsWith('.svg') || url.pathname.endsWith('.png')),
+	({ request }) => request.destination === 'image',
 	// Customize this strategy as needed, e.g., by changing to CacheFirst.
 	new CacheFirst({
 		cacheName: 'myzekr-images',
 		plugins: [
 			// Ensure that once this runtime cache reaches a maximum size the
 			// least-recently used images are removed.
-			new ExpirationPlugin({ maxEntries: 50 }),
+			new ExpirationPlugin({
+				maxEntries: 60,
+				maxAgeSeconds: 90 * 24 * 60 * 60, // 90 Days
+			}),
 		],
 	}),
 );

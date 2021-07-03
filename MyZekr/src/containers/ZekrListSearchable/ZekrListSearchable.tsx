@@ -1,4 +1,3 @@
-import { IconButton, InputAdornment, TextField } from '@material-ui/core';
 import React, { FC, FormEvent, useState } from 'react';
 import { ZekrIndex } from '../../services/Zekr/models/Zekr';
 import { searchZekrIndex } from '../../services/Zekr/ZekrSearch';
@@ -74,24 +73,26 @@ export const ZekrListSearchable: FC<Props> = ({
 			<h3 className="main-section-title title-with-tools">
 				<span className="no-wrap">{sectionTitle}</span>
 				{zekrList.length > displaySearchInputLimit && (
-					<TextField
-						className="search-input"
-						id={textBoxId}
-						placeholder="جستجو در این اذکار"
-						size="small"
-						onInput={onSearchInput}
-						onChange={onSearchChange}
-						onKeyDown={onSearchInputKeyDown}
-						InputProps={{
-							endAdornment: (
-								<InputAdornment position="start">
-									<IconButton onClick={onSearchIconClick}>
-										<span role="img">🔍</span>
-									</IconButton>
-								</InputAdornment>
-							),
-						}}
-					/>
+					<div className="input-group input-group-sm search-input">
+						<input
+							id={textBoxId}
+							type="text"
+							className="form-control"
+							aria-describedby="zekrlist-search-input"
+							placeholder="جستجو در این اذکار"
+							onInput={onSearchInput}
+							onChange={onSearchChange}
+							onKeyDown={onSearchInputKeyDown}
+						/>
+						<button
+							className="btn btn-outline-secondary button-icon"
+							type="button"
+							id="zekrlist-search-input"
+							onClick={onSearchIconClick}
+						>
+							<span role="img">🔍</span>
+						</button>
+					</div>
 				)}
 			</h3>
 			<div className="">

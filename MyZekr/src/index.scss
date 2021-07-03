@@ -544,6 +544,55 @@ BLOCK
 -----------------
 -----------------
 */
+.search-input {
+	// this includes Input and a Button
+	width: 100%;
+	border-bottom: solid 1px #1abc9c;
+	transition: all 0.3s ease-in-out;
+	color: #3251716b !important;
+
+	.button-icon {
+		border-radius: 50% !important;
+		&:focus,
+		&:hover {
+			opacity: 0.9;
+			background-color: rgba(192, 192, 192, 0.5);
+		}
+	}
+	input,
+	button {
+		border: none;
+		background-color: transparent;
+		opacity: 0.7;
+		&:focus,
+		&:valid {
+			box-shadow: none;
+			outline: none;
+			background-color: transparent;
+			color: #325171 !important;
+			opacity: 1;
+		}
+	}
+
+	input {
+		border-radius: 0 !important;
+		transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+		background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 95%, #1abc9c 4%);
+		background-position: +400px 0;
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		&:focus {
+			box-shadow: none;
+			outline: none;
+			background-position: 100% 0;
+		}
+	}
+}
+
+/*
+-----------------
+-----------------
+*/
 .sticky-inline-header {
 	position: -webkit-sticky;
 	position: sticky;
@@ -703,6 +752,10 @@ BLOCK
 			justify-content: space-between;
 			align-items: center;
 			.title-tools {
+			}
+			.search-input {
+				width: 100%;
+				max-width: 400px;
 			}
 		}
 	}

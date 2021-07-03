@@ -1,5 +1,4 @@
-import { IconButton, InputAdornment, TextField } from '@material-ui/core';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { BackButton } from '../../components/BackButton/BackButton';
 import { CategoryContainer } from '../../containers/CategoryContainer/CategoryContainer';
 import { PageMeta } from '../../containers/PageMeta/PageMeta';
@@ -24,29 +23,32 @@ export const HomePage: FC = () => {
 					</a>
 					قابل دریافت است.
 					<br />
-					تقدیم به امیرالمؤمنین مولا امام علی علیه السلام.
-					<br />
 					محتاج دعای شما عزیزان.
+					<br />
+					تقدیم به امیرالمؤمنین مولا امام علی علیه السلام.
 				</p>
 				<BackButton doNotShowButton={true} />
 			</main>
 			<section className="main-section main-search-bar">
-				<TextField
-					className="search-input"
-					id="homepage-main-search"
-					placeholder="جستجو در میان اذکار"
-					data-bs-toggle="modal"
-					data-bs-target="#site-search-modal"
-					InputProps={{
-						endAdornment: (
-							<InputAdornment position="start">
-								<IconButton>
-									<span role="img">🔍</span>
-								</IconButton>
-							</InputAdornment>
-						),
-					}}
-				/>
+				<div className="input-group input-group-sm search-input">
+					<input
+						type="text"
+						className="form-control"
+						aria-describedby="homepage-search-input"
+						placeholder="جستجو در میان اذکار"
+						data-bs-toggle="modal"
+						data-bs-target="#site-search-modal"
+					/>
+					<button
+						className="btn btn-outline-secondary button-icon"
+						type="button"
+						id="homepage-search-input"
+						data-bs-toggle="modal"
+						data-bs-target="#site-search-modal"
+					>
+						<span role="img">🔍</span>
+					</button>
+				</div>
 			</section>
 			<section className="main-section">
 				<h3 className="main-section-title">
