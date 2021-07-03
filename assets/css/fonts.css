@@ -39,7 +39,7 @@
 	font-weight: bold;
 	font-display: swap;
 }
-@font-face {
+/* @font-face {
 	font-family: Vazir;
 	src: url('/assets/fonts/Vazir-Black.eot');
 	src: url('/assets/fonts/Vazir-Black.eot?#iefix') format('embedded-opentype'),
@@ -81,7 +81,7 @@
 	font-weight: 100;
 	font-style: normal;
 	font-display: swap;
-}
+} */
 @font-face {
 	font-family: SamimV1;
 	src: url('/assets/fonts/Samim-v0.10.3.woff') format('woff'),
