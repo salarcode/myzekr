@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using ModernWpf.Controls;
 using ZekrDb.Data.Models;
 using ZekrDb.Data.Models.Zekr;
@@ -20,10 +21,11 @@ namespace ZekrDbClient.UI
 	public partial class ZekrWindow : Window, INotifyPropertyChanged
 	{
 
-		public ZekrWindow()
+		public ZekrWindow(double scale)
 		{
 			InitializeComponent();
 			ZekrModel = new Zekr();
+			Scaler.Value = scale;
 		}
 
 		private string _initUid;
@@ -271,6 +273,11 @@ namespace ZekrDbClient.UI
 			var text = txtUid.Text.Trim().Replace(' ', '-').ToLower();
 			txtUid.Text = text;
 
+		}
+
+		private void Scaler_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+		{
+			grdMain.LayoutTransform = new ScaleTransform(e.NewValue, e.NewValue);
 		}
 	}
 }

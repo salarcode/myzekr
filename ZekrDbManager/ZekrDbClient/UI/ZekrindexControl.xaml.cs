@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using ModernWpf.Controls;
 using ZekrDb.Data.Models;
 using ZekrDb.Data.Models.Zekr;
@@ -23,6 +24,17 @@ namespace ZekrDbClient.UI
 		}
 
 		private ObservableCollection<ZekrIndex> _zekrIndexList;
+		private double _scale = 1;
+
+		public double Scale
+		{
+			get => _scale;
+			set
+			{
+				_scale = value;
+				LayoutTransform = new ScaleTransform(_scale, _scale);
+			}
+		}
 
 
 		public ObservableCollection<ZekrIndex> ZekrIndexList
@@ -46,16 +58,16 @@ namespace ZekrDbClient.UI
 		private void RefreshIndexList()
 		{
 			var updated = new ObservableCollection<ZekrIndex>(ZekrModelStore.ReadZekrIndex());
- 			if (_zekrIndexList != null)
+			if (_zekrIndexList != null)
 			{
 				_zekrIndexList.Clear();
 			}
-            ZekrIndexList = updated;
+			ZekrIndexList = updated;
 		}
 
 		private void NewZekrClick(object sender, RoutedEventArgs e)
 		{
-			new ZekrWindow().Show();
+			new ZekrWindow(Scale).Show();
 		}
 
 		private void ZekrDuplicateClick(object sender, RoutedEventArgs e)
@@ -63,7 +75,7 @@ namespace ZekrDbClient.UI
 			var model = (sender as Button)?.DataContext as ZekrIndex;
 			if (model == null)
 				return;
-			var zekrWin = new ZekrWindow();
+			var zekrWin = new ZekrWindow(Scale);
 			try
 			{
 				zekrWin.LoadZekr(model.uid);
@@ -88,7 +100,7 @@ namespace ZekrDbClient.UI
 			var model = (sender as Button)?.DataContext as ZekrIndex;
 			if (model == null)
 				return;
-			var zekrWin = new ZekrWindow();
+			var zekrWin = new ZekrWindow(Scale);
 			try
 			{
 				zekrWin.LoadZekr(model.uid);

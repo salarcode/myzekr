@@ -15,6 +15,7 @@
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="1*"/>
 		</Grid.RowDefinitions>
-		<UI:ZekrIndexControl Margin="5" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+		<UI:ZekrIndexControl x:Name="zekrIndex" Margin="5" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+		<Slider HorizontalAlignment="Right" Minimum="1" Maximum="1.7" Margin="10" Grid.Row="1" VerticalAlignment="Bottom"  Width="120" ValueChanged="sliderScaler_ValueChanged"/>
 	</Grid>
 </Window>

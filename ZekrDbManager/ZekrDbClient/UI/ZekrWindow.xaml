@@ -13,7 +13,7 @@
         DataContext="{Binding RelativeSource={RelativeSource Self}}"
         mc:Ignorable="d"
         Title="مشاهده ذکر" Height="800" Width="1500" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft">
-	<Grid>
+	<Grid Name="grdMain">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="Auto"/>
 			<ColumnDefinition Width="Auto"/>
@@ -138,6 +138,7 @@
 			</Grid.ColumnDefinitions>
 			<Button Content="ذخیره" Click="SaveButtonClick" Margin="5" Grid.Column="1" MinWidth="70" Style="{StaticResource AccentButtonStyle}" />
 			<Button Content="انصراف" Click="CancelButtonClick" Margin="5" Grid.Column="2" MinWidth="70" Style="{StaticResource AccentButtonStyle}" />
+			<Slider Name="Scaler" HorizontalAlignment="Left" Minimum="1" Maximum="1.7" Margin="10,5"  VerticalAlignment="Bottom"  Width="120" ValueChanged="Scaler_ValueChanged"/>
 		</Grid>
 	</Grid>
 

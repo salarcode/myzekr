@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Media;
 
 namespace ZekrDbClient
 {
@@ -15,6 +16,11 @@ namespace ZekrDbClient
 		private void Window_Loaded(object sender, RoutedEventArgs e)
 		{
 			this.WindowState = WindowState.Maximized;
+		}
+
+		private void sliderScaler_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+		{
+			zekrIndex.Scale = e.NewValue;
 		}
 	}
 }
