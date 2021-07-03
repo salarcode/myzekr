@@ -23,7 +23,7 @@
 	"theme_color": "#dae6d8",
 	"background_color": "#ffffff",
 	"display": "standalone",
-	"orientation": "portrait-secondary",
+	"orientation": "any",
 	"categories": ["books", "education", "lifestyle"],
 	"lang": "fa",
 	"dir": "rtl",
