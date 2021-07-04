@@ -1,3 +1,4 @@
+import './FavoritesPage.scss';
 import { AnyAction } from 'redux';
 import React, { FC, useEffect, useState } from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
@@ -5,7 +6,6 @@ import { ThunkDispatch } from 'redux-thunk';
 import { AppSettings } from '../../services/Settings/models/AppSettings';
 import { readSettingsActionCreator, saveSettingsActionCreator } from '../../store/Actions/SettingsActions';
 import { AppState } from '../../store/store';
-import './FavoritesPage.scss';
 import { connect } from 'react-redux';
 import { ZekrListSearchable } from '../../containers/ZekrListSearchable/ZekrListSearchable';
 import { BackButton } from '../../components/BackButton/BackButton';

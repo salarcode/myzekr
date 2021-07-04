@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { BackButton } from '../../components/BackButton/BackButton';
 import { CategoryContainer } from '../../containers/CategoryContainer/CategoryContainer';
 import { PageMeta } from '../../containers/PageMeta/PageMeta';
+import ZekrListFavorites from '../../containers/ZekrListFavorites/ZekrListFavorites';
 import './HomePage.scss';
 
 export const HomePage: FC = () => {
@@ -59,6 +60,7 @@ export const HomePage: FC = () => {
 					<CategoryContainer />
 				</div>
 			</section>
+			<ZekrListFavorites sectionTitle="⭐ لیست علاقه مندی هایتان" />
 		</div>
 	);
 };

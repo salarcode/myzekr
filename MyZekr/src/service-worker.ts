@@ -24,6 +24,7 @@ var precacheManifest: Array<PrecacheEntry | string> = [];
 precacheManifest = precacheManifest.concat(self.__WB_MANIFEST);
 
 precacheManifest.push({ url: '/assets/fonts/Vazir.woff2' });
+precacheManifest.push({ url: '/assets/fonts/Vazir-Bold.woff2' });
 precacheManifest.push({ url: '/assets/fonts/Parastoo.woff2' });
 precacheManifest.push({ url: '/assets/webfonts/fa-solid-900.woff2' });
 

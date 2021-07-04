@@ -15,7 +15,13 @@ interface Props {
 }
 
 export const ErrorMessage: FC<Props> = ({ message, retry, retryFunction }) => {
-	message = message || 'مشکلی در دریافت یا نمایش اطلاعات پیش آمده است';
+	if (!message) {
+		if (navigator.onLine) {
+			message = 'مشکلی در دریافت یا نمایش اطلاعات پیش آمده است';
+		} else {
+			message = 'لطفا اتصال اینترنت خود را بررسی کنید. مشکلی در دریافت یا نمایش اطلاعات پیش آمده است.';
+		}
+	}
 
 	function onReloadPage() {
 		window.location.reload();

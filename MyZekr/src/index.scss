@@ -913,6 +913,7 @@ BLOCK
 		&.button-link-more {
 			flex-grow: 0;
 			margin-right: auto;
+			max-width: 150px;
 		}
 		&:focus {
 			border-color: #7eb09f;
@@ -935,12 +936,29 @@ BLOCK
 		user-select: none;
 		transition: all 0.5s ease;
 	}
+	&.item-list-summary {
+		justify-content: flex-start;
+		.item-button {
+			flex-grow: 1;
+			flex-shrink: 0;
+			width: auto;
+			padding-left: 10px;
+		}
+	}
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 600px) {
 	.item-list {
 		.item-button {
 			max-width: 250px;
+		}
+		&.item-list-summary {
+			.item-button {
+				max-width: 450px;
+			}
+			&.button-link-more {
+				max-width: 150px;
+			}
 		}
 	}
 }
