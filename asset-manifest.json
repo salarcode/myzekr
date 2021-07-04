@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.97df2e62.chunk.css",
-    "main.js": "/static/js/main.324406ee.chunk.js",
-    "main.js.map": "/static/js/main.324406ee.chunk.js.map",
+    "main.css": "/static/css/main.cc53a746.chunk.css",
+    "main.js": "/static/js/main.6150cfce.chunk.js",
+    "main.js.map": "/static/js/main.6150cfce.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.56c48bfc.js",
     "runtime-main.js.map": "/static/js/runtime-main.56c48bfc.js.map",
-    "static/js/2.6ecb8afe.chunk.js": "/static/js/2.6ecb8afe.chunk.js",
-    "static/js/2.6ecb8afe.chunk.js.map": "/static/js/2.6ecb8afe.chunk.js.map",
+    "static/js/2.c1bccc50.chunk.js": "/static/js/2.c1bccc50.chunk.js",
+    "static/js/2.c1bccc50.chunk.js.map": "/static/js/2.c1bccc50.chunk.js.map",
     "index.html": "/index.html",
     "service-worker.js": "/service-worker.js",
     "service-worker.js.map": "/service-worker.js.map",
-    "static/css/main.97df2e62.chunk.css.map": "/static/css/main.97df2e62.chunk.css.map",
-    "static/js/2.6ecb8afe.chunk.js.LICENSE.txt": "/static/js/2.6ecb8afe.chunk.js.LICENSE.txt",
+    "static/css/main.cc53a746.chunk.css.map": "/static/css/main.cc53a746.chunk.css.map",
+    "static/js/2.c1bccc50.chunk.js.LICENSE.txt": "/static/js/2.c1bccc50.chunk.js.LICENSE.txt",
     "static/media/add-favourite.8efecb08.svg": "/static/media/add-favourite.8efecb08.svg",
     "static/media/add.067491a9.svg": "/static/media/add.067491a9.svg",
     "static/media/arrow-up.f2806314.svg": "/static/media/arrow-up.f2806314.svg",
@@ -19,14 +19,15 @@
     "static/media/home.0657de42.svg": "/static/media/home.0657de42.svg",
     "static/media/islam-star.5d59afeb.svg": "/static/media/islam-star.5d59afeb.svg",
     "static/media/index.scss": "/static/media/line-seperator.b100db4d.svg",
+    "static/media/more-rewind.d40e2ce2.svg": "/static/media/more-rewind.d40e2ce2.svg",
     "static/media/remove.46c536a6.svg": "/static/media/remove.46c536a6.svg",
     "static/media/star.a2ed7ca2.svg": "/static/media/star.a2ed7ca2.svg",
     "static/media/tasbih.39c2a00a.svg": "/static/media/tasbih.39c2a00a.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.56c48bfc.js",
-    "static/js/2.6ecb8afe.chunk.js",
-    "static/css/main.97df2e62.chunk.css",
-    "static/js/main.324406ee.chunk.js"
+    "static/js/2.c1bccc50.chunk.js",
+    "static/css/main.cc53a746.chunk.css",
+    "static/js/main.6150cfce.chunk.js"
   ]
 }
