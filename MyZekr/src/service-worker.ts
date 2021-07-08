@@ -14,6 +14,7 @@ import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { PrecacheEntry } from 'workbox-precaching/_types';
 import { registerRoute } from 'workbox-routing';
 import { CacheFirst, NetworkFirst, StaleWhileRevalidate } from 'workbox-strategies';
+import { CacheableResponsePlugin } from 'workbox-cacheable-response';
 
 declare const self: ServiceWorkerGlobalScope;
 
@@ -69,7 +70,15 @@ registerRoute(({ url }) => url.pathname.endsWith('.json'), new NetworkFirst({ ca
 // Cache external styles and scripts
 registerRoute(
 	({ request }) => request.destination === 'script' || request.destination === 'style',
-	new StaleWhileRevalidate({ cacheName: 'myzekr-cdn' }),
+	new StaleWhileRevalidate({
+		cacheName: 'myzekr-cdn',
+		plugins: [
+			// Force Caching of Opaque Responses
+			new CacheableResponsePlugin({
+				statuses: [0, 200],
+			}),
+		],
+	}),
 );
 
 // Cache the fonts files from client first
