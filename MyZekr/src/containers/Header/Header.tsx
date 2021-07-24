@@ -7,7 +7,7 @@ export const Header: FC = () => {
 	return (
 		<div className="site-header">
 			<button
-				className="button button-subtle header-icon-button"
+				className="button-simple button-subtle header-icon-button"
 				type="button"
 				data-bs-toggle="offcanvas"
 				data-bs-target="#sidebar-app-drawer"
@@ -19,7 +19,7 @@ export const Header: FC = () => {
 				<h2 className="page-title">مرجع دعاها و اذکار</h2>
 			</Link>
 			<button
-				className="button button-subtle header-icon-button"
+				className="button-simple button-subtle header-icon-button"
 				type="button"
 				data-bs-toggle="modal"
 				data-bs-target="#site-search-modal"

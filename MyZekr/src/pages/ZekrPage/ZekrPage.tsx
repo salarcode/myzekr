@@ -70,7 +70,7 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 		doGetZekr();
 
 		detectPositionSticky('.sticky-inline-header');
-		detectPositionSticky('.zekr-body-play-voice');
+		detectPositionSticky('.zekr-body-play-buttons');
 	}, [zekrUid, settings, readSettings]);
 
 	function onReturnClick() {
@@ -174,7 +174,7 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 									onClick={openZekrBenefits}
 									type="button"
 									title="فضیلت"
-									className="button mx-2"
+									className="button-simple mx-2"
 									data-bs-toggle="modal"
 									data-bs-target="#zekr-benefits-dialog"
 								>
@@ -229,7 +229,7 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 						</a>
 					</div>
 				))}
-			<div className="zekr-body-play-voice">
+			<div className="zekr-body-play-buttons">
 				{/* <a href="#">
 					<img src="/assets/icons/stop.svg" className="icon-24  link-image" />
 				</a>

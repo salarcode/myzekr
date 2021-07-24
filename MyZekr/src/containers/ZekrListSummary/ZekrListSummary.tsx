@@ -53,7 +53,7 @@ export const ZekrListSummary: FC<Props> = ({
 					);
 				})}
 				{displayMoreButton && (
-					<Link to={moreButtonLink} key={moreButtonLink} className="item-button button-link-more" onClick={onMoreClick}>
+					<Link to={moreButtonLink} key={moreButtonLink} className="item-button item-button-more" onClick={onMoreClick}>
 						{moreButtonImage}
 						{moreButtonText}
 					</Link>

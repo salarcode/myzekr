@@ -1,11 +1,4 @@
-import React, { FC, FormEvent, FormEventHandler, Fragment, KeyboardEventHandler, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { ZekrList } from '../ZekrList/ZekrList';
-import { Zekr, ZekrIndex } from '../../services/Zekr/models/Zekr';
-import { getZekrIndexList } from '../../services/Zekr/ZekrWebService';
-import { ErrorMessage, retryType } from '../../components/ErrorMessage/ErrorMessage';
-import { Loading } from '../../components/Loading/Loading';
-import { searchZekrIndex } from '../../services/Zekr/ZekrSearch';
+import { FC } from 'react';
 
 interface Props {}
 
