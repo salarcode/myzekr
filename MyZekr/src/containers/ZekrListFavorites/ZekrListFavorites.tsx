@@ -52,6 +52,11 @@ const ZekrListFavorites: FC<Props> = ({
 		doGetZekrList();
 	}, []);
 
+	if (settings != null && !settings.homePage.displayFavorites) {
+		// do not render if not enabled
+		return <Fragment />;
+	}
+
 	reloadZekrFavorites();
 
 	function reloadZekrFavorites(forceReload = false) {
