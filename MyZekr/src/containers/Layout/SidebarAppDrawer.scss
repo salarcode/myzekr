@@ -25,4 +25,43 @@
 			margin: 0 0.2rem 0 0.8rem;
 		}
 	}
+	.color-theme-container {
+		margin-top: 10px;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		.color-theme {
+			cursor: pointer;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			display: inline-block;
+			&.selected {
+				border: 2px solid white;
+				box-shadow: 0 0 4px red;
+				&::after {
+					content: '✔';
+					display: block;
+					width: 100%;
+					height: 100%;
+					text-align: center;
+					padding: 0.5rem;
+					font-size: 1.1rem;
+					text-shadow: 0 0 2px white;
+				}
+			}
+			&.default {
+				background-color: #d8f2d3 !important;
+				color: black;
+			}
+			&.brown {
+				background-color: #5b513f !important;
+				color: white;
+			}
+			&.dark {
+				background-color: black !important;
+				color: white;
+			}
+		}
+	}
 }

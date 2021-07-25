@@ -2792,7 +2792,6 @@ body {
 }
 .zekr-line {
     border-color: transparent !important;
-	filter: invert(.5);
 }
 .zekr-body-play-buttons {
     box-shadow: 0px 0px 4px var(--darkreader-bg--zekr-body-play-buttons-shadow) !important;

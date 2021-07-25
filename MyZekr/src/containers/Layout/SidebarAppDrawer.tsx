@@ -30,6 +30,13 @@ const SidebarAppDrawer: FC<Props> = ({ settingsLoading, settings, saveSettings }
 		toggleSidebar();
 		document.getElementById('toggle-shareit-modal')?.click();
 	}
+
+	function applyTheme(name: string) {
+		if (!settings) return;
+		settings.theme.name = name;
+		saveChanges();
+	}
+
 	function saveChanges() {
 		if (settings) saveSettings(settings);
 	}
@@ -59,6 +66,9 @@ const SidebarAppDrawer: FC<Props> = ({ settingsLoading, settings, saveSettings }
 			setDisplayTodaySuggestions(settings.homePage.displayTodaySuggestions);
 		}
 	}
+
+	let themeName = settings?.theme.name;
+	if (themeName === 'Normal') themeName = 'default';
 
 	return (
 		<div
@@ -191,6 +201,24 @@ const SidebarAppDrawer: FC<Props> = ({ settingsLoading, settings, saveSettings }
 						</span>
 						لیست علاقه مندی ها
 					</Link>
+				</div>
+				<hr />
+				<div className="link-item ">
+					<div>رنگ بندی سایت</div>
+					<div className="darkreader color-theme-container">
+						<div
+							onClick={() => applyTheme('default')}
+							className={'color-theme default ' + (themeName === 'default' ? 'selected' : '')}
+						></div>
+						<div
+							onClick={() => applyTheme('brown')}
+							className={'color-theme brown ' + (themeName === 'brown' ? 'selected' : '')}
+						></div>
+						<div
+							onClick={() => applyTheme('dark')}
+							className={'color-theme dark ' + (themeName === 'dark' ? 'selected' : '')}
+						></div>
+					</div>
 				</div>
 				<hr />
 				<div className="link-item ">

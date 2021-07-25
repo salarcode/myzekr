@@ -11,6 +11,7 @@ import { connect } from 'react-redux';
 import SidebarAppDrawer from './SidebarAppDrawer';
 import { AboutDialog } from '../AboutDialog/AboutDialog';
 import { ShareItDialog } from '../ShareItDialog/ShareItDialog';
+import { applyTheme } from '../../common/themeManager';
 
 interface Props {
 	settings?: AppSettings | undefined;
@@ -23,6 +24,10 @@ const Layout: FC<Props> = ({ children, settings, readSettings, settingsLoading =
 		// Warning: this is the only place we load the settings, don't touch!
 		if (readSettings) readSettings();
 	}, [readSettings]);
+
+	if (settings) {
+		applyTheme(settings.theme.name);
+	}
 
 	return (
 		<div className="layout block-container myzekr-layout">

@@ -25,7 +25,7 @@ export function getAppSettingsInitial(): AppSettings {
 		},
 		theme: {
 			isDarkMode: false,
-			name: 'Normal',
+			name: 'default',
 		},
 		userFavorites: [],
 	};
