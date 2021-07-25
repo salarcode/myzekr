@@ -1,0 +1,29 @@
+/* -----------  */
+/* color-theme  */
+#sidebar-app-drawer .color-theme-container .color-theme.selected {
+    border-color: white !important;
+    box-shadow: 0 0 4px red !important;
+}
+
+#sidebar-app-drawer .color-theme-container .color-theme.selected::after {
+    text-shadow: 0 0 2px white !important;
+}
+
+#sidebar-app-drawer .color-theme-container .color-theme.default {
+    background-color: #d8f2d3 !important;
+    color: black !important;
+}
+
+#sidebar-app-drawer .color-theme-container .color-theme.brown {
+    background-color: #5b513f !important;
+    color: white !important;
+}
+
+#sidebar-app-drawer .color-theme-container .color-theme.dark {
+    background-color: black !important;
+    color: white !important;
+}
+
+.theme-dark .zekr-line {
+    filter: invert(.5);
+}
