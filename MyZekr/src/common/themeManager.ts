@@ -48,8 +48,8 @@ function markDarkTheme(isDark: boolean) {
 
 // theme-fixes.css
 function addThemeFixes() {
-	var applied = document.getElementById(themeFixesId);
-	if (applied) return;
+	// need to remove first then add, to keep higher order
+	removeThemeFixes();
 
 	const linkTheme = document.createElement('link');
 	linkTheme.type = 'text/css';
