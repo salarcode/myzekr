@@ -4,6 +4,7 @@ import { BackButton } from '../../components/BackButton/BackButton';
 import { PageMeta } from '../../containers/PageMeta/PageMeta';
 import './ZekrCounter.scss';
 import HomeImage from '../../assets-offline/icons/home.svg';
+import { toPersianNumber } from '../../common/helpers/numbers';
 //import TheIndex from '../../assets-offline/category-index.json';
 
 var zekrClickStatus = false;
@@ -98,7 +99,7 @@ export const ZekrCounter = () => {
 				</div>
 			</div>
 
-			<div className="count mt-3">شمارش: {count ? count : '0'}</div>
+			<div className="count mt-3">شمارش: {toPersianNumber(count ? count : 0)}</div>
 			<button
 				type="button"
 				className="counter-button button-contained"
@@ -121,7 +122,7 @@ export const ZekrCounter = () => {
 			<div className="history mb-2">
 				{countHistory?.length > 0 && (
 					<div>
-						{countHistory?.map((c, i) => <div key={i}>شمارش: {c}</div>).reverse()}
+						{countHistory?.map((c, i) => <div key={i}>شمارش: {toPersianNumber(c)}</div>).reverse()}
 						<button className="button-outlined mt-2" onClick={clearHistory}>
 							حذف تاریخچه
 						</button>
