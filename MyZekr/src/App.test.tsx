@@ -4,7 +4,7 @@ import App from './App';
 
 test('renders learn react link', () => {
 	const { getAllByText } = render(<App />);
-	const linkElements = getAllByText(/مرجع دعاها و اذکار/i);
+	const linkElements = getAllByText(/دعاها و اذکار/i);
 	for (const link of linkElements) {
 		expect(link).toBeInTheDocument();
 	}

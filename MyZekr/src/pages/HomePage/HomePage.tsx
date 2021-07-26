@@ -8,12 +8,12 @@ import './HomePage.scss';
 export const HomePage: FC = () => {
 	return (
 		<div>
-			<PageMeta title="خوش آمدید" description="سایت مرجع دعاها و اذکار" />
+			<PageMeta title="خوش آمدید" description="سایت دعاها و اذکار" />
 			<main className="text-center">
 				<h2 className="fs-6">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</h2>
 				<br />
 				<h1 className="fs-6">
-					<strong>به سایت مرجع دعاها و اذکار خوش آمدید</strong>
+					<strong>به سایت دعاها و اذکار خوش آمدید</strong>
 				</h1>
 				<p className="text-start">
 					در اینجا سعی می کنیم که مرجعی برای دعاها، اذکار و اعمال عبادی رو جمع کنیم. به امید داشتن منبعی تقریبا کامل.

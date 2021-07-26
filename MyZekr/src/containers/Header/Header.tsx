@@ -16,7 +16,7 @@ export const Header: FC = () => {
 				<i className="fas fa-bars"></i>
 			</button>
 			<Link to="/" aria-label="صفحه اصلی">
-				<h2 className="page-title">مرجع دعاها و اذکار</h2>
+				<h2 className="page-title">دعاها و اذکار</h2>
 			</Link>
 			<button
 				className="button-simple button-subtle header-icon-button"
