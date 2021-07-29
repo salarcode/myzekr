@@ -5,6 +5,7 @@ interface Props {
 	unsafeHtmlText: string;
 	styles?: CSSProperties;
 	colouredDiacritics?: boolean;
+	languageKey?: string;
 }
 
 function removeAccent(str: string): string {
@@ -46,10 +47,10 @@ function removeAccent(str: string): string {
  * Display accent chars in different color
  * @param param0 the html text
  */
-export const DiacriticsText: FC<Props> = ({ unsafeHtmlText, styles, colouredDiacritics }) => {
+export const DiacriticsText: FC<Props> = ({ unsafeHtmlText, styles, colouredDiacritics, languageKey }) => {
 	if (colouredDiacritics)
 		return (
-			<div className="diacritics-text" style={styles}>
+			<div className="diacritics-text" style={styles} lang={languageKey}>
 				<div
 					className="diacritics-org"
 					dangerouslySetInnerHTML={{
@@ -66,7 +67,7 @@ export const DiacriticsText: FC<Props> = ({ unsafeHtmlText, styles, colouredDiac
 		);
 	else
 		return (
-			<div className="diacritics-text" style={styles}>
+			<div className="diacritics-text" style={styles} lang={languageKey}>
 				<div
 					className="diacritics-simple"
 					dangerouslySetInnerHTML={{

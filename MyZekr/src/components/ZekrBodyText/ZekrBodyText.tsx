@@ -47,11 +47,13 @@ export const ZekrBodyText: FC<Props> = ({ body, lineSeparator = true, settings }
 						unsafeHtmlText={body.body}
 						styles={textCss}
 						colouredDiacritics={settings?.colouredDiacritics}
+						languageKey={body.languageKey}
 					/>
 				) : (
 					<div
 						className="zekr-body-text"
 						style={textTranslationCss}
+						lang={body.languageKey}
 						dangerouslySetInnerHTML={{
 							__html: body.body,
 						}}
