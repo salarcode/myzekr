@@ -52,7 +52,7 @@ export const ScrollTop: FC = () => {
 	}
 
 	return (
-		<a href="#top" onClick={onScrollClick} id="scroll-back-to-top" className="opacity-0">
+		<a href="#top" onClick={onScrollClick} id="scroll-back-to-top">
 			<img src={ArrowUpImage} alt="⬆" className="icon-28 link-image" />
 		</a>
 	);
