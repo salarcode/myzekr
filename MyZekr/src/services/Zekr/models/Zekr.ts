@@ -15,7 +15,7 @@ interface ZekrBase {
 	parents?: Uid[];
 	tags?: Uid[];
 	zekrTimes?: ZekrTime[];
-	zekrCounter?: ZekrCounter[];
+	zekrCounts?: ZekrCounter[];
 	showZekrCounter?: boolean;
 }
 

@@ -19,7 +19,7 @@ namespace ZekrDb.Data.Models.Zekr
 		private List<string> _parents;
 		private List<string> _tags;
 		private List<ZekrTime> _zekrTimes;
-		private List<ZekrCounter> _zekrCounter;
+		private List<ZekrCounter> _zekrCounts;
 		private bool? _showZekrCounter;
 
 		[Display(Name = "UID")]
@@ -118,10 +118,10 @@ namespace ZekrDb.Data.Models.Zekr
 
 		[Browsable(false)]
 		[Display(Name = "ذکر شمار")]
-		public List<ZekrCounter> zekrCounter
+		public List<ZekrCounter> zekrCounts
 		{
-			get => _zekrCounter;
-			set { _zekrCounter = value; OnPropertyChanged(); }
+			get => _zekrCounts;
+			set { _zekrCounts = value; OnPropertyChanged(); }
 		}
 
 		protected override BaseModelValidationResult ValidateInternal()

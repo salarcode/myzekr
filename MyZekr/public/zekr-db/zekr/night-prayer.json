@@ -148,5 +148,35 @@
     "AfterMidnight",
     "NightPrayer"
   ],
-  "showZekrCounter": true
+  "showZekrCounter": true,
+  "zekrCounts":[
+    {
+      "name": "اَللّهُمَّ اِغْفِر...",
+      "count": 40
+    },
+    {
+      "name": "استغفار",
+      "count": 70
+    },
+    {
+      "name": "هذا مَقامُ...",
+      "count": 7
+    },
+    {
+      "name": "اَلْعَفو",
+      "count": 300
+    },
+    {
+      "name": "الله اکبر",
+      "count": 34
+    },
+    {
+      "name": "الحمد لله",
+      "count": 33
+    },
+    {
+      "name": "سبحان الله",
+      "count": 33
+    }
+  ]
 }

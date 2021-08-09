@@ -250,7 +250,7 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 			</div>
 			{zekr.benefits && zekr.benefits.length > 0 && zekrBenefitsDialog()}
 			{zekrCounterVisible && showZekrCounter && (
-				<ZekrInlineCounter zekrCounts={zekr.zekrCounter} onCloseRequested={onCloseZekrCounter} />
+				<ZekrInlineCounter zekrCounts={zekr.zekrCounts} onCloseRequested={onCloseZekrCounter} />
 			)}
 		</div>
 	);

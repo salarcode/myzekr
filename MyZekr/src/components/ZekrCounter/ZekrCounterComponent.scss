@@ -1,0 +1,74 @@
+.zekr-counter-box {
+	text-align: center;
+	.header {
+		font-size: 2em;
+		margin: 4px;
+	}
+	.count {
+		margin: 0.5em 0.5em 0.3em;
+		font-size: 1.3em;
+	}
+	.counter-button {
+		width: 50%;
+		max-height: 140px;
+		min-height: 120px;
+		height: 30vh;
+		font-size: 2em;
+	}
+	.history {
+		text-align: start;
+	}
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	.zekr-counter-box {
+		.counter-button {
+			width: 80%;
+			font-size: 1.2em;
+		}
+		&.zekr-counter-inline {
+			.counter-button {
+				height: 20vh;
+			}
+		}
+	}
+}
+/* Medium devices (landscape tablets, 768px and down) */
+@media only screen and (max-width: 768px) and (min-width: 600px) {
+	.zekr-counter-box {
+		.counter-button {
+			width: 70%;
+			font-size: 1.8em;
+		}
+	}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
+
+.zekr-defined-counts {
+	text-align: start;
+	font-size: 1em;
+	white-spacex: nowrap;
+	overflow: hidden;
+	.badge {
+		background-color: var(--breadcrumb-item-back);
+		border: 1px solid var(--breadcrumb-item-border) !important;
+		border-style: solid;
+		padding: 0.6em 0.7em;
+		margin-left: 0.8em;
+		cursor: pointer;
+		max-width: 110px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		&.active {
+			border-color: var(--search-input-text-back2) !important;
+			background-color: var(--content-layout-back2);
+		}
+	}
+}
