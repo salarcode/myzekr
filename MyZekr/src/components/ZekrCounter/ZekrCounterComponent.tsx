@@ -1,5 +1,5 @@
 import './ZekrCounterComponent.scss';
-import React, { FC, MouseEventHandler, useEffect, useState } from 'react';
+import React, { FC, MouseEventHandler, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Zekr } from '../../services/Zekr/models/Zekr';
 import { ZekrCounter } from '../../services/Zekr/models/ZekrCounter';
@@ -20,7 +20,7 @@ var zekrClickStatus = false;
 var zekrVibrateWarmed = false;
 
 export const ZekrCounterComponent: FC<Props> = ({ zekrCounts, onCloseRequested }) => {
-	const [count, setCount] = useState<number>(0);
+	let [count, setCount] = useState<number>(0);
 	const [countHistory, setCountHistory] = useState<number[]>([]);
 	const [activeCountsDetail, setActiveCountsDetail] = useState<CountsDetail | undefined>(undefined);
 	const [zekrCountsDetails, setZekrCountsDetails] = useState<CountsDetail[]>([]);
@@ -65,12 +65,13 @@ export const ZekrCounterComponent: FC<Props> = ({ zekrCounts, onCloseRequested }
 	function increaseCount() {
 		var batchStatus = increaseCountBatch();
 
-		if (batchStatus.resetCount) {
-			resetCount(true);
-		} else {
-			setCount(count + 1);
-		}
+		setCount(count + 1);
+		count += 1;
 
+		if (batchStatus.resetCount) {
+			debugger;
+			resetCount(true);
+		}
 		if (!batchStatus.isVibrated) {
 			vibrateShort();
 		}
@@ -78,6 +79,8 @@ export const ZekrCounterComponent: FC<Props> = ({ zekrCounts, onCloseRequested }
 	function decreaseCount() {
 		decreaseCountBatch();
 		setCount(count - 1);
+		count -= 1;
+
 		vibrateLong();
 	}
 
@@ -85,6 +88,8 @@ export const ZekrCounterComponent: FC<Props> = ({ zekrCounts, onCloseRequested }
 		if (count) countHistory.push(count);
 		resetCountBatch();
 		setCount(0);
+		count = 0;
+
 		if (dontVibrate !== true) {
 			vibrateLong();
 		}
