@@ -27,3 +27,6 @@
 .theme-dark .zekr-line {
     filter: invert(.5);
 }
+.theme-dark .diacritics-text .diacritics-org{
+    color: #d47b7b !important
+}
