@@ -1,0 +1,18 @@
+/* Medium devices (320px — 480px: Mobile devices.) */
+@media only screen and (min-width: 481px) {
+	.zekr-body-stacked {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-around;
+		text-align: justify !important;
+
+		> .zekr-body-translation-source {
+			width: 45%;
+			margin-top: 0;
+		}
+		> .zekr-body-translation {
+			width: 45%;
+			margin-top: 0 !important;
+		}
+	}
+}

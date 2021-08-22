@@ -9,6 +9,7 @@ import { AppSettings } from '../../services/Settings/models/AppSettings';
 import { readSettingsActionCreator, saveSettingsActionCreator } from '../../store/Actions/SettingsActions';
 import { AnyAction } from 'redux';
 import TasbihImage from '../../assets-offline/icons/tasbih.svg';
+import { canStackZekrBody } from '../../common/helpers/mediaQuery';
 
 interface Props {
 	settings?: AppSettings;
@@ -42,6 +43,7 @@ const SidebarAppDrawer: FC<Props> = ({ settingsLoading, settings, saveSettings }
 	}
 	const [colouredDiacritics, setColouredDiacritics] = useState<boolean>(settings?.colouredDiacritics || true);
 	const [enableTranslations, setEnableTranslations] = useState<boolean>(settings?.enableTranslations || true);
+	const [stackedZekrBody, setStackedZekrBody] = useState<boolean>(settings?.textSettings.stackedZekrBody || false);
 	const [displayFavorites, setDisplayFavorites] = useState<boolean>(settings?.homePage.displayFavorites || true);
 	const [displayTodayPlan, setDisplayTodayPlan] = useState<boolean>(settings?.homePage.displayTodayPlan || true);
 	const [displayTodaySuggestions, setDisplayTodaySuggestions] = useState<boolean>(
@@ -55,6 +57,9 @@ const SidebarAppDrawer: FC<Props> = ({ settingsLoading, settings, saveSettings }
 		}
 		if (enableTranslations != settings.enableTranslations) {
 			setEnableTranslations(settings.enableTranslations);
+		}
+		if (stackedZekrBody != settings?.textSettings.stackedZekrBody) {
+			setStackedZekrBody(settings.textSettings.stackedZekrBody);
 		}
 		if (displayFavorites != settings.homePage.displayFavorites) {
 			setDisplayFavorites(settings.homePage.displayFavorites);
@@ -127,6 +132,25 @@ const SidebarAppDrawer: FC<Props> = ({ settingsLoading, settings, saveSettings }
 					/>
 					<label className="form-check-label" htmlFor="chkEnableTranslations">
 						نمایش ترجمه
+					</label>
+				</div>
+				<div className="form-check form-switch">
+					<input
+						className="form-check-input"
+						type="checkbox"
+						id="chkStackedZekrBody"
+						disabled={!canStackZekrBody()}
+						checked={stackedZekrBody}
+						onChange={(e) => {
+							if (settings) {
+								settings.textSettings.stackedZekrBody = e.currentTarget.checked;
+								saveChanges();
+							}
+							setStackedZekrBody(e.currentTarget.checked);
+						}}
+					/>
+					<label className="form-check-label" htmlFor="chkStackedZekrBody">
+						<i className="fas fa-columns"></i> متن و ترجمه افقی
 					</label>
 				</div>
 				<hr />

@@ -22,6 +22,7 @@ export function getAppSettingsInitial(): AppSettings {
 			bodyFont: 'Parastoo',
 			bodyFontSize: '1.2rem',
 			benefitsFontSize: '1rem',
+			stackedZekrBody: false,
 		},
 		theme: {
 			isDarkMode: false,
@@ -45,6 +46,7 @@ interface BodyTextSettings {
 	alternateBodyFont: string;
 	alternateBodyFontSize: string;
 	benefitsFontSize: string;
+	stackedZekrBody: boolean;
 }
 interface UserFavoriteItem {
 	zekrUid: string;

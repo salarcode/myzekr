@@ -33,6 +33,7 @@ export const ZekrBodyText: FC<Props> = ({ body, lineSeparator = true, settings }
 	function optionalButtonClick() {
 		setDisplayOptional(false);
 	}
+	const displayTranslation = body.translationBody != null && settings?.enableTranslations === true;
 
 	return (
 		<div className="zekr-body">
@@ -41,26 +42,34 @@ export const ZekrBodyText: FC<Props> = ({ body, lineSeparator = true, settings }
 					{body.optionalText || '...'}
 				</button>
 			)}
-			<div className="zekr-body-wrapper" style={displayOptional ? { display: 'none' } : {}}>
-				{body.languageKey === useDiacriticsTextLang ? (
-					<DiacriticsText
-						unsafeHtmlText={body.body}
-						styles={textCss}
-						colouredDiacritics={settings?.colouredDiacritics}
-						languageKey={body.languageKey}
-					/>
-				) : (
-					<div
-						className="zekr-body-text"
-						style={textTranslationCss}
-						lang={body.languageKey}
-						dangerouslySetInnerHTML={{
-							__html: body.body,
-						}}
-					/>
-				)}
-
-				<Conditional condition={body.translationBody != null && settings?.enableTranslations === true}>
+			<div
+				className={
+					settings?.textSettings.stackedZekrBody && displayTranslation
+						? 'zekr-body-wrapper zekr-body-stacked'
+						: 'zekr-body-wrapper'
+				}
+				style={displayOptional ? { display: 'none' } : {}}
+			>
+				<div className={displayTranslation ? 'zekr-body-translation-source' : ''}>
+					{body.languageKey === useDiacriticsTextLang ? (
+						<DiacriticsText
+							unsafeHtmlText={body.body}
+							styles={textCss}
+							colouredDiacritics={settings?.colouredDiacritics}
+							languageKey={body.languageKey}
+						/>
+					) : (
+						<div
+							className="zekr-body-text"
+							style={textTranslationCss}
+							lang={body.languageKey}
+							dangerouslySetInnerHTML={{
+								__html: body.body,
+							}}
+						/>
+					)}
+				</div>
+				<Conditional condition={displayTranslation}>
 					<div className="zekr-body-alternative zekr-body-translation">
 						<ZekrBodyText body={body.translationBody} lineSeparator={false} settings={settings} />
 					</div>
