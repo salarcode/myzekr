@@ -1,0 +1,19 @@
+[
+	{
+	  "zekrUid": "ziyarat-ashura",
+	  "voices": [
+		{
+			"uid": "ziarat-ashura-farahmand",
+			"name":"استاد فرهمند (15.34 MB)",
+			"file":"ziarat-ashura-farahmand.mp3",
+			"fileSize": 16082714
+		},
+		{
+			"uid": "ziarat-ashura-mehdi-samavati",
+			"name":"حاج مهدی سماواتی (3.54 MB)",
+			"file":"ziarat-ashura-mehdi-samavati-p30download.com.mp3",
+			"fileSize": 3713480
+		}
+	  ]
+	}
+]
