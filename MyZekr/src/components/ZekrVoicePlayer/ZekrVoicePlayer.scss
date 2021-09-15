@@ -1,0 +1,15 @@
+.zekr-body-play-buttons {
+	&.voice-player {
+		.range {
+			width: 100%;
+		}
+	}
+	.voice-player-times {
+		position: absolute;
+		left: 10px;
+	}
+	.voice-player-voice-name {
+		position: absolute;
+		right: 10px;
+	}
+}

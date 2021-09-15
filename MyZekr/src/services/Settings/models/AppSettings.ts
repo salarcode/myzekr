@@ -5,6 +5,7 @@ export interface AppSettings {
 	theme: AppThemeSettings;
 	textSettings: BodyTextSettings;
 	userFavorites: UserFavoriteItem[];
+	selectedVoices: VoiceSettings[];
 }
 
 export function getAppSettingsInitial(): AppSettings {
@@ -29,6 +30,7 @@ export function getAppSettingsInitial(): AppSettings {
 			name: 'default',
 		},
 		userFavorites: [],
+		selectedVoices: [],
 	};
 }
 interface HomePageSettings {
@@ -50,4 +52,8 @@ interface BodyTextSettings {
 }
 interface UserFavoriteItem {
 	zekrUid: string;
+}
+interface VoiceSettings {
+	zekrUid: string;
+	voiceFile: string;
 }

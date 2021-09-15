@@ -10,6 +10,7 @@ namespace ZekrDb.Data.Models.Zekr
 		private ObservableCollection<ZekrBody> _zekrBody;
 		private ObservableCollection<ZekrBody> _benefits = new ObservableCollection<ZekrBody>();
 		private ObservableCollection<ZekrReferenceSource> _source = new ObservableCollection<ZekrReferenceSource>();
+		private ObservableCollection<ZekrVoice> _zekrVoices;
 
 		public ObservableCollection<ZekrBody> zekrBody
 		{
@@ -27,6 +28,12 @@ namespace ZekrDb.Data.Models.Zekr
 		{
 			get => _source;
 			set { _source = value; OnPropertyChanged(); }
+		}
+
+		public ObservableCollection<ZekrVoice> zekrVoices
+		{
+			get => _zekrVoices;
+			set { _zekrVoices = value; OnPropertyChanged(); }
 		}
 
 		protected override BaseModelValidationResult ValidateInternal()

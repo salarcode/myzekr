@@ -24,6 +24,7 @@ import { ScrollTop } from '../../components/ScrollTop/ScrollTop';
 import HomeImage from '../../assets-offline/icons/home.svg';
 import IslamStarImage from '../../assets-offline/icons/islam-star.svg';
 import TasbihImage from '../../assets-offline/icons/tasbih.svg';
+import { ZekrVoicePlayer } from '../../components/ZekrVoicePlayer/ZekrVoicePlayer';
 
 interface params {
 	zekrUid: string;
@@ -39,6 +40,7 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 	const [loading, setLoading] = useState<boolean>(true);
 	const [categories, setCategories] = useState<ZekrCategory[] | undefined>();
 	const [benefitsOpen, setBenefitsOpen] = useState<boolean>(false);
+	const [voicePlayerOpen, setVoicePlayerOpen] = useState<boolean>(false);
 	const [zekrCounterVisible, setZekrCounterVisible] = useState(false);
 
 	var zekrUid = match.params.zekrUid;
@@ -92,6 +94,12 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 	}
 	function onCloseZekrCounter() {
 		setZekrCounterVisible(false);
+	}
+	function onVoicePlayerOpen() {
+		setVoicePlayerOpen(true);
+	}
+	function onVoicePlayerClose() {
+		setVoicePlayerOpen(false);
 	}
 
 	let benefitsCss = {};
@@ -230,17 +238,23 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 					</div>
 				))}
 			<div className="zekr-body-play-buttons">
-				{/* <a href="#">
-					<img src="/assets/icons/stop.svg" className="icon-24  link-image" />
-				</a>
-				<a href="#">
-					<img src="/assets/icons/play-button.svg" className="icon-28 link-image" />
-				</a>
-				<a href="#">
-					<img src="/assets/icons/microphone.svg" className="icon-20 link-image" />
-				</a> */}
+				{voicePlayerOpen && <ZekrVoicePlayer zekr={zekr} settings={settings} />}
 				<ScrollTop />
 				<TextZoomButtons />
+				{zekr.zekrVoices && zekr.zekrVoices.length > 0 && (
+					<Fragment>
+						{voicePlayerOpen && (
+							<a href="#stop" onClick={onVoicePlayerClose}>
+								<img src="/assets/icons/stop.svg" className="icon-28 link-image" alt="⏹" />
+							</a>
+						)}
+						{!voicePlayerOpen && (
+							<a href="#play" onClick={onVoicePlayerOpen}>
+								<img src="/assets/icons/play-button.svg" className="icon-28 link-image" alt="▶" />
+							</a>
+						)}
+					</Fragment>
+				)}
 				<BookmarkZekrButton zekr={zekr} />
 				{showZekrCounter && (
 					<a href="#zekr-counter" onClick={onShowZekrCounter} title="ذکر شمار">

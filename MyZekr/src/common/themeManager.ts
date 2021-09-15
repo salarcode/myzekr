@@ -3,7 +3,7 @@ let appliedThemeName = '';
 const themeFixesId = 'theme-fixes-reset';
 
 export function applyTheme(themeName: string) {
-	if (themeName == appliedThemeName) return;
+	if (themeName === appliedThemeName) return;
 
 	if (appliedThemeId) {
 		var applied = document.getElementById(appliedThemeId);

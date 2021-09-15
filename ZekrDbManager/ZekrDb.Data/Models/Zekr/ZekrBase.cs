@@ -21,6 +21,7 @@ namespace ZekrDb.Data.Models.Zekr
 		private List<ZekrTime> _zekrTimes;
 		private List<ZekrCounter> _zekrCounts;
 		private bool? _showZekrCounter;
+		private bool? _hasVoice;
 
 		[Display(Name = "UID")]
 		public string uid
@@ -122,6 +123,17 @@ namespace ZekrDb.Data.Models.Zekr
 		{
 			get => _zekrCounts;
 			set { _zekrCounts = value; OnPropertyChanged(); }
+		}
+
+		/// <summary>
+		/// nullable
+		/// </summary>
+		[Display(Name = "صوت دارد")]
+		[DisplayName("صوت دارد")]
+		public bool? hasVoice
+		{
+			get => _hasVoice;
+			set { _hasVoice = value; OnPropertyChanged(); }
 		}
 
 		protected override BaseModelValidationResult ValidateInternal()

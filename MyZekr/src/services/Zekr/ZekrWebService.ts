@@ -3,6 +3,7 @@ import { retrieveCacheItem, saveCacheItem } from '../MemoryCache';
 import { Uid } from './models/Uid';
 import { Zekr, ZekrIndex } from './models/Zekr';
 import { ZekrCategory } from './models/ZekrCategory';
+import { ZekrVoiceIndex } from './models/ZekrVoiceIndex';
 
 /** The base url for Json data could be any CDN */
 const siteBaseUrl = '';
@@ -197,6 +198,33 @@ export function getZekrIndexList(): Promise<ZekrIndex[] | undefined> {
 	let url = `${siteBaseUrl}/zekr-db/${keyName}.json`;
 	return new Promise((resolve, reject) => {
 		webJsonRequestXhr<undefined, ZekrIndex[]>({
+			url: url,
+			timeout: defaultWebRequestTimeout,
+		})
+			.then((response) => {
+				var value = response.parsedBody;
+				if (value) {
+					saveCacheItem(keyName, value);
+				}
+				resolve(value);
+			})
+			.catch((err) => {
+				reject(err);
+			});
+	});
+}
+
+export function getZekrVoiceIndexList(): Promise<ZekrVoiceIndex[] | undefined> {
+	let keyName = `zekr-voice-index`;
+	let cachedItem = retrieveCacheItem<ZekrVoiceIndex[]>(keyName);
+	if (cachedItem) {
+		// retrieved from cache
+		return Promise.resolve(cachedItem);
+	}
+
+	let url = `${siteBaseUrl}/zekr-db/${keyName}.json`;
+	return new Promise((resolve, reject) => {
+		webJsonRequestXhr<undefined, ZekrVoiceIndex[]>({
 			url: url,
 			timeout: defaultWebRequestTimeout,
 		})

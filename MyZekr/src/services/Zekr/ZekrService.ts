@@ -9,6 +9,10 @@ import {
 	getWebZekrCategoryList as getWebZekrParentCategoryList,
 } from './ZekrWebService';
 
+export function getZekrVoiceFileUrl(filename: string): string {
+	return `/zekr-db/zekr-voice/${filename}`;
+}
+
 export function getZekrByUid(uid: string): Promise<Zekr | undefined> {
 	return getWebZekrByUid(uid);
 }

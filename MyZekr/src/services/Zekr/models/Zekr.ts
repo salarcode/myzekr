@@ -3,6 +3,7 @@ import { ZekrBody } from './ZekrBody';
 import { ZekrCounter } from './ZekrCounter';
 import { ZekrReferenceSource } from './ZekrReferenceSource';
 import { ZekrTime } from './ZekrTime';
+import { ZekrVoice } from './ZekrVoice';
 
 interface ZekrBase {
 	uid: string;
@@ -25,6 +26,7 @@ export interface Zekr extends ZekrBase {
 	zekrBody: ZekrBody[];
 	benefits?: ZekrBody[];
 	source?: ZekrReferenceSource[];
+	zekrVoices: ZekrVoice[];
 }
 
 export interface ZekrMemory extends Zekr {}

@@ -1,7 +1,5 @@
 import './ZekrCounterComponent.scss';
-import React, { FC, MouseEventHandler, useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Zekr } from '../../services/Zekr/models/Zekr';
+import React, { FC, useEffect, useState } from 'react';
 import { ZekrCounter } from '../../services/Zekr/models/ZekrCounter';
 import { toPersianNumber } from '../../common/helpers/numbers';
 import { getNewUid } from '../../common/helpers/uid';
@@ -145,7 +143,7 @@ export const ZekrCounterComponent: FC<Props> = ({ zekrCounts, onCloseRequested }
 		let foundIndex = -1;
 		for (let index = 0; index < zekrCountsDetails.length; index++) {
 			const c = zekrCountsDetails[index];
-			if (c.id == activeCountsDetail.id) {
+			if (c.id === activeCountsDetail.id) {
 				foundIndex = index;
 				break;
 			}
