@@ -19,6 +19,8 @@ export const ZekrVoicePlayer: FC<Props> = ({ zekr, settings }) => {
 	const [player, setPlayer] = useState<ReactPlayer | undefined>();
 	const [played, setPlayed] = useState<string>('0:00');
 	const [duration, setDuration] = useState<string>('0:00');
+	const [error, setError] = useState<string>('');
+	const [buffering, setBuffering] = useState(false);
 
 	if (zekr.zekrVoices && zekr.zekrVoices.length) {
 		if (settings && settings.selectedVoices && settings.selectedVoices.length) {
@@ -52,7 +54,14 @@ export const ZekrVoicePlayer: FC<Props> = ({ zekr, settings }) => {
 		setVoiceName(voice.name);
 	}
 
-	function onPLayerError() {}
+	function onPLayerError() {
+		if (window.navigator.onLine) {
+			setError('خطای دریافت صوت');
+		} else {
+			setError('مشکل اتصال اینترنت');
+		}
+		setBuffering(false);
+	}
 	function onPLayerReady(p: ReactPlayer) {
 		setPlayer(p);
 	}
@@ -73,9 +82,6 @@ export const ZekrVoicePlayer: FC<Props> = ({ zekr, settings }) => {
 		setPlaying(false);
 	}
 	function onPLayerProgress(state: { played: number; playedSeconds: number; loaded: number; loadedSeconds: number }) {
-		console.log(
-			`onPLayerProgress: played: ${state.played}, playedSeconds: ${state.playedSeconds}, loadedSeconds: ${state.loadedSeconds}`,
-		);
 		setPlayPosition(state.playedSeconds);
 		setPlayed(formatTime(state.playedSeconds));
 	}
@@ -93,6 +99,12 @@ export const ZekrVoicePlayer: FC<Props> = ({ zekr, settings }) => {
 			player?.seekTo(position);
 			setPlaying(true);
 		}
+	}
+	function onBuffering() {
+		setBuffering(true);
+	}
+	function onBufferingEnded() {
+		setBuffering(false);
 	}
 
 	function formatTime(seconds: number): string {
@@ -114,7 +126,14 @@ export const ZekrVoicePlayer: FC<Props> = ({ zekr, settings }) => {
 				min="0"
 			/>
 			<div className="voice-player-times">
-				{duration} / {played}
+				{buffering && <i className="fas fa-spinner fa-spin mx-2"></i>}
+				{error ? (
+					<span className="text-danger">{error}</span>
+				) : (
+					<span>
+						{duration} / {played}
+					</span>
+				)}
 			</div>
 			{voiceName && (
 				<div className="voice-player-voice-name">
@@ -132,6 +151,8 @@ export const ZekrVoicePlayer: FC<Props> = ({ zekr, settings }) => {
 				onEnded={onPLayerEnded}
 				onProgress={onPLayerProgress}
 				onError={onPLayerError}
+				onBuffer={onBuffering}
+				onBufferEnd={onBufferingEnded}
 				width={0}
 				height={0}
 				playing={playing}
