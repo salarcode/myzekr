@@ -57,17 +57,17 @@
 
 پس از اطمینان از نصب آن دستور زیر را پوشه پروژه اجرا کنید:
 
-<code dir="ltr">
+<div dir="ltr">
 
 	npm install
-</code>
+</div>
 
 سپس برای اجرای سایت دستور زیر را اجرا کنید:
 
-<code dir="ltr">
+<div dir="ltr">
 
 	npm run start
-</code>
+</div>
 
 پس از آن سایت در آدرسی مانند `http://localhost:3000` اجرا می شود.
 
