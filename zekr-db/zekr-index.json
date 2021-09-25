@@ -351,5 +351,47 @@
     "zekrTimes": [
       "ArafaDay"
     ]
+  },
+  {
+    "uid": "dua-weekdays-shanbe",
+    "fullName": "دعای روز شنبه",
+    "metaTitle": "دعای روز شنبه",
+    "category": "week-days-dua"
+  },
+  {
+    "uid": "dua-weekdays-yekshanbe",
+    "fullName": "دعای روز یکشنبه",
+    "metaTitle": "دعای روز یکشنبه",
+    "category": "week-days-dua"
+  },
+  {
+    "uid": "dua-weekdays-doshanbe",
+    "fullName": "دعای روز دوشنبه",
+    "metaTitle": "دعای روز دوشنبه",
+    "category": "week-days-dua"
+  },
+  {
+    "uid": "dua-weekdays-seshanbe",
+    "fullName": "دعای روز سه شنبه",
+    "metaTitle": "دعای روز سه شنبه",
+    "category": "week-days-dua"
+  },
+  {
+    "uid": "dua-weekdays-chaharshanbe",
+    "fullName": "دعای روز چهارشنبه",
+    "metaTitle": "دعای روز چهارشنبه",
+    "category": "week-days-dua"
+  },
+  {
+    "uid": "dua-weekdays-panjshanbe",
+    "fullName": "دعای روز پنجشنبه",
+    "metaTitle": "دعای روز پنجشنبه",
+    "category": "week-days-dua"
+  },
+  {
+    "uid": "dua-weekdays-juma",
+    "fullName": "دعای روز جمعه",
+    "metaTitle": "دعای روز جمعه",
+    "category": "week-days-dua"
   }
 ]
