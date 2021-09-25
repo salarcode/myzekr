@@ -8,9 +8,9 @@ namespace ZekrDb.Data.Models.Zekr
 	public class Zekr : ZekrBase
 	{
 		private ObservableCollection<ZekrBody> _zekrBody;
-		private ObservableCollection<ZekrBody> _benefits = new ObservableCollection<ZekrBody>();
-		private ObservableCollection<ZekrReferenceSource> _source = new ObservableCollection<ZekrReferenceSource>();
-		private ObservableCollection<ZekrVoice> _zekrVoices;
+		private ObservableCollection<ZekrBody> _benefits = new();
+		private ObservableCollection<ZekrReferenceSource> _source = new();
+		private ObservableCollection<ZekrVoice> _zekrVoices = new();
 
 		public ObservableCollection<ZekrBody> zekrBody
 		{

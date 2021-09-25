@@ -47,6 +47,7 @@ namespace ZekrDbClient.UI
 			{
 				zekrWindow.ZekrSources.ZekrSourceModel = zekrWindow.ZekrModel.source;
 				zekrWindow.ZekrBenefits.ZekrBenefitsModel = zekrWindow.ZekrModel.benefits;
+				zekrWindow.ZekrVoices.ZekrVoiceListModel = zekrWindow.ZekrModel.zekrVoices;
 			}
 		}
 

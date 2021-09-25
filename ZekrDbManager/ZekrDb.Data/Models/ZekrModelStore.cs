@@ -16,6 +16,7 @@ namespace ZekrDb.Data.Models
 
 
 		public static string ZekrUidPath => ZekrDbPath + @"zekr\";
+		public static string ZekrVoicesPath => ZekrDbPath + @"zekr-voice\";
 		public const string JsonFileExtension = ".json";
 		public const string RemoveFileExtension = ".removed";
 		public const string ZekrCategories = "category-index" + JsonFileExtension;
@@ -73,6 +74,31 @@ namespace ZekrDb.Data.Models
 				var nameName = path + RemoveFileExtension;
 				f.MoveTo(nameName, true);
 			}
+		}
+
+		public static bool ZekrVoiceExists(string sourceFilename)
+		{
+			var newFilename = Path.Combine(ZekrVoicesPath, sourceFilename);
+			return File.Exists(newFilename);
+		}
+
+		public static long ZekrVoiceSize(string sourceFilename)
+		{
+			var newFilename = Path.Combine(ZekrVoicesPath, sourceFilename);
+			var file = new FileInfo(newFilename);
+			if (file.Exists)
+			{
+				return file.Length;
+			}
+			return -1;
+		}
+
+		public static void SaveZekrVoice(string sourceFilepath, string newName)
+		{
+			var newFilename = Path.Combine(ZekrVoicesPath, newName);
+			if (new FileInfo(newFilename).FullName == sourceFilepath)
+				return;
+			System.IO.File.Copy(sourceFilepath, newFilename, true);
 		}
 	}
 }

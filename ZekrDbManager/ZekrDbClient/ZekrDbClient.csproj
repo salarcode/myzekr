@@ -19,8 +19,4 @@
     <ProjectReference Include="..\ZekrDb.Data\ZekrDb.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="UI\Controls\" />
-  </ItemGroup>
-
 </Project>

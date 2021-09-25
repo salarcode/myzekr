@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Newtonsoft.Json;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
 using ZekrDb.Data.Infrastructure;
 
 namespace ZekrDb.Data.Models
@@ -12,9 +7,9 @@ namespace ZekrDb.Data.Models
 	public static class ModelStore
 	{
 #if DEBUG
-		public static Formatting JsonFormatting = Formatting.None;
+		public static Formatting JsonFormatting = Formatting.Indented;
 #else
-		public static Formatting JsonFormatting = Formatting.None;
+		public static Formatting JsonFormatting = Formatting.Indented;
 #endif
 
 
@@ -22,6 +17,7 @@ namespace ZekrDb.Data.Models
 		{
 			return Deserialize<T>(File.ReadAllText(filename));
 		}
+
 		public static void Write<T>(T model, string filename)
 		{
 			var jsonString = Serialize(model);
@@ -32,6 +28,7 @@ namespace ZekrDb.Data.Models
 		{
 			return JsonConvert.DeserializeObject<T>(jsonString);
 		}
+
 		public static string Serialize<T>(T model)
 		{
 			return JsonConvert.SerializeObject(model, JsonFormatting, new JsonSerializerSettings()

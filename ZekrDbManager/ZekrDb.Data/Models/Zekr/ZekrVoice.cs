@@ -4,7 +4,7 @@
 	{
 		private string _name;
 		private string _file;
-		private int? _fileSize;
+		private long? _fileSize;
 
 		public string name
 		{
@@ -18,7 +18,7 @@
 			set { _file = value; OnPropertyChanged(); }
 		}
 
-		public int? fileSize
+		public long? fileSize
 		{
 			get => _fileSize;
 			set { _fileSize = value; OnPropertyChanged(); }

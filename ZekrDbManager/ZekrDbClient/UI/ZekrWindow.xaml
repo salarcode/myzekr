@@ -8,6 +8,7 @@
         xmlns:Zekr="clr-namespace:ZekrDb.Data.Models.Zekr;assembly=ZekrDb.Data"
         xmlns:hc="https://handyorg.github.io/handycontrol"
         xmlns:sdl="http://schemas.sdl.com/xaml"
+        xmlns:controls="clr-namespace:ZekrDbClient.UI.Controls"
         x:Class="ZekrDbClient.UI.ZekrWindow"
         ui:WindowHelper.UseModernWindowStyle="True"
         DataContext="{Binding RelativeSource={RelativeSource Self}}"
@@ -124,10 +125,10 @@
 						</DataTemplate>
 					</ItemsControl.ItemTemplate>
 				</ItemsControl>
-
+				<hc:DashedBorder Height="2" BorderBrush="Gray" BorderThickness="0,1,0,0" BorderDashCap="Round" BorderDashOffset="4" BorderDashThickness="4" />
 				<local:ZekrBenefitsControl x:Name="ZekrBenefits" ZekrBenefitsModel="{Binding ZekrModel.benefits, Mode=TwoWay}" ></local:ZekrBenefitsControl>
 				<local:ZekrSourcesControl x:Name="ZekrSources" ZekrSourceModel="{Binding ZekrModel.source, Mode=TwoWay}"></local:ZekrSourcesControl>
-				
+				<controls:ZekrVoicesControl x:Name="ZekrVoices" ZekrVoiceListModel="{Binding ZekrModel.zekrVoices, Mode=TwoWay}"></controls:ZekrVoicesControl>
 			</StackPanel>
 		</ScrollViewer>
 		<Grid Grid.Row="5" Grid.ColumnSpan="10">

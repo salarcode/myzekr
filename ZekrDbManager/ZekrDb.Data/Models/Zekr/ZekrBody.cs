@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
-using Newtonsoft.Json;
-using ZekrDb.Data.Infrastructure;
+﻿using System.Collections.ObjectModel;
 
 namespace ZekrDb.Data.Models.Zekr
 {

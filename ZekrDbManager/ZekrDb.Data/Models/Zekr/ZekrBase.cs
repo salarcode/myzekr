@@ -99,7 +99,6 @@ namespace ZekrDb.Data.Models.Zekr
 			get => _tags;
 			set { _tags = value; OnPropertyChanged(); }
 		}
-
 		
 		[Browsable(false)]
 		[Display(Name = "زمان ها")]

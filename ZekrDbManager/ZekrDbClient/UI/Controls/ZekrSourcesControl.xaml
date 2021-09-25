@@ -17,11 +17,11 @@
 		</Grid.RowDefinitions>
 		<Button Content="افزودن منبع" Click="NewSourceClicked" Width="90" Margin="5" Style="{StaticResource AccentButtonStyle}" />
 		<DataGrid x:Name="grdSources" Grid.Row="1" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" 
-			AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="False" CanUserAddRows="True"
+			AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="False" CanUserAddRows="False"
 			ItemsSource="{Binding ZekrSourceModel, Mode=TwoWay}" Margin="5" GridLinesVisibility="All">
 			<DataGrid.Columns>
-				<DataGridTextColumn Header = "عنوان منبع" Binding = "{Binding title}" Width="200" />
-				<DataGridTextColumn Header = "لینک منبع" Binding = "{Binding url}" Width="500"  >
+				<DataGridTextColumn Header = "عنوان منبع" Binding = "{Binding title}" Width="500" />
+				<DataGridTextColumn Header = "لینک منبع" Binding = "{Binding url}" Width="300"  >
 					<DataGridTextColumn.EditingElementStyle>
 						<Style/>
 					</DataGridTextColumn.EditingElementStyle>
