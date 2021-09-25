@@ -5,7 +5,7 @@ export function searchZekrIndex(zekrIndexList: ZekrIndex[], searchText: string, 
 	var remaining = limit;
 
 	for (const zekr of zekrIndexList) {
-		if (zekr.fullName?.includes(searchText) || zekr.fullName?.includes(searchText)) {
+		if (zekr.fullName?.includes(searchText) || zekr.metaTitle?.includes(searchText)) {
 			result.push(zekr);
 		}
 		remaining--;
