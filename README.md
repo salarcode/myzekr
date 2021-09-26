@@ -44,8 +44,8 @@
  - Site: [MyZekr.com](https://myzekr.com/)
  - App Engine: React
  - UI: Bootstrap
- - Icons: FontAwesome & FlatIcon ([Attributes](https://github.com/salarcode/myzekr/tree/MyZekr.com/assets/icons))
- - Font: [Vazir](https://rastikerdar.github.io/vazir-font/) & [Samim](https://rastikerdar.github.io/samim-font/)
+ - Icons: [FontAwesome](https://fontawesome.com/) & [FlatIcon](https://www.flaticon.com/) ([Attributes](https://github.com/salarcode/myzekr/tree/MyZekr.com/assets/icons))
+ - Font: [Vazir](https://rastikerdar.github.io/vazir-font/) & [Parastoo](https://rastikerdar.github.io/parastoo-font/)
  - Json Data Editor: C#, .Net 5.0
  - Hosting: [Netlify.com](https://www.netlify.com/)
 
