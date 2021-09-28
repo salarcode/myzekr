@@ -20,6 +20,7 @@ export const ZekrListSearchable: FC<Props> = ({
 	displayRemoveButton,
 	onRemoveClick,
 }) => {
+	const searchResultLimit: number = 20;
 	const [searchText, setSearchText] = useState<string>('');
 	const [zekrSearchResult, setZekrSearchResult] = useState<ZekrIndex[] | null>();
 
@@ -63,7 +64,7 @@ export const ZekrListSearchable: FC<Props> = ({
 			return;
 		}
 
-		var searchResult = searchZekrIndex(zekrList, val, zekrList.length);
+		var searchResult = searchZekrIndex(zekrList, val, searchResultLimit);
 		setZekrSearchResult(searchResult);
 		setSearchText(val);
 	}

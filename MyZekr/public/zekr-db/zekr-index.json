@@ -393,5 +393,11 @@
     "fullName": "دعای روز جمعه",
     "metaTitle": "دعای روز جمعه",
     "category": "week-days-dua"
+  },
+  {
+    "uid": "al-muttaqin-sermon",
+    "fullName": "خطبه متقین",
+    "metaTitle": "خُطبه مُتّقین یا خطبه هَمّام",
+    "category": "famous-hadith"
   }
 ]
