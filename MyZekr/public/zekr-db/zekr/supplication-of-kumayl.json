@@ -1,7 +1,7 @@
 {
   "uid": "supplication-of-kumayl",
-  "metaTitle": "دعای کُمَیل",
   "fullName": "دعای کمیل",
+  "metaTitle": "دعای کُمَیل",
   "category": "famous-dua",
   "zekrBody": [
     {
@@ -749,6 +749,17 @@
     {
       "title": "دعای کمیل/متن دعا - دانشنامه‌ی اسلامی",
       "url": "http://wiki.ahlolbait.com/%D8%AF%D8%B9%D8%A7%DB%8C_%DA%A9%D9%85%DB%8C%D9%84/%D9%85%D8%AA%D9%86_%D8%AF%D8%B9%D8%A7"
+    },
+    {
+      "title": "دعای کمیل (دانلود متن، ترجمه و صوت) | موسسه تحقیقات و نشر معارف اهل البیت علیهم السلام",
+      "url": "http://ahlolbait.com/doa/1398/%D8%AF%D8%B9%D8%A7%DB%8C-%DA%A9%D9%85%DB%8C%D9%84-%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF-%D9%85%D8%AA%D9%86%D8%8C-%D8%AA%D8%B1%D8%AC%D9%85%D9%87-%D9%88-%D8%B5%D9%88%D8%AA"
+    }
+  ],
+  "zekrVoices": [
+    {
+      "name": "دعای کمیل",
+      "file": "supplication-of-kumayl.mp3",
+      "fileSize": 10513521
     }
   ],
   "zekrTimes": [

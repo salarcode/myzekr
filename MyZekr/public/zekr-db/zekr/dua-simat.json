@@ -1,7 +1,7 @@
 {
   "uid": "dua-simat",
-  "metaTitle": "دعای سِمات",
   "fullName": "دعای سِمات",
+  "metaTitle": "دعای سِمات",
   "category": "famous-dua",
   "zekrBody": [
     {
@@ -534,6 +534,13 @@
     {
       "title": "دعای سمات - ويکی شيعه",
       "url": "https://fa.wikishia.net/view/%D8%AF%D8%B9%D8%A7%DB%8C_%D8%B3%D9%85%D8%A7%D8%AA"
+    }
+  ],
+  "zekrVoices": [
+    {
+      "name": "دعای سِمات",
+      "file": "dua-simat.mp3",
+      "fileSize": 8888027
     }
   ],
   "tags": [

@@ -39,11 +39,16 @@
   },
   {
     "uid": "faraj-imamm-mahdi",
-    "fullName": "دعای فرج امام زمان (ع)",
+    "fullName": "دعای فرج امام زمان (عج)",
     "metaTitle": "دعای فرج",
     "category": "famous-dua",
     "tags": [
-      "for-imamm-mahdi"
+      "for-imamm-mahdi",
+      "mafatih-al-janan"
+    ],
+    "zekrTimes": [
+      "MorningPrayer",
+      "AfterMorningPrayer"
     ]
   },
   {
@@ -115,8 +120,8 @@
   },
   {
     "uid": "zeyarat-imamm-mahdi-friday",
-    "fullName": "زیارت امام زمان حضرت مهدی(عج) در روز جمعه",
-    "metaTitle": "زیارت امام زمان حضرت مهدی(عج) در روز جمعه",
+    "fullName": "زیارت امام زمان حضرت مهدی (عج) در روز جمعه",
+    "metaTitle": "زیارت امام زمان حضرت مهدی (عج) در روز جمعه",
     "category": "ziyarats",
     "tags": [
       "for-imamm-mahdi"
@@ -254,10 +259,10 @@
     "category": "famous-dua",
     "zekrTimes": [
       "AfterMorningPrayer",
-      "ArafaDay",
+      "RamadanMonth",
       "RamadanQadrNights",
-      "HalfOfShabanDay",
-      "RamadanMonth"
+      "ArafaDay",
+      "HalfOfShabanDay"
     ]
   },
   {
