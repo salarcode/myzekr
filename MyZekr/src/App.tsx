@@ -37,8 +37,6 @@ function App() {
 		cssFile.href = '/assets/css/fonts.css';
 		cssFile.setAttribute('id', 'fonts-stylesheet');
 		document.head.appendChild(cssFile);
-
-		console.log('fonts-stylesheet added!');
 	}
 	function reAddFontStyleSheets() {
 		var fontsStylesheet = document.getElementById('fonts-stylesheet');
