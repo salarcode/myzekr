@@ -33,8 +33,13 @@
       "url": "https://article.tebyan.net/136143"
     }
   ],
-  "zekrVoices": [],  
+  "zekrVoices": [],
+  "showZekrCounter": true,
   "zekrCounts":[
+    {
+      "name": "40",
+      "count": 40
+    },
     {
       "name": "400",
       "count": 400
