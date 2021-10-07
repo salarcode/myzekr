@@ -1,7 +1,7 @@
 {
   "uid": "faraj-imamm-mahdi",
-  "metaTitle": "دعای فرج",
   "fullName": "دعای فرج امام زمان (عج)",
+  "metaTitle": "دعای فرج",
   "category": "famous-dua",
   "zekrBody": [
     {
@@ -121,6 +121,13 @@
     {
       "title": "دعای فرج - ويکی شيعه",
       "url": "https://fa.wikishia.net/view/%D8%AF%D8%B9%D8%A7%DB%8C_%D9%81%D8%B1%D8%AC"
+    }
+  ],
+  "zekrVoices": [
+    {
+      "name": "محسن فرهمند آزاد",
+      "file": "faraj-imamm-mahdi-farahmand.mp3",
+      "fileSize": 858730
     }
   ],
   "tags": [
