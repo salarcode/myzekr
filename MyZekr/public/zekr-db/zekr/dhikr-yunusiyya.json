@@ -37,31 +37,31 @@
   "showZekrCounter": true,
   "zekrCounts":[
     {
-      "name": "40",
+      "name": "",
       "count": 40
     },
     {
-      "name": "400",
+      "name": "",
       "count": 400
     },
     {
-      "name": "700",
+      "name": "",
       "count": 700
     },
     {
-      "name": "1001",
+      "name": "",
       "count": 1001
     },
     {
-      "name": "3000",
+      "name": "",
       "count": 3000
     },
     {
-      "name": "4000",
+      "name": "",
       "count": 4000
     },
     {
-      "name": "7000",
+      "name": "",
       "count": 7000
     }
   ]
