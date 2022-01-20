@@ -1,5 +1,6 @@
 let appliedThemeId = '';
 let appliedThemeName = '';
+let setBrowserColorTimeout: NodeJS.Timeout | null = null;
 const themeFixesId = 'theme-fixes-reset';
 
 export function applyTheme(themeName: string) {
@@ -15,6 +16,7 @@ export function applyTheme(themeName: string) {
 		appliedThemeName = '';
 		removeThemeFixes();
 		markDarkTheme(false);
+		setBrowserColor();
 		return;
 	}
 	appliedThemeName = themeName;
@@ -30,6 +32,7 @@ export function applyTheme(themeName: string) {
 
 	markDarkTheme(styleSheet.isDark);
 	addThemeFixes();
+	setBrowserColor();
 }
 
 function markDarkTheme(isDark: boolean) {
@@ -84,4 +87,26 @@ function getThemeStylesheet(name: string) {
 			};
 	}
 	return null;
+}
+function setBrowserColor() {
+	setBrowserColorNow();
+
+	if (setBrowserColorTimeout) {
+		clearTimeout(setBrowserColorTimeout);
+	}
+	// Note: timeout is needed to handle css files load time
+	setBrowserColorTimeout = setTimeout(setBrowserColorNow, 600);
+}
+
+function setBrowserColorNow() {
+	let siteHeader = document.querySelector('.site-header');
+	let metaThemeColor = document.querySelector("meta[name='theme-color']") as HTMLMetaElement;
+	if (!siteHeader || !metaThemeColor) return;
+
+	let styles = window.getComputedStyle(siteHeader);
+	let color = styles.backgroundColor;
+	if (!color) return;
+
+	console.log(`setBrowserColor, before: ${metaThemeColor.content} after: ${color}`);
+	metaThemeColor.content = color;
 }
