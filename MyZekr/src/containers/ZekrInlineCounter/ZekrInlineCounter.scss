@@ -11,7 +11,9 @@
 	position: sticky;
 	bottom: 2px;
 
-	max-height: 300px;
+	max-height: 330px;
+	min-height: 250px;
+	height: 46vh;
 	overflow-y: auto;
 	scrollbar-width: thin;
 	scrollbar-color: #a8d4c7 #d8f2d3;
