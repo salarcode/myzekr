@@ -136,7 +136,7 @@ export function getZekrTimeText(zekrTime: ZekrTime): string {
 			return `عید قربان`;
 
 		case ZekrTime.EidGhadir:
-			return `عید قدیر`;
+			return `عید غدیر`;
 
 		case ZekrTime.ArafaDay:
 			return `روز عرفه`;

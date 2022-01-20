@@ -93,7 +93,7 @@ namespace ZekrDb.Data.Models.Zekr
 		[Display(Name = "عید قربان")]
 		EidAdha,
 
-		[Display(Name = "عید قدیر")]
+		[Display(Name = "عید غدیر")]
 		EidGhadir,
 
 		[Display(Name = "روز عرفه")]
