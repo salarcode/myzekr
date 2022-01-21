@@ -39,7 +39,7 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 	const [zekr, setZekr] = useState<Zekr>();
 	const [loading, setLoading] = useState<boolean>(true);
 	const [categories, setCategories] = useState<ZekrCategory[] | undefined>();
-	const [benefitsOpen, setBenefitsOpen] = useState<boolean>(false);
+	const [benefitsOpen, setBenefitsOpen] = useState<any>();
 	const [voicePlayerOpen, setVoicePlayerOpen] = useState<boolean>(false);
 	const [zekrCounterVisible, setZekrCounterVisible] = useState(false);
 
@@ -73,6 +73,8 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 
 		detectPositionSticky('.sticky-inline-header');
 		detectPositionSticky('.zekr-body-play-buttons');
+
+		return closeZekrBenefits;
 	}, [zekrUid, settings, readSettings]);
 
 	function onReturnClick() {
@@ -83,22 +85,34 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 	}
 
 	function openZekrBenefits() {
-		setBenefitsOpen(true);
+		setBenefitsOpen(document.getElementById('zekr-benefits-dialog'));
 	}
 	function closeZekrBenefits() {
-		setBenefitsOpen(false);
+		if (benefitsOpen) {
+			benefitsOpen.modal('hide');
+		}
+		var backdrop = document.getElementsByClassName('modal-backdrop');
+		for (let index = 0; index < backdrop.length; index++) {
+			backdrop[index].remove();
+		}
+		var body = document.getElementsByTagName('body')[0];
+		body.className = '';
+		body.setAttribute('style', '');
 	}
-	function onShowZekrCounter(e: any) {
-		e.preventDefault();
+
+	function onShowZekrCounter(e: React.MouseEvent<HTMLAnchorElement>) {
+		e?.preventDefault();
 		setZekrCounterVisible(true);
 	}
 	function onCloseZekrCounter() {
 		setZekrCounterVisible(false);
 	}
-	function onVoicePlayerOpen() {
+	function onVoicePlayerOpen(e: React.MouseEvent<HTMLAnchorElement>) {
+		e?.preventDefault();
 		setVoicePlayerOpen(true);
 	}
-	function onVoicePlayerClose() {
+	function onVoicePlayerClose(e: React.MouseEvent<HTMLAnchorElement>) {
+		e?.preventDefault();
 		setVoicePlayerOpen(false);
 	}
 

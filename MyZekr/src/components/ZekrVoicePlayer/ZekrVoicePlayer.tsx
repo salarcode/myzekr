@@ -85,10 +85,12 @@ export const ZekrVoicePlayer: FC<Props> = ({ zekr, settings }) => {
 		setPlayPosition(state.playedSeconds);
 		setPlayed(formatTime(state.playedSeconds));
 	}
-	function playClick() {
+	function playClick(e: React.MouseEvent<HTMLAnchorElement>) {
+		e?.preventDefault();
 		setPlaying(true);
 	}
-	function pauseClick() {
+	function pauseClick(e: React.MouseEvent<HTMLAnchorElement>) {
+		e?.preventDefault();
 		setPlaying(false);
 	}
 	function onPlayChange(e: ChangeEvent<HTMLInputElement>) {

@@ -107,6 +107,5 @@ function setBrowserColorNow() {
 	let color = styles.backgroundColor;
 	if (!color) return;
 
-	console.log(`setBrowserColor, before: ${metaThemeColor.content} after: ${color}`);
 	metaThemeColor.content = color;
 }
