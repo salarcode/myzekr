@@ -30,3 +30,6 @@
 .theme-dark .diacritics-text .diacritics-org{
     color: rgb(255 178 178) !important
 }
+.theme-dark .btn-close{
+    filter: invert(1);
+}
