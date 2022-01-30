@@ -96,7 +96,7 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 			backdrop[index].remove();
 		}
 		var body = document.getElementsByTagName('body')[0];
-		body.className = '';
+		body.className = (body.className || '').replace('modal-open', '');
 		body.setAttribute('style', '');
 	}
 
