@@ -8,10 +8,11 @@ import { readSettingsActionCreator } from '../../store/Actions/SettingsActions';
 import { AppState } from '../../store/store';
 import { AppSettings } from '../../services/Settings/models/AppSettings';
 import { connect } from 'react-redux';
-import SidebarAppDrawer from './SidebarAppDrawer';
+import SidebarAppDrawer, { openOffCanvas } from './SidebarAppDrawer';
 import { AboutDialog } from '../AboutDialog/AboutDialog';
 import { ShareItDialog } from '../ShareItDialog/ShareItDialog';
 import { applyTheme } from '../../common/themeManager';
+import { enableOffCanvasSwipe } from './OffCanvasSwipe';
 
 interface Props {
 	settings?: AppSettings | undefined;
@@ -23,6 +24,7 @@ const Layout: FC<Props> = ({ children, settings, readSettings, settingsLoading =
 	useEffect(() => {
 		// Warning: this is the only place we load the settings, don't touch!
 		if (readSettings) readSettings();
+		enableOffCanvasSwipe(null, openOffCanvas);
 	}, [readSettings]);
 
 	if (settings) {

@@ -17,6 +17,11 @@ interface Props {
 	saveSettings: (settings: AppSettings) => void;
 }
 
+export function openOffCanvas() {
+	var openButton = document.getElementById('toggle-sidebar-app-drawer');
+	openButton?.click();
+}
+
 const SidebarAppDrawer: FC<Props> = ({ settingsLoading, settings, saveSettings }) => {
 	function toggleSidebar() {
 		document.getElementById('toggle-sidebar-app-drawer')?.click();
