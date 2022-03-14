@@ -1,7 +1,7 @@
 {
   "uid": "night-prayer",
-  "metaTitle": "نماز شب",
   "fullName": "نماز شب",
+  "metaTitle": "نماز شب",
   "category": "prayer-daily-nawafil",
   "zekrBody": [
     {
@@ -141,6 +141,7 @@
       "url": "https://namnak.com/%D9%86%D9%85%D8%A7%D8%B2-%D8%B4%D8%A8.p33026"
     }
   ],
+  "zekrVoices": [],
   "tags": [
     "prayer"
   ],
@@ -149,7 +150,7 @@
     "NightPrayer"
   ],
   "showZekrCounter": true,
-  "zekrCounts":[
+  "zekrCounts": [
     {
       "name": "اَللّهُمَّ اِغْفِر...",
       "count": 40
