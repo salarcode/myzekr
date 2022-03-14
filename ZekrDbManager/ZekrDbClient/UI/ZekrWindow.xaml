@@ -119,7 +119,7 @@
 				<ItemsControl ItemsSource="{Binding Path=ZekrModel.zekrBody}" Grid.Row="1" Grid.Column="1" MinHeight="10" Margin="10">
 					<ItemsControl.ItemTemplate>
 						<DataTemplate>
-							<local:ZekrBodyControl RemoveButtonVisibility="Visible" OnRemoveButtonClick="ZekrRemoveClick"
+							<local:ZekrBodyControl RemoveButtonVisibility="Visible" OnRemoveButtonClick="ZekrRemoveClick" OnInsertButtonClick="ZekrInsertClick"
 							                       MoveUpButtonVisibility="Visible" OnMoveUpButtonClick="ZekrMoveUpClick"
 							                       MoveDownVisibility="Visible" OnMoveDownButtonClick="ZekrMoveDownClick"/>
 						</DataTemplate>

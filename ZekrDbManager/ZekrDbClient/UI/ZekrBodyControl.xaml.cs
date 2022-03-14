@@ -22,6 +22,7 @@ namespace ZekrDbClient.UI
 
 
 		public Action<ZekrBodyControl, ZekrBody> OnRemoveButtonClick { get; set; }
+		public Action<ZekrBodyControl, ZekrBody> OnInsertButtonClick { get; set; }
 		public Action<ZekrBodyControl, ZekrBody> OnMoveUpButtonClick { get; set; }
 		public Action<ZekrBodyControl, ZekrBody> OnMoveDownButtonClick { get; set; }
 
@@ -35,6 +36,12 @@ namespace ZekrDbClient.UI
 		{
 			get => RemoveButton.Visibility;
 			set => RemoveButton.Visibility = value;
+		}
+
+		public Visibility InsertButtonVisibility
+		{
+			get => InsertButton.Visibility;
+			set => InsertButton.Visibility = value;
 		}
 
 		public Visibility MoveDownVisibility
@@ -232,6 +239,11 @@ namespace ZekrDbClient.UI
 		private void RemoveButtonClick(object sender, RoutedEventArgs e)
 		{
 			OnRemoveButtonClick?.Invoke(this, ZekrBodyModel);
+		}
+
+		private void InsertButtonClick(object sender, RoutedEventArgs e)
+		{
+			OnInsertButtonClick?.Invoke(this, ZekrBodyModel);
 		}
 
 		private void MoveUpButtonClick(object sender, RoutedEventArgs e)

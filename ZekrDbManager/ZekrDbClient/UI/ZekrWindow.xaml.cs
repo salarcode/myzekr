@@ -191,6 +191,19 @@ namespace ZekrDbClient.UI
 			}
 		}
 
+		private async void ZekrInsertClick(ZekrBodyControl zekrBodyControl, ZekrBody zekr)
+		{
+			if (zekr == null)
+				return;
+			var index = ZekrModel.zekrBody.IndexOf(zekr);
+
+			if (ZekrModel.zekrBody == null)
+				ZekrModel.zekrBody = new ObservableCollection<ZekrBody>();
+
+			var body = new ZekrBody();
+			ZekrModel.zekrBody.Insert(index, body);
+		}
+
 		private async void ZekrRemoveClick(ZekrBodyControl zekrBodyControl, ZekrBody zekr)
 		{
 			if (zekr == null)
@@ -268,7 +281,7 @@ namespace ZekrDbClient.UI
 		{
 			UpdateZekrTimes();
 		}
- 
+
 		private void txtUid_LostFocus(object sender, RoutedEventArgs e)
 		{
 			var text = txtUid.Text.Trim().Replace(' ', '-').ToLower();
