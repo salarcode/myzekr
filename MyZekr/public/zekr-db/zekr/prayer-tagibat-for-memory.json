@@ -1,11 +1,21 @@
 {
   "uid": "prayer-tagibat-for-memory",
-  "metaTitle": "دعایی برای تقویت حافظه",
   "fullName": "دعای حافظه بعد از هر نماز (مفاتیح الجنان)",
+  "metaTitle": "دعایی برای تقویت حافظه",
   "category": "prayer-taqibat",
   "zekrBody": [
     {
       "body": "از پيامبر اكرم صلی‌الله‌علیه‌وآله روايت شده كه به اميرالمؤمنين علیه‌السلام فرمود: هر گاه خواستى هر چه را كه مى‏‌شنوى و مى‏‌خوانى حفظ كنى، اين دعا را در تعقيب تمام نمازها بخوان:",
+      "alternateBodyList": [
+        {
+          "body": "بِسْمِ اللهِ الرَّحْمنِ الرَّحِیمِ",
+          "translationBody": {
+            "body": "به نام خداوند بخشنده مهربان",
+            "languageKey": "fa"
+          },
+          "languageKey": "ar"
+        }
+      ],
       "languageKey": "fa"
     },
     {
@@ -24,6 +34,7 @@
       "url": "https://bahjat.ir/fa/content/10491"
     }
   ],
+  "zekrVoices": [],
   "tags": [
     "prayer-taqibat"
   ]
