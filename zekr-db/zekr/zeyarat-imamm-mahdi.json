@@ -9,6 +9,10 @@
       "alternateBodyList": [
         {
           "body": "بِسْمِ اللهِ الرَّحْمنِ الرَّحِیمِ\r\n",
+          "translationBody": {
+            "body": "به نام خداوند بخشنده مهربان",
+            "languageKey": "fa"
+          },
           "languageKey": "ar"
         }
       ],
