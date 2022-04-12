@@ -163,7 +163,9 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 		<div className="zekr-container">
 			<PageMeta
 				title={(zekr?.fullName ?? zekr.metaTitle) + ' - مشاهده ذکر'}
-				description={'مشاهده ذکر و دعا - ' + zekr?.fullName}
+				description={
+					zekr.metaDescription ? zekr.metaDescription + ' - مشاهده ذکر و دعا' : 'مشاهده ذکر و دعا - ' + zekr?.fullName
+				}
 			/>
 			<div className="sticky-inline-header">
 				<div className="block-cell">
