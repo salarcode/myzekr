@@ -159,7 +159,7 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 		var title = zekr?.fullName ?? zekr.metaTitle ?? '';
 
 		if (categories && categories.length > 0) {
-			if (title.length < 60) title += ' - ' + categories[0].title;
+			if (title.length < 60) title += ' - ' + categories[categories.length - 1].title;
 		}
 
 		return title;
