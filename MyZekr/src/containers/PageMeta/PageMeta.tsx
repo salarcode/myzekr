@@ -9,9 +9,14 @@ interface Props {
 }
 
 export const PageMeta: FC<Props> = ({ title, description }) => {
+	if (!title) {
+		title = 'مرجع دعاها و اذکار';
+	} else if (title.length < 60) {
+		title += ' - مرجع دعاها و اذکار';
+	}
 	return (
 		<Helmet>
-			<title>{title && title + ' - '} مرجع دعاها و اذکار</title>
+			<title>{title}</title>
 			<meta name="description" content={description ? description : title} />
 		</Helmet>
 	);

@@ -153,6 +153,18 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 		</div>
 	);
 
+	function getPageTitle(zekr: Zekr): string {
+		if (!zekr) return '';
+
+		var title = zekr?.fullName ?? zekr.metaTitle ?? '';
+
+		if (categories && categories.length > 0) {
+			if (title.length < 60) title += ' - ' + categories[0].title;
+		}
+
+		return title;
+	}
+
 	return loading || settingsLoading || !zekr ? (
 		loading || settingsLoading ? (
 			<Loading />
@@ -162,7 +174,7 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 	) : (
 		<div className="zekr-container">
 			<PageMeta
-				title={(zekr?.fullName ?? zekr.metaTitle) + ' - مشاهده ذکر'}
+				title={getPageTitle(zekr)}
 				description={
 					zekr.metaDescription ? zekr.metaDescription + ' - مشاهده ذکر و دعا' : 'مشاهده ذکر و دعا - ' + zekr?.fullName
 				}
