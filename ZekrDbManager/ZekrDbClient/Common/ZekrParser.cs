@@ -120,10 +120,16 @@ namespace ZekrDbClient.Common
 				if (c == 'پ' || c == 'چ' || c == 'ژ' || c == 'گ')
 					return false;
 
-				if (c == 'ة' /*|| c == 'أ'*/ || c == 'ؤ')
-					return true;
+				//if (c == 'ة' /*|| c == 'أ'*/ || c == 'ؤ')
+				//	// double the weight
+				//	arabicDiacritics += 2;
+				//else if (c == 'ٍ' || c == 'ٌ' || c == 'ً' || c == 'ۀ' || c == 'ّ' || c == 'ِ' || c == 'ُ' || c == 'َ' || c == 'ْ' || c == 'إ')
+				//	arabicDiacritics++;
 
-				if (c == 'ٍ' || c == 'ٌ' || c == 'ً' || c == 'ۀ' || c == 'ّ' || c == 'ِ' || c == 'ُ' || c == 'َ' || c == 'ْ' || c == 'إ')
+				if (c == '\u0629' /*|| c == '\u0623'*/ || c == '\u0624')
+					// double the weight
+					arabicDiacritics += 2;
+				else if (c == '\u064D' || c == '\u064C' || c == '\u064B' || c == '\u06C0' || c == '\u0651' || c == '\u0650' || c == '\u064F' || c == '\u064E' || c == '\u0652' || c == '\u0625')
 					arabicDiacritics++;
 			}
 
