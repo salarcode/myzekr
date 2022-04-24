@@ -156,7 +156,7 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 	function getPageTitle(zekr: Zekr): string {
 		if (!zekr) return '';
 
-		var title = zekr?.fullName ?? zekr.metaTitle ?? '';
+		var title = zekr?.metaTitle || zekr?.fullName || '';
 		if (title.length < 60 && zekr.zekrVoices?.length > 0) {
 			const suffix = ' (متنی و صوتی)';
 			if (title.length + suffix.length > 60) {
