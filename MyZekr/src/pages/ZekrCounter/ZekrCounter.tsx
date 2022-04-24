@@ -8,7 +8,10 @@ import { ZekrCounterComponent } from '../../components/ZekrCounter/ZekrCounterCo
 export const ZekrCounter = () => {
 	return (
 		<div className="zekr-counter-box">
-			<PageMeta title="ذکر شمار" description="ذکر شمار" />
+			<PageMeta
+				title="ذکر شمار - شمارش ذکر و صلوات"
+				description="شمارش ذکر و صلوات با افزایش و کاهنده شمارش. نمایش ذکر های قبلی."
+			/>
 			<div className="sticky-inline-header-DISABLED">
 				<div className="block-cell">
 					<div className="page-inline-header">

@@ -157,9 +157,18 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 		if (!zekr) return '';
 
 		var title = zekr?.fullName ?? zekr.metaTitle ?? '';
-
-		if (categories && categories.length > 0) {
-			if (title.length < 60) title += ' - ' + categories[categories.length - 1].title;
+		if (title.length < 60 && zekr.zekrVoices?.length > 0) {
+			const suffix = ' (متنی و صوتی)';
+			if (title.length + suffix.length > 60) {
+				title += ` (صوتی)`;
+			} else {
+				title += suffix;
+			}
+		}
+		if (title.length < 60) {
+			if (categories && categories.length > 0) {
+				title += ' - ' + categories[categories.length - 1].title;
+			}
 		}
 
 		return title;

@@ -16,14 +16,15 @@
         Title="مشاهده ذکر" Height="800" Width="1500" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft">
 	<Grid Name="grdMain">
 		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="150"/>
 			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="150"/>
 			<ColumnDefinition Width="Auto"/>
-			<ColumnDefinition Width="100"/>
+			<ColumnDefinition Width="150"/>
 			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="150"/>
 			<ColumnDefinition Width="Auto"/>
-			<ColumnDefinition Width="Auto" MinWidth="80"/>
-			<ColumnDefinition Width="Auto"/>
-			<ColumnDefinition Width="1*"/>
+			<ColumnDefinition Width="10*"/>
 		</Grid.ColumnDefinitions>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
@@ -39,26 +40,24 @@
 		<TextBox x:Name="txtUid" HorizontalAlignment="Left" Margin="5" Text="{Binding ZekrModel.uid, Mode=TwoWay}" VerticalAlignment="Center" Width="200" Grid.Column="1" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" FlowDirection="LeftToRight" LostFocus="txtUid_LostFocus" />
 		<Label Content="عنوان بلند کامل" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Center" Grid.Row="1"/>
 		<TextBox HorizontalAlignment="Left" Margin="5" Text="{Binding ZekrModel.fullName, Mode=TwoWay}" VerticalAlignment="Center" Width="200" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
-		<Label Content="عنوان ویژه" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Center" Grid.Row="2"/>
-		<TextBox HorizontalAlignment="Left" Margin="5"  Text="{Binding ZekrModel.metaTitle, Mode=TwoWay}" VerticalAlignment="Center" Width="200" Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
-		<Label Content="Image Url" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Center" Grid.Column="3"/>
-		<TextBox HorizontalAlignment="Left" Margin="5" Text="{Binding ZekrModel.imageUrl, Mode=TwoWay}" VerticalAlignment="Center" Width="200" Grid.Column="4" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" FlowDirection="LeftToRight"/>
-		<Label Content="دسته" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Center" Grid.Row="1" Grid.Column="3"/>
+		<Label Content="Image Url" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Center" Grid.Column="2"/>
+		<TextBox HorizontalAlignment="Left" Margin="5" Text="{Binding ZekrModel.imageUrl, Mode=TwoWay}" VerticalAlignment="Center" Width="200" Grid.Column="3" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" FlowDirection="LeftToRight"/>
+		<Label Content="دسته" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2"/>
 		<ComboBox Margin="5" Width="200" SelectedIndex="0" Name="ZekrCategoriesBox"
 				  ItemsSource="{Binding ZekrCategories, Mode=OneWay}"
 				  DisplayMemberPath="title"
 				  SelectedValuePath="uid"
 		          SelectedValue="{Binding ZekrModel.category, Mode=TwoWay}"
-		          Grid.Row="1" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Stretch"/>
+		          Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Stretch"/>
 
-		<Label Content="تگ ها" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Center" Grid.Row="2" Grid.Column="3"/>
+		<Label Content="تگ ها" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Center" Grid.Row="0" Height="32" VerticalContentAlignment="Center" Grid.Column="4"/>
 
 		<hc:CheckComboBox Name="TagsCheckBox"
-		                  Grid.Row="2" Grid.Column="4" Margin="5" MinWidth="200" MaxWidth="400" VerticalAlignment="Top" HorizontalAlignment="Left" VerticalContentAlignment="Stretch"
+		                  Grid.Row="0" Grid.Column="5" Margin="5" MinWidth="200" MaxWidth="400" VerticalAlignment="Top" HorizontalAlignment="Left" VerticalContentAlignment="Stretch"
 		                  ItemsSource="{Binding ZekrTags, Mode=OneWay}"
 		                  DisplayMemberPath="title"
 		                  SelectedValuePath="uid"
-						  ShowClearButton="True" IsError="False"  SelectionChanged="TagsCheckBox_SelectionChanged" Grid.RowSpan="2">
+						  ShowClearButton="True" IsError="False"  SelectionChanged="TagsCheckBox_SelectionChanged" Grid.RowSpan="1">
 			<!--Style="{StaticResource CheckComboBoxExtend}"-->
 			<!--Style="{StaticResource CheckComboBoxPlus}"-->
 			<hc:CheckComboBox.Resources>
@@ -73,9 +72,9 @@
 			</hc:CheckComboBox.Resources>
 
 		</hc:CheckComboBox>
-		<Label Content="زمان" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Center" Grid.Row="2" Grid.Column="5"/>
+		<Label Content="زمان" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Center" Grid.Row="1" Grid.Column="4"/>
 		<hc:CheckComboBox Name="ZekrTimesCheckBox"
-		                  Grid.Row="2" Grid.Column="6" Margin="5" MinWidth="200" MaxWidth="400" VerticalAlignment="Top" HorizontalAlignment="Left" VerticalContentAlignment="Stretch"
+		                  Grid.Row="1" Grid.Column="5" Margin="5" MinWidth="200" MaxWidth="400" VerticalAlignment="Top" HorizontalAlignment="Left" VerticalContentAlignment="Stretch"
 		                  ItemsSource="{Binding ZekrTimes, Mode=OneWay}"
 		                  DisplayMemberPath="Value"
 		                  SelectedValuePath="Key"
@@ -96,8 +95,8 @@
 		</hc:CheckComboBox>
 
 		<Button Content="افزودن سطر متن" Margin="5" Click="AddZekr_Click" Grid.Row="3" Grid.Column="1" Style="{StaticResource AccentButtonStyle}"/>
-		<Button Content="افزودن تشخیص خودکار متن" Click="AddParsedBody_Click" Grid.Row="3" Grid.Column="7" Margin="5" Style="{StaticResource AccentButtonStyle}" HorizontalAlignment="Right"  />
-		
+		<Button Content="افزودن تشخیص خودکار متن" Click="AddParsedBody_Click" Grid.Row="3" Grid.Column="8" Margin="5" Style="{StaticResource AccentButtonStyle}" HorizontalAlignment="Right"  />
+
 		<ScrollViewer Name="MainScrollViwer" OverridesDefaultStyle="False" Grid.Row="4" Grid.ColumnSpan="10">
 			<StackPanel Orientation="Vertical" Grid.Row="4" >
 				<!--<ListBox Name="ListViewZekrList" MinHeight="10" ItemsSource="{Binding Path=ZekrModel.zekrBody}" Margin="10"
@@ -116,6 +115,22 @@
 						</DataTemplate>
 					</ListView.ItemTemplate>
 				</ListView>-->
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="150"/>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="150"/>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="150"/>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="10*"/>
+					</Grid.ColumnDefinitions>
+					<Label Content="عنوان متا" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Center"/>
+					<TextBox  HorizontalAlignment="Left" Margin="5"  Text="{Binding ZekrModel.metaTitle, Mode=TwoWay}" VerticalAlignment="Center" Width="200" Grid.Column="1" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+					<Label Content="شرح متا" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Center" Grid.Column="2"/>
+					<TextBox  HorizontalAlignment="Stretch" Margin="5"  Text="{Binding ZekrModel.metaDescription, Mode=TwoWay}" VerticalAlignment="Center" Grid.Column="3" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Grid.ColumnSpan="2" Width="560"/>
+
+				</Grid>
 				<ItemsControl ItemsSource="{Binding Path=ZekrModel.zekrBody}" Grid.Row="1" Grid.Column="1" MinHeight="10" Margin="10">
 					<ItemsControl.ItemTemplate>
 						<DataTemplate>
