@@ -10,7 +10,7 @@ interface Props {
 
 function removeAccent(str: string): string {
 	if (!str) return str;
-	var diacritics = ['ً', 'ٌ', 'ٍ', 'َ', 'ُ', 'ِ', 'ّ', 'ْ'];
+	var diacritics = ['ً', 'ٌ', 'ٍ', 'َ', 'ُ', 'ِ', 'ّ', 'ْ', '\u0670'];
 
 	var result = '';
 	for (let index = 0; index < str.length; index++) {
