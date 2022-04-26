@@ -483,5 +483,17 @@
     "zekrTimes": [
       "RamadanMonth"
     ]
+  },
+  {
+    "uid": "dua-ramadan-daily",
+    "fullName": "دعاهای روزهای ماه رمضان",
+    "metaTitle": "دعاهای روزهای ماه رمضان",
+    "metaDescription": "لیست دعاهای مختصر روزانه ماه رمضان که معمولا هر روز پس از نماز واجب آن روز خوانده می‌شود",
+    "category": "dua-ramadan",
+    "zekrTimes": [
+      "BetweenDawn",
+      "AfterMorningPrayer",
+      "RamadanMonth"
+    ]
   }
 ]
