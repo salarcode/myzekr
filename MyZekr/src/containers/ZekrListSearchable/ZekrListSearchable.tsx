@@ -26,7 +26,7 @@ export const ZekrListSearchable: FC<Props> = ({
 
 	if (!displaySearchInputLimit) {
 		// default limit to show search box
-		displaySearchInputLimit = 5;
+		displaySearchInputLimit = 15;
 	}
 
 	var searchTimeout: NodeJS.Timeout;
