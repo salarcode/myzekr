@@ -19,7 +19,8 @@ export const ZekrCounter = () => {
 							<span className="breadcrumbs-list">
 								<span className="breadcrumb-item">
 									<Link to="/" aria-label="صفحه اصلی">
-										<img src={HomeImage} className="icon-20" alt="خانه" />
+										<img src={HomeImage} className="icon-20 mx-1" alt="خانه" />
+										صفحه دعاها
 									</Link>
 								</span>
 							</span>
