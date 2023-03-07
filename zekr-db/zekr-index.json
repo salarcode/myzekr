@@ -495,5 +495,20 @@
       "AfterMorningPrayer",
       "RamadanMonth"
     ]
+  },
+  {
+    "uid": "prayer-of-jafar-tayyar",
+    "fullName": "نماز جعفر طیار",
+    "metaTitle": "نماز جعفر طیار",
+    "metaDescription": "نماز جعفر طَیّار از نمازهای مستحب است که به صورت دو نماز دو رکعتی خوانده می‌شود. برای برای برآورده شدن حاجات و آمرزش گناهان این نماز خوانده شود.",
+    "category": "prayer-mustahabb",
+    "tags": [
+      "prayer"
+    ],
+    "zekrTimes": [
+      "NightOfFriday",
+      "Friday",
+      "HalfOfShabanDay"
+    ]
   }
 ]
