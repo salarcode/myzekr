@@ -5,17 +5,16 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
     paths:
       - MyZekr/**
   pull_request:
-    branches: [ main ]
+    branches: [main]
     paths:
       - MyZekr/**
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -24,44 +23,44 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm ci
-      working-directory: ./MyZekr
-    - run: npm run build --if-present
-      working-directory: ./MyZekr
-      env:
-        CI: false 
-    - run: npm test
-      working-directory: ./MyZekr
-      env:
-        CI: false 
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+        working-directory: ./MyZekr
+      - run: npm run build --if-present
+        working-directory: ./MyZekr
+        env:
+          CI: false
+      - run: npm test
+        working-directory: ./MyZekr
+        env:
+          CI: false
 
-    - name: Upload production-ready build files
-      uses: actions/upload-artifact@v4
-      with:
-        name: production-files
-        path: ./MyZekr/build
-  
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-files
+          path: ./MyZekr/build
+
   deploy:
     name: Deploy to MyZekr.com
     needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-    
-    steps:
-    - name: Download artifact
-      uses: actions/download-artifact@v4
-      with:
-        name: production-files
-        path: ./MyZekr/build
 
-    - name: Deploy to `MyZekr.com` branch
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_branch: MyZekr.com 
-        publish_dir: ./MyZekr/build
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: production-files
+          path: ./MyZekr/build
+
+      - name: Deploy to `MyZekr.com` branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: MyZekr.com
+          publish_dir: ./MyZekr/build
