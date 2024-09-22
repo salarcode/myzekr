@@ -18,9 +18,10 @@ interface ZekrBase {
 	zekrTimes?: ZekrTime[];
 	zekrCounts?: ZekrCounter[];
 	showZekrCounter?: boolean;
+	nextRecommendation?: {}
 }
 
-export interface ZekrIndex extends ZekrBase {}
+export interface ZekrIndex extends ZekrBase { }
 
 export interface Zekr extends ZekrBase {
 	zekrBody: ZekrBody[];
@@ -29,4 +30,4 @@ export interface Zekr extends ZekrBase {
 	zekrVoices: ZekrVoice[];
 }
 
-export interface ZekrMemory extends Zekr {}
+export interface ZekrMemory extends Zekr { }
