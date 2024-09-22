@@ -29,6 +29,7 @@ import { ZekrVoicePlayer } from '../../components/ZekrVoicePlayer/ZekrVoicePlaye
 interface params {
 	zekrUid: string;
 }
+
 interface Props extends RouteComponentProps<params> {
 	settings: AppSettings | undefined;
 	settingsLoading: boolean;
