@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.a4d61386.chunk.css",
-    "main.js": "/static/js/main.265bf91d.chunk.js",
-    "main.js.map": "/static/js/main.265bf91d.chunk.js.map",
+    "main.js": "/static/js/main.0458474c.chunk.js",
+    "main.js.map": "/static/js/main.0458474c.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.56c48bfc.js",
     "runtime-main.js.map": "/static/js/runtime-main.56c48bfc.js.map",
     "static/js/2.fbe87412.chunk.js": "/static/js/2.fbe87412.chunk.js",
@@ -12,22 +12,22 @@
     "service-worker.js.map": "/service-worker.js.map",
     "static/css/main.a4d61386.chunk.css.map": "/static/css/main.a4d61386.chunk.css.map",
     "static/js/2.fbe87412.chunk.js.LICENSE.txt": "/static/js/2.fbe87412.chunk.js.LICENSE.txt",
-    "static/media/add-favourite.8efecb08.svg": "/static/media/add-favourite.8efecb08.svg",
-    "static/media/add.067491a9.svg": "/static/media/add.067491a9.svg",
-    "static/media/arrow-up.f2806314.svg": "/static/media/arrow-up.f2806314.svg",
-    "static/media/back.a611f23f.svg": "/static/media/back.a611f23f.svg",
-    "static/media/home.0657de42.svg": "/static/media/home.0657de42.svg",
-    "static/media/islam-star.5d59afeb.svg": "/static/media/islam-star.5d59afeb.svg",
+    "static/media/add-favourite.f4120f70.svg": "/static/media/add-favourite.f4120f70.svg",
+    "static/media/add.cf18676f.svg": "/static/media/add.cf18676f.svg",
+    "static/media/arrow-up.41a73bdc.svg": "/static/media/arrow-up.41a73bdc.svg",
+    "static/media/back.47beff12.svg": "/static/media/back.47beff12.svg",
+    "static/media/home.634b2b24.svg": "/static/media/home.634b2b24.svg",
+    "static/media/islam-star.e4eeb4f1.svg": "/static/media/islam-star.e4eeb4f1.svg",
     "static/media/index.scss": "/static/media/line-seperator.b100db4d.svg",
-    "static/media/more-rewind.d40e2ce2.svg": "/static/media/more-rewind.d40e2ce2.svg",
-    "static/media/remove.46c536a6.svg": "/static/media/remove.46c536a6.svg",
-    "static/media/star.a2ed7ca2.svg": "/static/media/star.a2ed7ca2.svg",
-    "static/media/tasbih.39c2a00a.svg": "/static/media/tasbih.39c2a00a.svg"
+    "static/media/more-rewind.f6a21177.svg": "/static/media/more-rewind.f6a21177.svg",
+    "static/media/remove.9c6ce992.svg": "/static/media/remove.9c6ce992.svg",
+    "static/media/star.16d8c811.svg": "/static/media/star.16d8c811.svg",
+    "static/media/tasbih.3bbdc724.svg": "/static/media/tasbih.3bbdc724.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.56c48bfc.js",
     "static/js/2.fbe87412.chunk.js",
     "static/css/main.a4d61386.chunk.css",
-    "static/js/main.265bf91d.chunk.js"
+    "static/js/main.0458474c.chunk.js"
   ]
 }
