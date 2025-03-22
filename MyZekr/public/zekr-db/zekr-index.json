@@ -510,5 +510,15 @@
       "Friday",
       "HalfOfShabanDay"
     ]
+  },
+  {
+    "uid": "laylat-al-qadr-common-practices",
+    "fullName": "اعمال مشترک شب‌های قدر",
+    "metaTitle": "اعمال مشترک شب‌های قدر",
+    "metaDescription": "",
+    "category": "dua-ramadan",
+    "zekrTimes": [
+      "RamadanQadrNights"
+    ]
   }
 ]
