@@ -47,8 +47,12 @@
 					text-align: center;
 					padding: 0.5rem;
 					font-size: 1.1rem;
-					text-shadow: 0 0 2px white;
+					text-shadow: 0 0 2px white, 0 0 5px white;
 				}
+			}
+			&.system {
+				background: linear-gradient(90deg, #d8f2d3 50%, rgba(0, 0, 0, 0.9) 50%) !important;
+				color: black;
 			}
 			&.default {
 				background-color: #d8f2d3 !important;

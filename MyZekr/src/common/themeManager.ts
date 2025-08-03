@@ -1,38 +1,77 @@
-let appliedThemeId = '';
 let appliedThemeName = '';
 let setBrowserColorTimeout: NodeJS.Timeout | null = null;
-const themeFixesId = 'theme-fixes-reset';
+
+// Theme link element IDs
+const THEME_DARK_ID = 'theme-dark';
+const THEME_BROWN_ID = 'theme-brown';
+const THEME_FIXES_ID = 'theme-fixes';
+
+enum ThemeStatus {
+	AlwaysEnabled,
+	Disabled,
+	PrefersDark,
+	PrefersLight,
+}
 
 export function applyTheme(themeName: string) {
 	if (themeName === appliedThemeName) return;
 
-	if (appliedThemeId) {
-		var applied = document.getElementById(appliedThemeId);
-		if (applied) applied.remove();
-	}
-	var styleSheet = getThemeStylesheet(themeName);
-	if (!styleSheet || !styleSheet.file) {
-		appliedThemeId = '';
-		appliedThemeName = '';
-		removeThemeFixes();
-		markDarkTheme(false);
-		setBrowserColor();
-		return;
-	}
 	appliedThemeName = themeName;
-	appliedThemeId = 'theme-' + themeName;
-	var url = '/themes/' + styleSheet.file;
 
-	const linkTheme = document.createElement('link');
-	linkTheme.type = 'text/css';
-	linkTheme.rel = 'stylesheet';
-	linkTheme.href = url;
-	linkTheme.id = appliedThemeId;
-	document.getElementsByTagName('head')[0].appendChild(linkTheme);
+	const themeConfig = getThemeConfig(themeName);
+	if (!themeConfig) return;
 
-	markDarkTheme(styleSheet.isDark);
-	addThemeFixes();
+	// Update media attributes for all theme stylesheets
+	updateThemeStylesheet(THEME_DARK_ID, themeConfig.dark);
+	updateThemeStylesheet(THEME_BROWN_ID, themeConfig.brown);
+	updateThemeStylesheet(THEME_FIXES_ID, themeConfig.fixes);
+
+	// Ensure all theme stylesheets are at the end of head
+	ensureThemeStylesheetsAtEnd();
+
+	markDarkTheme(themeConfig.isDark);
 	setBrowserColor();
+}
+
+function updateThemeStylesheet(linkId: string, themeStatus: ThemeStatus) {
+	const link = document.getElementById(linkId) as HTMLLinkElement;
+	if (link) {
+		switch (themeStatus) {
+			case ThemeStatus.AlwaysEnabled:
+				link.media = 'all';
+				link.removeAttribute('disabled');
+				break;
+			case ThemeStatus.Disabled:
+				link.media = 'not all';
+				link.setAttribute('disabled', '');
+				break;
+			case ThemeStatus.PrefersDark:
+				link.media = '(prefers-color-scheme: dark)';
+				link.removeAttribute('disabled');
+				break;
+			case ThemeStatus.PrefersLight:
+				link.media = '(prefers-color-scheme: light)';
+				link.removeAttribute('disabled');
+				break;
+		}
+
+		// Re-append to head to ensure it stays at the end after React adds dynamic styles
+		const head = document.getElementsByTagName('head')[0];
+		head.appendChild(link);
+	}
+}
+
+function ensureThemeStylesheetsAtEnd() {
+	const head = document.getElementsByTagName('head')[0];
+	const themeIds = [THEME_DARK_ID, THEME_BROWN_ID, THEME_FIXES_ID];
+
+	// Re-append all theme stylesheets in order to ensure they're at the end
+	themeIds.forEach((id) => {
+		const link = document.getElementById(id);
+		if (link) {
+			head.appendChild(link);
+		}
+	});
 }
 
 function markDarkTheme(isDark: boolean) {
@@ -49,45 +88,44 @@ function markDarkTheme(isDark: boolean) {
 	body.className = className;
 }
 
-// theme-fixes.css
-function addThemeFixes() {
-	// need to remove first then add, to keep higher order
-	removeThemeFixes();
-
-	const linkTheme = document.createElement('link');
-	linkTheme.type = 'text/css';
-	linkTheme.rel = 'stylesheet';
-	linkTheme.href = '/themes/theme-fixes.css';
-	linkTheme.id = themeFixesId;
-	document.getElementsByTagName('head')[0].appendChild(linkTheme);
-}
-function removeThemeFixes() {
-	var applied = document.getElementById(themeFixesId);
-	if (applied) applied.remove();
-}
-
-function getThemeStylesheet(name: string) {
+function getThemeConfig(name: string) {
 	if (!name) return null;
+
 	switch (name.toLowerCase()) {
 		case 'normal':
 		case 'default':
+		case 'light':
 			return {
-				file: '',
+				dark: ThemeStatus.Disabled,
+				brown: ThemeStatus.Disabled,
+				fixes: ThemeStatus.Disabled,
 				isDark: false,
-			};
-		case 'brown':
-			return {
-				file: 'theme-brown.css',
-				isDark: true,
 			};
 		case 'dark':
 			return {
-				file: 'theme-dark.css',
+				dark: ThemeStatus.AlwaysEnabled,
+				brown: ThemeStatus.Disabled,
+				fixes: ThemeStatus.AlwaysEnabled,
 				isDark: true,
+			};
+		case 'brown':
+			return {
+				dark: ThemeStatus.Disabled,
+				brown: ThemeStatus.AlwaysEnabled,
+				fixes: ThemeStatus.AlwaysEnabled,
+				isDark: true,
+			};
+		case 'system':
+			return {
+				dark: ThemeStatus.PrefersDark,
+				brown: ThemeStatus.Disabled,
+				fixes: ThemeStatus.PrefersDark,
+				isDark: window.matchMedia('(prefers-color-scheme: dark)').matches,
 			};
 	}
 	return null;
 }
+
 function setBrowserColor() {
 	setBrowserColorNow();
 

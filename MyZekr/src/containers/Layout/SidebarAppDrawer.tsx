@@ -236,6 +236,10 @@ const SidebarAppDrawer: FC<Props> = ({ settingsLoading, settings, saveSettings }
 					<div>رنگ بندی سایت</div>
 					<div className="darkreader color-theme-container">
 						<div
+							onClick={() => applyTheme('system')}
+							className={'color-theme system ' + (themeName === 'system' ? 'selected' : '')}
+						></div>
+						<div
 							onClick={() => applyTheme('default')}
 							className={'color-theme default ' + (themeName === 'default' ? 'selected' : '')}
 						></div>

@@ -42,7 +42,7 @@ const Layout: FC<Props> = ({ children, settings, readSettings, settingsLoading =
 				<ShareItDialog />
 			</div>
 			<div>
-				<div className="block-cell">
+				<div>
 					<Footer />
 				</div>
 			</div>

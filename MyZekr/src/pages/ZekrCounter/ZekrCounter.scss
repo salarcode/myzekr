@@ -1,0 +1,9 @@
+.zekr-counter-page {
+	display: flex !important;
+	flex-direction: column;
+	height: 100%;
+
+	.zekr-counter-box {
+		margin-bottom: 20px;
+	}
+}

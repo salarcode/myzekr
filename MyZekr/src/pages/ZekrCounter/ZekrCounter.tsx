@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom';
 import { BackButton } from '../../components/BackButton/BackButton';
 import { PageMeta } from '../../containers/PageMeta/PageMeta';
+import { ZekrRecommendations } from '../../components/ZekrRecommendations/ZekrRecommendations';
 import './ZekrCounter.scss';
 import HomeImage from '../../assets-offline/icons/home.svg';
 import { ZekrCounterComponent } from '../../components/ZekrCounter/ZekrCounterComponent';
 
 export const ZekrCounter = () => {
 	return (
-		<div className="zekr-counter-box">
+		<div className="zekr-counter-page">
 			<PageMeta
 				title="ذکر شمار - شمارش ذکر و صلوات"
 				description="شمارش ذکر و صلوات با افزایش و کاهنده شمارش. نمایش ذکر های قبلی."
@@ -34,6 +35,8 @@ export const ZekrCounter = () => {
 			</div>
 
 			<ZekrCounterComponent />
+
+			<ZekrRecommendations title="پیشنهادات ذکر" count={4} />
 		</div>
 	);
 };
