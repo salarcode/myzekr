@@ -2753,7 +2753,7 @@ body {
 }
 .button-simple {
     background-color: transparent;
-    border: solid 1px var(--darkreader-border--button-simple-border);
+    border-color: var(--darkreader-border--button-simple-border);
 }
 .button-simple:focus {
     border-color: var(--darkreader-border--button-simple-border-focus);
