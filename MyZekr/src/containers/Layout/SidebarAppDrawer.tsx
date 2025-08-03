@@ -86,7 +86,8 @@ const SidebarAppDrawer: FC<Props> = ({ settingsLoading, settings, saveSettings }
 			tabIndex={-1}
 			id="sidebar-app-drawer"
 			aria-labelledby="sidebar-app-drawer-title"
-			data-bs-scroll="false"
+			data-bs-scroll="true"
+			data-bs-backdrop="true"
 		>
 			<button
 				id="toggle-sidebar-app-drawer"

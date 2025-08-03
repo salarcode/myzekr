@@ -1,5 +1,5 @@
 import { FC } from 'react';
 
 export const VersionNumber: FC = () => {
-	return <span>0.0.1</span>;
+	return <span>0.2</span>;
 };

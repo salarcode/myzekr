@@ -121,6 +121,10 @@ export const ZekrVoicePlayer: FC<Props> = ({ zekr, settings }) => {
 			<input
 				value={playPosition}
 				onChange={onPlayChange}
+				onTouchStart={(e) => e.stopPropagation()}
+				onTouchMove={(e) => e.stopPropagation()}
+				onTouchEnd={(e) => e.stopPropagation()}
+				onMouseDown={(e) => e.stopPropagation()}
 				type="range"
 				id="playerSeek"
 				className="range"
