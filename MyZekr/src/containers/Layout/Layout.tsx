@@ -15,6 +15,7 @@ import { applyTheme } from '../../common/themeManager';
 import { enableOffCanvasSwipe } from './OffCanvasSwipe';
 
 interface Props {
+	children?: React.ReactNode;
 	settings?: AppSettings | undefined;
 	settingsLoading?: boolean;
 	readSettings: () => Promise<void>;

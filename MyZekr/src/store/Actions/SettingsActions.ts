@@ -1,5 +1,5 @@
-import { Action, ActionCreator, Dispatch } from 'redux';
-import { ThunkAction } from 'redux-thunk';
+import { Action, ActionCreator } from 'redux';
+import { ThunkAction, ThunkDispatch } from 'redux-thunk';
 import { AppSettings } from '../../services/Settings/models/AppSettings';
 import { UserInformation } from '../../services/Settings/models/UserInformation';
 import { readSettingsFromServer, saveSettingsInServer } from '../../services/Settings/settings';
@@ -10,18 +10,25 @@ export const Action_ReadingSettings = 'ReadingSettings';
 export const Action_SaveSettings = 'SaveSettings';
 export const Action_SavingSettings = 'SavingSettings';
 
-interface ReadingSettingsAction extends Action<typeof Action_ReadingSettings> {}
+interface ReadingSettingsAction extends Action<typeof Action_ReadingSettings> {
+	[key: string]: unknown;
+}
 interface ReadSettingsAction extends Action<typeof Action_ReadSettings> {
 	settings: AppSettings;
 	userInformation: UserInformation;
+	[key: string]: unknown;
 }
-interface SavingSettingsAction extends Action<typeof Action_SavingSettings> {}
-interface SaveSettingsAction extends Action<typeof Action_SaveSettings> {}
+interface SavingSettingsAction extends Action<typeof Action_SavingSettings> {
+	[key: string]: unknown;
+}
+interface SaveSettingsAction extends Action<typeof Action_SaveSettings> {
+	[key: string]: unknown;
+}
 
 export type SettingsActions = ReadSettingsAction | SaveSettingsAction | ReadingSettingsAction | SavingSettingsAction;
 
-export const readSettingsActionCreator: ActionCreator<ThunkAction<Promise<void>, object, object, ReadSettingsAction>> = () => {
-	return async (dispatch: Dispatch) => {
+export const readSettingsActionCreator: ActionCreator<ThunkAction<Promise<void>, object, object, SettingsActions>> = () => {
+	return async (dispatch: ThunkDispatch<object, object, SettingsActions>) => {
 		const readingSettingsAction: ReadingSettingsAction = {
 			type: Action_ReadingSettings,
 		};
@@ -42,11 +49,11 @@ export const readSettingsActionCreator: ActionCreator<ThunkAction<Promise<void>,
 	};
 };
 
-export const saveSettingsActionCreator: ActionCreator<ThunkAction<Promise<void>, object, object, SaveSettingsAction>> = (
+export const saveSettingsActionCreator: ActionCreator<ThunkAction<Promise<void>, object, object, SettingsActions>> = (
 	settings: AppSettings,
 	userInfo: UserInformation | undefined,
 ) => {
-	return async (dispatch: Dispatch) => {
+	return async (dispatch: ThunkDispatch<object, object, SettingsActions>) => {
 		const savingSettingsAction: SavingSettingsAction = {
 			type: Action_SavingSettings,
 		};

@@ -1,7 +1,7 @@
 import './FavoritesPage.scss';
 import { AnyAction } from 'redux';
 import React, { FC, useEffect, useState } from 'react';
-import { Link, RouteComponentProps } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ThunkDispatch } from 'redux-thunk';
 import { AppSettings } from '../../services/Settings/models/AppSettings';
 import { readSettingsActionCreator, saveSettingsActionCreator } from '../../store/Actions/SettingsActions';
@@ -15,8 +15,9 @@ import { getZekrIndexList } from '../../services/Zekr/ZekrWebService';
 import { ZekrIndex } from '../../services/Zekr/models/Zekr';
 import { PageMeta } from '../../containers/PageMeta/PageMeta';
 import HomeImage from '../../assets-offline/icons/home.svg';
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 
-interface Props extends RouteComponentProps {
+interface Props {
 	settings: AppSettings | undefined;
 	settingsLoading: boolean;
 	readSettings: () => void;

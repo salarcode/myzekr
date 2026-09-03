@@ -4,10 +4,10 @@ import './ScrollableView.scss';
 import jQuery from 'jquery';
 
 interface Props {
-	zekr: Zekr;
+	children?: React.ReactNode;
 }
 
-export const ScrollableView: FC = ({ children }) => {
+export const ScrollableView: FC<Props> = ({ children }) => {
 	useEffect(() => {
 		resizeScrollableView();
 

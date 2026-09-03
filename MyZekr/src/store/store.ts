@@ -1,5 +1,5 @@
 import { applyMiddleware, createStore, Store } from 'redux';
-import thunk from 'redux-thunk';
+import { thunk } from 'redux-thunk';
 import { AppSettings } from '../services/Settings/models/AppSettings';
 import { UserInformation } from '../services/Settings/models/UserInformation';
 import { rootReducer } from './Reducers/rootReducer';

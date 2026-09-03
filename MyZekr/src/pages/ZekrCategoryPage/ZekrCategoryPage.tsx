@@ -1,6 +1,6 @@
 import './ZekrCategoryPage.scss';
 import React, { FC, useEffect, useState } from 'react';
-import { Link, RouteComponentProps } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { ErrorMessage, retryType } from '../../components/ErrorMessage/ErrorMessage';
 import { Loading } from '../../components/Loading/Loading';
 import { ZekrIndex } from '../../services/Zekr/models/Zekr';
@@ -16,14 +16,16 @@ import HomeImage from '../../assets-offline/icons/home.svg';
 interface params {
 	categoryUid: string;
 }
-export const ZekrCategoryPage: FC<RouteComponentProps<params>> = ({ match, history }) => {
+export const ZekrCategoryPage: FC = () => {
+	const navigate = useNavigate();
 	const [zekrList, setZekrList] = useState<ZekrIndex[]>();
 	const [loading, setLoading] = useState<boolean>(true);
 	const [childrenCategories, setChildrenCategories] = useState<ZekrCategory[]>();
 	const [category, setCategory] = useState<ZekrCategory>();
 	const [catParents, setCatParents] = useState<ZekrCategory[]>([]);
 
-	var categoryUid = match.params.categoryUid;
+	const params = useParams();
+	var categoryUid = params.categoryUid || '';
 
 	useEffect(() => {
 		async function doGetZekrList() {
@@ -70,7 +72,7 @@ export const ZekrCategoryPage: FC<RouteComponentProps<params>> = ({ match, histo
 	}, [categoryUid]);
 
 	function categoryClick() {
-		history.push('/zekr-list/' + category?.uid);
+		navigate('/zekr-list/' + category?.uid);
 	}
 
 	return loading || !zekrList ? (
