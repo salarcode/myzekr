@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Lockfile intentionally not shared: react-scripts@5 forbids TypeScript >=5,
+# so installs rely on .npmrc (legacy-peer-deps) rather than a committed lock.
+package-lock.json
+
