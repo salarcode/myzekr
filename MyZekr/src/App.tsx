@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import './App.scss';
 import ReactGA from 'react-ga4';
 import Layout from './containers/Layout/Layout';
@@ -11,20 +11,23 @@ import { configureStore } from './store/store';
 import { Provider } from 'react-redux';
 import { ZekrCounter } from './pages/ZekrCounter/ZekrCounter';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
-import { createBrowserHistory } from 'history';
+
+// Initialize google analytics page view tracking
+ReactGA.initialize('G-9BKCVXCGTY', { testMode: process.env.NODE_ENV === 'test' });
+
+function GAListener() {
+	const location = useLocation();
+	useEffect(() => {
+		ReactGA.send({ hitType: 'pageview', page: location.pathname });
+	}, [location]);
+	return null;
+}
 
 function App() {
 	const store = configureStore();
 
 	useEffect(() => {
 		addFontStyleSheets();
-
-		const history = createBrowserHistory();
-		// Initialize google analytics page view tracking
-		ReactGA.initialize('G-9BKCVXCGTY', { testMode: process.env.NODE_ENV === 'test' });
-		history.listen(({ location }) => {
-			ReactGA.send({ hitType: 'pageview', page: location.pathname });
-		});
 	}, []);
 
 	/**
@@ -61,6 +64,7 @@ function App() {
 	return (
 		<Provider store={store}>
 			<BrowserRouter basename={process.env.PUBLIC_URL}>
+				<GAListener />
 				<Layout>
 					<Routes>
 						<Route path="/home" element={<Navigate to="/" replace />} />

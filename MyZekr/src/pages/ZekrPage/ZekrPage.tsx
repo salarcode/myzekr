@@ -28,7 +28,8 @@ import { ZekrVoicePlayer } from '../../components/ZekrVoicePlayer/ZekrVoicePlaye
 const TasbihImage = '/assets/icons/tasbih.svg';
 
 interface params {
-	zekrUid: string;
+	zekrUid?: string;
+	[index: string]: string | undefined;
 }
 
 interface Props {
@@ -44,7 +45,7 @@ const ZekrPage: FC<Props> = ({ settings, settingsLoading, readSettings }) => {
 	const [benefitsOpen, setBenefitsOpen] = useState<any>();
 	const [voicePlayerOpen, setVoicePlayerOpen] = useState<boolean>(false);
 	const [zekrCounterVisible, setZekrCounterVisible] = useState(false);
-	const params = useParams();
+	const params = useParams<params>();
 	const navigate = useNavigate();
 
 	var zekrUid = params.zekrUid || '';

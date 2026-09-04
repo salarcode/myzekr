@@ -15,7 +15,6 @@ import { getZekrIndexList } from '../../services/Zekr/ZekrWebService';
 import { ZekrIndex } from '../../services/Zekr/models/Zekr';
 import { PageMeta } from '../../containers/PageMeta/PageMeta';
 import HomeImage from '../../assets-offline/icons/home.svg';
-import { useNavigate, useLocation, useParams } from 'react-router-dom';
 
 interface Props {
 	settings: AppSettings | undefined;

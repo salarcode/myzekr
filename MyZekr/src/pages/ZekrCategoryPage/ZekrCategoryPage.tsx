@@ -14,7 +14,8 @@ import { PageMeta } from '../../containers/PageMeta/PageMeta';
 import HomeImage from '../../assets-offline/icons/home.svg';
 
 interface params {
-	categoryUid: string;
+	categoryUid?: string;
+	[index: string]: string | undefined;
 }
 export const ZekrCategoryPage: FC = () => {
 	const navigate = useNavigate();
@@ -24,7 +25,7 @@ export const ZekrCategoryPage: FC = () => {
 	const [category, setCategory] = useState<ZekrCategory>();
 	const [catParents, setCatParents] = useState<ZekrCategory[]>([]);
 
-	const params = useParams();
+	const params = useParams<params>();
 	var categoryUid = params.categoryUid || '';
 
 	useEffect(() => {

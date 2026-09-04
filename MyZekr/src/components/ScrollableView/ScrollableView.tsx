@@ -1,5 +1,4 @@
 import React, { FC, useEffect } from 'react';
-import { Zekr } from '../../services/Zekr/models/Zekr';
 import './ScrollableView.scss';
 import jQuery from 'jquery';
 
