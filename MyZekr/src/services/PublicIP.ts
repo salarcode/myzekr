@@ -7,6 +7,10 @@ export const getClientPublicIp = async () => {
 		return data.ip;
 	} catch {
 		const res = await fetch('https://ifconfig.co/ip');
+		if (!res.ok) {
+			console.warn(`ifconfig.co responded with ${res.status}`);
+			return '';
+		}
 		return (await res.text()).trim();
 	}
 };
