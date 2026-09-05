@@ -4,6 +4,7 @@
 	"private": true,
 	"homepage": "https://myzekr.com/",
 	"dependencies": {
+		"@testing-library/dom": "^10.4.0",
 		"@testing-library/jest-dom": "^7.0.1",
 		"@testing-library/react": "^16.3.3",
 		"@testing-library/user-event": "^14.6.7",
@@ -30,10 +31,19 @@
 		"start": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
 		"build": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
 		"test": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts test",
+		"test:ci": "cross-env NODE_OPTIONS=--openssl-legacy-provider CI=true react-scripts test --watchAll=false",
 		"eject": "react-scripts eject"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
+	},
+	"jest": {
+		"moduleNameMapper": {
+			"^react-router/dom$": "<rootDir>/node_modules/react-router/dist/development/dom-export.js"
+		},
+		"transformIgnorePatterns": [
+			"node_modules/(?!(react-ga4|react-player|react-router|react-router-dom|workbox-core|workbox-routing|workbox-strategies|workbox-expiration|workbox-cacheable-response)/)"
+		]
 	},
 	"browserslist": {
 		"production": [
