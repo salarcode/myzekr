@@ -1,6 +1,16 @@
-import publicIp from 'public-ip';
-
-export const getClientPublicIp = async () =>
-	await publicIp.v4({
-		fallbackUrls: ['https://ifconfig.co/ip'],
-	});
+export const getClientPublicIp = async () => {
+	try {
+		const res = await fetch('https://api.ipify.org?format=json');
+		if (!res.ok) throw new Error(`ipify responded with ${res.status}`);
+		const data = await res.json();
+		if (typeof data.ip !== 'string') throw new Error('ipify response missing ip');
+		return data.ip;
+	} catch {
+		const res = await fetch('https://ifconfig.co/ip');
+		if (!res.ok) {
+			console.warn(`ifconfig.co responded with ${res.status}`);
+			return '';
+		}
+		return (await res.text()).trim();
+	}
+};

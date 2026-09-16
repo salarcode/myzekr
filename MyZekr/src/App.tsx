@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import './App.scss';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import Layout from './containers/Layout/Layout';
 import { HomePage } from './pages/HomePage/HomePage';
 import ZekrPage from './pages/ZekrPage/ZekrPage';
@@ -11,21 +11,23 @@ import { configureStore } from './store/store';
 import { Provider } from 'react-redux';
 import { ZekrCounter } from './pages/ZekrCounter/ZekrCounter';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
-import { createBrowserHistory } from 'history';
+
+// Initialize google analytics page view tracking
+ReactGA.initialize('G-9BKCVXCGTY', { testMode: process.env.NODE_ENV === 'test' });
+
+function GAListener() {
+	const location = useLocation();
+	useEffect(() => {
+		ReactGA.send({ hitType: 'pageview', page: location.pathname });
+	}, [location]);
+	return null;
+}
 
 function App() {
 	const store = configureStore();
 
 	useEffect(() => {
 		addFontStyleSheets();
-
-		const history = createBrowserHistory();
-		// Initialize google analytics page view tracking
-		ReactGA.initialize('G-9BKCVXCGTY', { testMode: process.env.NODE_ENV === 'test' });
-		history.listen((location) => {
-			ReactGA.set({ page: location.pathname }); // Update the user's current page
-			ReactGA.pageview(location.pathname); // Record a pageview for the given page
-		});
 	}, []);
 
 	/**
@@ -62,16 +64,17 @@ function App() {
 	return (
 		<Provider store={store}>
 			<BrowserRouter basename={process.env.PUBLIC_URL}>
+				<GAListener />
 				<Layout>
-					<Switch>
-						<Redirect path="/home" to="/" />
-						<Route exact path="/" component={HomePage} />
-						<Route path="/zekr/:zekrUid" component={ZekrPage} />
-						<Route path="/zekr-list/:categoryUid" component={ZekrCategoryPage} />
-						<Route path="/counter" component={ZekrCounter} />
-						<Route path="/favorites" component={FavoritesPage} />
-						<Route component={NotFoundPage} />
-					</Switch>
+					<Routes>
+						<Route path="/home" element={<Navigate to="/" replace />} />
+						<Route path="/" element={<HomePage />} />
+						<Route path="/zekr/:zekrUid" element={<ZekrPage />} />
+						<Route path="/zekr-list/:categoryUid" element={<ZekrCategoryPage />} />
+						<Route path="/counter" element={<ZekrCounter />} />
+						<Route path="/favorites" element={<FavoritesPage />} />
+						<Route path="*" element={<NotFoundPage />} />
+					</Routes>
 				</Layout>
 			</BrowserRouter>
 		</Provider>

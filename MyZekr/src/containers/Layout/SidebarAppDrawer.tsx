@@ -8,8 +8,9 @@ import { AppState } from '../../store/store';
 import { AppSettings } from '../../services/Settings/models/AppSettings';
 import { readSettingsActionCreator, saveSettingsActionCreator } from '../../store/Actions/SettingsActions';
 import { AnyAction } from 'redux';
-import TasbihImage from '../../assets-offline/icons/tasbih.svg';
 import { canStackZekrBody } from '../../common/helpers/mediaQuery';
+
+const TasbihImage = '/assets/icons/tasbih.svg';
 
 interface Props {
 	settings?: AppSettings;

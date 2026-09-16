@@ -1,6 +1,6 @@
 import './ZekrPage.scss';
 import React, { FC, Fragment, useEffect, useState } from 'react';
-import { Link, RouteComponentProps } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { ErrorMessage, retryType } from '../../components/ErrorMessage/ErrorMessage';
 import { Loading } from '../../components/Loading/Loading';
 import { Zekr } from '../../services/Zekr/models/Zekr';
@@ -23,28 +23,32 @@ import TextZoomButtons from '../../containers/TextZoomButtons/TextZoomButtons';
 import { ScrollTop } from '../../components/ScrollTop/ScrollTop';
 import HomeImage from '../../assets-offline/icons/home.svg';
 import IslamStarImage from '../../assets-offline/icons/islam-star.svg';
-import TasbihImage from '../../assets-offline/icons/tasbih.svg';
 import { ZekrVoicePlayer } from '../../components/ZekrVoicePlayer/ZekrVoicePlayer';
 
+const TasbihImage = '/assets/icons/tasbih.svg';
+
 interface params {
-	zekrUid: string;
+	zekrUid?: string;
+	[index: string]: string | undefined;
 }
 
-interface Props extends RouteComponentProps<params> {
+interface Props {
 	settings: AppSettings | undefined;
 	settingsLoading: boolean;
 	readSettings: () => void;
 }
 
-const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSettings }) => {
+const ZekrPage: FC<Props> = ({ settings, settingsLoading, readSettings }) => {
 	const [zekr, setZekr] = useState<Zekr>();
 	const [loading, setLoading] = useState<boolean>(true);
 	const [categories, setCategories] = useState<ZekrCategory[] | undefined>();
 	const [benefitsOpen, setBenefitsOpen] = useState<any>();
 	const [voicePlayerOpen, setVoicePlayerOpen] = useState<boolean>(false);
 	const [zekrCounterVisible, setZekrCounterVisible] = useState(false);
+	const params = useParams<params>();
+	const navigate = useNavigate();
 
-	var zekrUid = match.params.zekrUid;
+	var zekrUid = params.zekrUid || '';
 
 	useEffect(() => {
 		async function doGetZekr() {
@@ -79,8 +83,8 @@ const ZekrPage: FC<Props> = ({ history, match, settings, settingsLoading, readSe
 	}, [zekrUid, settings, readSettings]);
 
 	function onReturnClick() {
-		if (history.length > 2) {
-			history.goBack();
+		if (window.history.length > 2) {
+			navigate(-1);
 		} else if (categories && categories.length > 0) {
 		}
 	}

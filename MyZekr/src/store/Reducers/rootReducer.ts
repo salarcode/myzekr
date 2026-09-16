@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
-import { AppState } from '../store';
 import { settingsReducer } from './SettingsReducer';
 
-export const rootReducer = combineReducers<AppState>({
+export const rootReducer = combineReducers({
 	settingsState: settingsReducer,
 });

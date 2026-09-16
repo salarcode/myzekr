@@ -19,13 +19,13 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [20.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
@@ -34,10 +34,10 @@ jobs:
         working-directory: ./MyZekr
         env:
           CI: false
-      - run: npm test
+      - run: npm run test:ci
         working-directory: ./MyZekr
         env:
-          CI: false
+          CI: true
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
@@ -49,7 +49,7 @@ jobs:
     name: Deploy to MyZekr.com
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
     steps:
       - name: Download artifact

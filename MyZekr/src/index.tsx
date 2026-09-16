@@ -1,15 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import './index.scss';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
-ReactDOM.render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>,
-	document.getElementById('root'),
-);
+const container = document.getElementById('root');
+if (container) {
+	const root = createRoot(container);
+	root.render(
+		<React.StrictMode>
+			<App />
+		</React.StrictMode>,
+	);
+}
 
 // https://felixgerschau.com/how-to-make-your-react-app-a-progressive-web-app-pwa/
 

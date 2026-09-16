@@ -1,5 +1,5 @@
 import './ZekrVoicePlayer.scss';
-import { ChangeEvent, FC, Fragment, useState } from 'react';
+import { ChangeEvent, FC, Fragment, useRef, useState } from 'react';
 import ReactPlayer from 'react-player';
 import { Zekr } from '../../services/Zekr/models/Zekr';
 import { AppSettings } from '../../services/Settings/models/AppSettings';
@@ -16,7 +16,7 @@ export const ZekrVoicePlayer: FC<Props> = ({ zekr, settings }) => {
 	const [voiceName, setVoiceName] = useState('');
 	const [playPosition, setPlayPosition] = useState(0);
 	const [playing, setPlaying] = useState(false);
-	const [player, setPlayer] = useState<ReactPlayer | undefined>();
+	const playerRef = useRef<HTMLVideoElement>(null);
 	const [played, setPlayed] = useState<string>('0:00');
 	const [duration, setDuration] = useState<string>('0:00');
 	const [error, setError] = useState<string>('');
@@ -62,10 +62,8 @@ export const ZekrVoicePlayer: FC<Props> = ({ zekr, settings }) => {
 		}
 		setBuffering(false);
 	}
-	function onPLayerReady(p: ReactPlayer) {
-		setPlayer(p);
-	}
-	function onPLayerDuration(duration: number) {
+	function onPLayerDuration(event: React.SyntheticEvent<HTMLVideoElement>) {
+		const duration = event.currentTarget.duration;
 		var seek = document.getElementById('playerSeek') as HTMLInputElement;
 		seek.max = duration.toString();
 		seek.min = '0';
@@ -81,9 +79,10 @@ export const ZekrVoicePlayer: FC<Props> = ({ zekr, settings }) => {
 	function onPLayerEnded() {
 		setPlaying(false);
 	}
-	function onPLayerProgress(state: { played: number; playedSeconds: number; loaded: number; loadedSeconds: number }) {
-		setPlayPosition(state.playedSeconds);
-		setPlayed(formatTime(state.playedSeconds));
+	function onPLayerProgress(event: React.SyntheticEvent<HTMLVideoElement>) {
+		const currentTime = event.currentTarget.currentTime;
+		setPlayPosition(currentTime);
+		setPlayed(formatTime(currentTime));
 	}
 	function playClick(e: React.MouseEvent<HTMLAnchorElement>) {
 		e?.preventDefault();
@@ -98,7 +97,9 @@ export const ZekrVoicePlayer: FC<Props> = ({ zekr, settings }) => {
 		if (position > 0) {
 			setPlayPosition(position);
 			setPlayed(formatTime(position));
-			player?.seekTo(position);
+			if (playerRef.current) {
+				playerRef.current.currentTime = position;
+			}
 			setPlaying(true);
 		}
 	}
@@ -150,19 +151,19 @@ export const ZekrVoicePlayer: FC<Props> = ({ zekr, settings }) => {
 				</div>
 			)}
 			<ReactPlayer
-				onReady={onPLayerReady}
-				onDuration={onPLayerDuration}
+				ref={playerRef}
+				onDurationChange={onPLayerDuration}
 				onStart={onPLayerStart}
 				onPause={onPLayerPause}
 				onEnded={onPLayerEnded}
 				onProgress={onPLayerProgress}
 				onError={onPLayerError}
-				onBuffer={onBuffering}
-				onBufferEnd={onBufferingEnded}
+				onWaiting={onBuffering}
+				onCanPlay={onBufferingEnded}
 				width={0}
 				height={0}
 				playing={playing}
-				url={fileUrl}
+				src={fileUrl}
 			/>
 			{playing && (
 				<a href="#pause" onClick={pauseClick}>
